@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 90%;
+    margin: 30px;
+    border: 5px solid;
+    display: flex;
+    align-items: center;
+}
+.element{
+    width: 200px;
+    height: 200px;
+    background-color: steelblue;
+    margin: 20px;
+    transition: transform 1s;
+
+    /* transform-origin:top left; */
+    z-index: -1;
+}
+.container:hover .element{
+    /* transform: skewX(30deg) skewY(30deg); */
+    /* Dentro de un mismo transform podemos aplicar muchas otras, estas se ejecutarán en orden. */
+    /* transform: translate(200px) rotate(30deg); */
+    transform: rotate(90deg) translateX(200px) scaleY(.3);
+}

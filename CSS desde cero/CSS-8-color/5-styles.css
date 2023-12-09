@@ -1,0 +1,30 @@
+/* HSL - ES EL MAS RECOMENDABLE PARA USAR
+    -Hue (va de 0 a 360 grados)
+        circulo cromatico
+            0 rojo -------- color primario
+            60 amarillo
+            120 verde ----- color primario
+            180 cyan
+            240 azul ------ color primario
+            300 magenta 
+            360 rojo
+    -Saturación (intensidad de color de 0 a 100%(color puro)) - como una camisa soleada va de gris a color puro(manejo la intensidad(un color puede estar muy encendido o muy opaco))
+    -Light (lus, de 0(negro) a 100%(blanco)) 50 para arriba aclaro el color, de 50 para abajo
+
+*/
+
+body{
+    /* 0 en Hue, da rojo */
+    /* 100% en saturación da el color puro */
+    /* al 50% de luz, me da el color puro */
+    background-color: hsl(0, 100%, 50%);
+
+    /* el primero es el tomo del color */
+    /* segundo va de gris a color puro, manejo la intensidad(un color puede estar muy encendido o muy opaco) */
+    /* con la luz, de 50 para arriba aclaro el color, de 50 para abajo oscuresco el color */
+    background-color: hsl(0, 100%, 30%);
+
+
+    /* HSLA - la A de transparencia */
+    background-color: hsla(0, 100%, 30%,.5);
+}

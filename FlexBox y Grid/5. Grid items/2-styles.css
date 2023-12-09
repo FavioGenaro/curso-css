@@ -1,0 +1,46 @@
+
+/* los tracks tambien pueden ser flexibles por el contenido */
+
+.container {
+    font-size: 2em;
+    background: red;
+    padding: 1em;
+    display: grid;
+    margin-top: 20px;
+    /* creamos 2 columnas las cuales van a medir el minimo contenido posible, , es decir, lo minimo sin que nada se desborde, el segundo item se ajusta a EDteam y no a 'a', el primer item se ajusta a 'Bienvenidos'(pero la imagen hace que se estire y sea 'Bienvenidos a') */
+    grid-template-columns: min-content min-content;
+    grid-gap: 1em;
+}
+
+.container-2 {
+    font-size: 2em;
+    background: red;
+    padding: 1em;
+    display: grid;
+    margin-top: 20px;
+    /* la segunda columna es max content, por lo que no hace salto de linea y hace que se ocupe el maximo contenido posible */
+    grid-template-columns: min-content max-content;
+    grid-gap: 1em;
+}
+
+.container-3 {
+    font-size: 2em;
+    background: red;
+    padding: 1em;
+    display: grid;
+    margin-top: 20px;
+    /* fit-content es una función: por defecto usa el min-conten y el paremetro que le damos en el maximo al que puede crecer */
+    /* al reducir y aumentar el tamaño de pantalla observamos que crece un maximo de 400px y un minimo (tiene un limite de reducción y aumento de tamaño)*/
+    grid-template-columns: fit-content(400px) max-content;
+    grid-gap: 1em;
+}
+
+.item {
+    background: yellow;
+}
+
+.item img {
+    /* para el container: este la primera columna se ajusta al tamaño de la imagen, ya que es el minimo sin que nada se desborde*/
+
+    width: 200px;
+}

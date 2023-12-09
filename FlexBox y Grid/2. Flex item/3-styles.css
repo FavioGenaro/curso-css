@@ -1,0 +1,26 @@
+/* Los mismo que grow, usa el mismo algoritmo, solo que ahora reduce su tamaño */
+.container {
+    display: flex;
+    font-size: 3em;
+    background: yellow;
+}
+
+.item {
+    background: pink;
+    width: 500px;/* para hacer que salgan del container */
+    /* al decirle flex-shrink, hace que no sobrepasen su container sino que se reduzcan y puedan caber todos juntos
+        aqui usamos el espacio sobrante, no el faltante, para hallar el factor de reduccion para cada item
+    */
+    flex-shrink: 3;
+    /* cero hace que no se reduscan, mantiene su tamaño por más que estiremos.  */
+    /* flex-shrink: 0; */
+}
+
+.item:nth-child(even) {
+    background: cyan;
+}
+
+.item:nth-child(3) {
+    /* hacemos el item 3 se redusca más que el resto */
+    flex-shrink: 5;
+}

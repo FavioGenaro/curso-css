@@ -1,0 +1,11 @@
+/* color keywords
+
+    son colores que tienen un nombre propio(yellow, green, red, blue,etc)
+
+    https://www.w3.org/TR/css-color-3/#html4
+    https://www.w3.org/TR/css-color-3/#svg-color
+*/
+body{
+    background-color: aqua;
+    color:transparent;/*sin color*/
+}

@@ -1,0 +1,16 @@
+
+html, body{
+    /* se cubre toda la pantalla */
+    height: 100%;
+    margin: 0;
+}
+body{
+    /* sobre todos aparece el primer fondo, el resto esta debajo */
+    background-image: url(https://images.unsplash.com/photo-1638913974023-cef988e81629?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80), url(https://images.unsplash.com/photo-1644258676710-ffb99d7d7a1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80), url(https://images.unsplash.com/photo-1644340253042-34f3d6b77b2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+    background-repeat: no-repeat;
+    /* cada tamaño se va a cada fondo en ese orden */
+    /* background-size: 20%; esto se aplica a todos los fondos*/
+    background-size: 20%,20%,30%;
+
+    background-position: 0 0, center center, right bottom;
+}

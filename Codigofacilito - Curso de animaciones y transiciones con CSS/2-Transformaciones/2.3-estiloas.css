@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 90%;
+    margin: 30px;
+    border: 5px solid; /* el color por defecto es negro, este color cambia si defirnimos un color para el container*/
+    display: flex;
+    align-items: center;
+}
+.element{
+    width: 200px;
+    height: 200px;
+    background-color: steelblue;
+    margin: 20px;
+    transition: transform 1s; /*en caso sea 360 o una vuelta debe tener una transicion para poder notarlo*/
+    
+    /* en rotaciones, se define el punto de rotación con transform-origin */
+    /* Primero pasamos el valor para el eje de las Y y luego al eje X */
+    /* Podemos colocar valores en porcentaja, px (el punto de rotación puede salir del elemento) o 
+		usar center,top,bottom,right,left (estos solo toman las partes del elemento, no salen del él) */
+    /* Su valor por defecto es 50% 50% que representa el centro del elemento */
+    transform-origin: top right; /* arriba y a la derecha es el origen */
+    z-index: -1;
+}
+.container:hover .element{
+    transform: rotate(120deg);
+    /* Acepta valores:   
+        grados de 0 a 360 deg
+        gradianes de 0-400 grad
+        radianes de 0-6.28319 rad
+        vueltas de 0-1 turn
+    */
+}

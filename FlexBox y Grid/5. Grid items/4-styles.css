@@ -1,0 +1,49 @@
+/* grid-areas - nos permiten definir areas en grid(espacio rectangular divido por las lineas de css grid) */
+
+body {
+    font-size: 2em;
+    display: grid;
+    min-height: 100vh;
+    grid-gap: 1em; /*separación*/
+
+    /* grid-template-areas: definimos las areas colocando entre comillas las filas y las columnas las separamos con un espacio dentro de las mimas comillas*/
+
+    /* grid-template-areas: 'header header'
+                        'header header';  con esto creabamos un gird 2x2 llamado header, pero asi cubre solo 1 filas, ya que el ato no esta definido*/
+    /* grid-template-areas:'header header header header'
+                        'main main main aside' 
+                        'footer footer footer footer'; con esto creamos 3 filas y 4 columnas para poder distribuir nuestros elementos(main 75% y aside 25%)*/
+
+    grid-template-areas: 'header' 'main' 'aside' 'footer'; /* por defecto o menor a 1024px son todos filas*/
+}
+
+@media screen and (min-width: 1024px) { /* a partir de 1024px se acomodan*/
+    body {
+        grid-template-areas: 'header header'
+                            'main aside'
+                            'footer footer';
+        grid-template-rows: 2em 1fr 2em; /* el primero y tercero 2em el segundo cubre lo que sobre (creamos 3 filas) */
+        grid-template-columns: 3fr 1fr; /*(creamos 2 columnas y hacemos que se pueda generar main 75% y aside 25%, ya que header y footer mide todo el ancho) esto hace que el contenido de main sea flexible, tambien el de aside porque estan con fr*/
+    }
+}
+
+.item {
+    background: yellow;
+}
+
+.header {
+    /* va a cubrir el area llamada header  */
+    grid-area: header
+}
+
+.aside {
+    grid-area: aside;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}

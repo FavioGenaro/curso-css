@@ -1,0 +1,72 @@
+/*ESPECIFICIDAD - PRIMER PILAR
+    Etiquetas(h1,span) y pseudoelementos:        1 
+    Clases, atributos y pseudoClases:            10
+    Id:                                          100
+    Estilos en línea:                            1000
+
+*/
+
+
+h3{
+    color: red;          /*  1  */
+}
+.title {
+    color: green;        /*  10  */
+}
+#title{ 
+    /*Los id son más especificos que la etiqueta y clase*/
+    color: blue;         /*  100  */
+}
+h3.title{
+    color: yellow;       /*  1+10=11  */
+}
+h3#title{
+     /*Aun más especifico que solo id*/
+    color: purple;      /*  1+100=101  */
+}
+h1#title.title{
+    /*Más especifico que todos los anteriores*/
+    color: steelblue;   /*  1+10+100=111  */
+}
+body > h3#title.title{
+    /*Más especifico que todos, con hijo directo de body se le suma 1*/
+    color: magenta;      /*  1+10+100+1=112  - GANA*/      
+}
+
+/*
+    Coloca el codigo CSS en esta pagina para medir la especificidad: https://jonassebastianohlsson.com/specificity-graph/
+    
+    La curva debe ir de baja a alta para saber que vamos de menor a mayor especificidad, pero si va de alto a bajo de forma seguida (tiene puntas), entonces se debe cambiar el codigo por mala practica ya que las que tienen menor especificidad no se estarian aplicando
+*/
+
+
+/*CASCADA - SEGUNDO PILAR*/
+.title2{
+    /* Sobre escribo dentro del mismo selector */
+    color: red;
+    color: green;
+}
+.title2{
+    /* Sobreescribo con otro selector */
+    color: blue;
+}
+h4{
+    /* Rompemos la cascada ya que el selector tiene 1 punto siendo menor que los anteriores con 10, y no se aplican estos estilos */
+
+    /* !important: Es el más especificos de todos dentro de css, incluso si se tiene el estilo aplicado dentro de HTML */
+    /* color: purple !important ; */
+    /* Si hay 2 selectores con important entonces ambos se cancelan y se regresa al contador de puntos(No es recomendable usar important) */
+    color: purple;
+}
+
+/* ESTILOS COMPUTADOS */
+/*
+Inspeccionar en el navegador
+    En Styles no muestra el estilo aplicado y tachado los que no se aplicaron o fueron sobreescritos, a detalle (entrada input)
+
+    Al costado en Computed, nos muestra enteramente los estilos aplicados, (salida output)
+
+*/
+/* HERENCIA - TERCER PILAR*/
+
+

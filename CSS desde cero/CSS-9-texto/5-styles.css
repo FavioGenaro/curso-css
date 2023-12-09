@@ -1,0 +1,26 @@
+/*  */
+p{
+    border: 1px solid black;
+    background: #eee;
+
+
+    font-family: 'Open Sans';
+
+    /* tipo de letra */
+    font-family: 'Roboto Mono', monospace; /*la primera es la de google, la segunda es otro tipo de letra que es una alternativa en caso la primera falle o no se encuentre*/
+    font-weight: 200; /*con esto escojo el ancho de letra que traje de google, me traja el de 200 y 700, puedo escoger entre estos dos*/
+
+}
+
+p{
+    font-family: 'Open Sans';
+    background: hsl(200, 20%, 40%);
+    color: #fff;
+    /* text-shadow: x y blur color,... (movimiento en x y, difuminado y color - se pueden crear muchas sombras  )*/
+    text-shadow: 1px 1px 0px #000;
+}
+h1{
+    /* el color de la sombra debe ser diferente al color de la letra */
+    text-shadow: 1px 1px 2px #000;
+    color:#fff;
+}   

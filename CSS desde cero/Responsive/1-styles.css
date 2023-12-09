@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* vw: viewport width
+    vh: viewport height
+*/
+
+main{
+    width: 100vw; /* 100% del ancho de pantalla */
+    height: 100vh; /* 100% de la altura de pantalla */
+    background-color: aquamarine;
+}
+section{
+    width: 80%;
+    /* para usar el max y min debemos tener previamente un widt que generalmente es en % */
+    min-width: 320px;/* 320px es el valor minimo del width, si llega a 320px ya no se reduce su tamaño(ayuda al diseño responsive)*/
+    max-width: 500px;/* el tamaño maximo del witdh es 500px, de ahi ya no puede crecer más */
+    /* height: 500px; */
+    min-height: 500px;/* su tamaño minimo es 500px, su contenido puede hacerlo crecer a más de 500px, es decir, que se adaptara a su contenido porque no tiene un tamaño máximo */
+    margin: 0 auto;
+    background-color: red;
+}

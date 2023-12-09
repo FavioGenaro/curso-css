@@ -1,0 +1,44 @@
+/* Posicionar los items, es que podemos cambiar el orden en que se colocan en muestro container, ya que inicialmente es como si trabajaramos con tablas y se colocan en orden */
+
+body{
+    display: grid;
+    min-height: 100vh; /*toma toda la altura*/
+
+    /* tendremos 4 lineas en la columna, 3 lineas en las filas */
+    grid-template-columns: 1fr 3fr; /* 25% 75% */
+    grid-template-rows: 4em 1fr 4em; /* 4em para el header, 4em para el footer y al medio se autocomplete*/
+
+    grid-gap: 1em;/*separeacion entre cada item*/
+}
+
+aside{
+    background-color: hsl(200, 100%, 60%);
+}
+
+header{
+    background-color: hsl(60, 100%, 60%);
+
+    /* grid-row-start: n, indica numero de linea de la fila donde empieza el area */
+    /* grid-column-start: n, indica el numero de linea de la comluna por la que empieza el area */
+    /* grid-column-end y row:n, indica donde va acabar esa area */
+
+    grid-row-start: 1; /*empieza en la linea 1*/
+
+    /* va de la 1ra y acaba en la tercera linea */
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+footer{
+    background-color: hsl(300, 100%, 60%);
+
+    /* inicia en la 3ra linea de las filas */
+    grid-row-start: 3;
+
+    /* cubre de la 1ra a 3ra linea */
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+main{
+    background-color: lightgreen;
+}

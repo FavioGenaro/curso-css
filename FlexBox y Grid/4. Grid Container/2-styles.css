@@ -1,0 +1,30 @@
+
+/* tenemos 2 formas de definir tracks
+    grid-template-columns: colocamos el ancho de las columnas ;
+    grid-template-rows: colocamos el alto de las filas 
+*/
+
+.container {
+    display: grid;
+    height: 300px;
+    background: yellow;
+    font-size: 2em;
+    /* https://developer.mozilla.org/es/docs/Web/CSS/grid-template-columns */
+    grid-template-columns: 100px 300px 50px 1fr;/* definimos 4 columnas, tambien podemos colocar px o %, para cada columna, podemos confundirnos si es que hay espacio sobrante*/
+    /* https://developer.mozilla.org/es/docs/Web/CSS/grid-template-rows */
+    grid-template-rows: 10% 20% 1fr;
+
+    grid-gap: 1em; /* nos permite dar una separación entre los items*/
+
+    /* NOTA: 
+        - grid-template-columns y grid-template-rows pueden ser demasiados para que con el container los contenga y por ende esos se desbordan
+        - grid-gap: si colocamos mucha distancia podemos generar desborde y el fr no funciona en desborde
+    */
+}
+.item {
+    background: pink;
+}
+
+.item:nth-child(even) {
+    background: cyan;
+}

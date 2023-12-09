@@ -1,0 +1,26 @@
+
+/* align-self: auto | flex-start | flex-end | center | baseline | stretch  */
+.container {
+    display: flex;
+    font-size: 1.5em;
+    background: yellow;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    background: pink;
+    height: 100px;
+}
+
+.item:nth-child(even) {
+    background: cyan;
+}
+
+.item:nth-child(3) {
+    /* podemos alinear un unico elemento, al cual queremos que no siga el flujo de los demás
+    alinea los elementos flexibles de la línea flexible actual, reemplazando el valor de align-items. Si el límite transversal de alguno de los elementos está definido como auto, el valor de align-self es ignorado. */
+    align-self: flex-start;
+    align-self: flex-end;
+}

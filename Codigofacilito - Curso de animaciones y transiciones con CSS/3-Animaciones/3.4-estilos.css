@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(41, 28, 141);
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+}
+.texts{
+    text-align: center;
+    margin: auto; /* centra el texto y la imagen */
+}
+.cody{
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    /* animation: giraBob 1.5s; */
+
+    animation-name: giraBob;
+    animation-duration:1000ms;
+    /* añado un delay de 0s al primero para que se ejecute al instante y un
+    delay de 1s al segundo para que empiece un segundo despues, que es justamente 
+    lo que tarda el primer keyframes
+    */
+    animation-delay: 0s; 
+    /* animation-iteration-count permite hacer varias ejecuciones de la animacion
+    acepta valores enteros y decimales(si es 1.2, se ejecuta una vez y luego el 20% de la animación)
+        infinite: se repite infinitamente
+
+    */
+    animation-iteration-count: 3;
+    /* por defecto la animacion va de 0-100% ó from-to (con normal)
+    con reverse: ve de 100%-0% ó to-from, pero aun regresamos de golpe
+    con alternate: va de 0%-100% y 100%-0%, eliminando ese golpe brusco que regresa de 100-0 o de 0-100
+    con alternate-reverse: va de 100%-0% y 0%-100%
+    */
+    animation-direction: alternate;
+}
+@keyframes giraBob{
+    from{
+        transform: scale(.3) translateY(-30%) rotate(30deg);
+    }
+    
+}
+@keyframes grow{
+    to{
+        transform: scale(1.5);
+    }
+}

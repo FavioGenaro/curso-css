@@ -1,0 +1,23 @@
+/* como evitar que los elementos se aplasten */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    background-color: yellow;
+    font-size: 3em;
+    font-weight: bold;
+    display: inline-flex;
+    height: 200px;
+
+    /* align-items: flex-start; */
+}
+.header div{
+    display: flex;
+}
+.header div img{
+    width: 100%;
+}
+

@@ -1,0 +1,43 @@
+
+p{
+    border: 1px solid black;
+    background: #eee;
+
+
+    font-size: 2rem;
+
+    /* dependiendo si la fuente tiene el estilo italic */
+    font-style: italic;
+    /* font-weight: ancho de la fuente */
+    font-weight: bold;/*recomendable usar 100 200 300 400..., el estandar es 400*/
+
+    /* left es por defecto */
+    text-align: left;
+    /* se alinea a la derecha */
+    text-align: right;
+    /* justificado, aunque no es muy usado pues deja espacios orrendos */
+    text-align: justify;
+    /* center */
+    text-align: center;
+
+    /* espacio entre lineas o interlineado*/
+    line-height: 2; /*2=200%=doble del font-size del texto*/
+    line-height: 1.5;/*para titulos darle 1.3 y para texto largo 1.6*/
+
+
+    text-decoration: underline;/*le da un subrayado*/
+    /* text-decoration: line-through; tacha el texto */
+
+
+    text-transform: uppercase; /*todo mayuscula*/
+    text-transform: lowercase; /*todo minuscula*/
+    text-transform: capitalize; /*las primeras letras en mayuscula*/
+
+    /* espacio entre las letras */
+    letter-spacing: 0.1em;/*0.1=10%, tambien podemos usar valores negativos*/
+    /* espacio entre las palabras */
+    word-spacing: 0.5em;
+
+
+
+}

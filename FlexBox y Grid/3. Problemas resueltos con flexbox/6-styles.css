@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;/* de arriba hacia abajo*/
+
+}
+
+
+header{
+    background-color: hsl(340, 100%, 65%);
+    padding: 1em;
+}
+main{
+    background-color: hsl(180, 90%, 65%);
+    flex: 1; /* para que ocupe el espacio sobrante*/
+}
+aside{
+    background-color: hsl(100, 90%, 55%);
+    width: 25%;
+    order: -1; /*para que este antes de main, tmb podemos hacerlo cambiando su orden en el html*/
+}
+footer{
+    background-color: hsl(220, 80%, 50%);
+    padding: 1em;
+}
+
+.content{
+    display: flex;
+    flex: 1; /* para que ocupen el espacio sobrante del height*/
+}

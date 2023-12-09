@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.element{
+    width: 200px;
+    height: 200px;
+    background-color: tomato;
+    margin: 20px;
+
+    clip-path: circle(80%);
+    transition-property: clip-path, transform;
+    transition-duration: 4s;
+
+    /* Define la curva de acelaración de la transición entre el estado inicial o final */
+    /* Las propiedades son
+        ease, por defecto, aumenta la velocidad hacia la mitad y al final disminuye
+        ease-in, comienza lento y aumenta con el tiempo
+        ease-out, comienza rapido y disminuye con el tiempo
+        eace-in-out, comienza lento, acelera y luego disminuye otra vez
+        linear, velocidad uniforme durante toda la transición 
+        step(colocamos la cantidad de paso para que se ejecute la animación) - no se usa
+
+        podemos tener una velocidad personaliza, gracias a la curva de bezier, nor permite generar curvas de aceleración.En esta pagina podemos generar nuestras curvas
+        https://cubic-bezier.com/#0,0,1,1
+    */
+    /* al igual que la duración podemos colocar varios timing-function los cuales se comportan igual que en duración, se intercalan. */
+    transition-timing-function: cubic-bezier(.12,1.16,.08,.81), ease;
+}
+
+.container:hover .element{ /* cuando container este en hover, element hará lo siguiente*/
+    clip-path: circle(30%);
+    transform: translate(100%); /* se translada */
+}
+
+.container{
+    width: 90%;
+    border: 3px solid;
+    margin: 0 auto;
+    /* transition-property: ; */
+    /* transition: justify-content 2s; */
+}

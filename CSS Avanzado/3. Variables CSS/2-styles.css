@@ -1,0 +1,39 @@
+/* Scope: el ambito en el que existe una variable
+    Bloque: solo puede ser usada dentro un ambito, restringido entre llaves.
+        Ejemplo: al crear una funcion, las variables definidas dentro de la función solo son usadas en la función, más no fuera de ella
+    Tipos de scope en css
+        - Global: usada en cualquier o toda la parte del documento
+            usamos el :root en vez de HTML por que tiene mayor especificidad
+        - DOM: puede ser usada por los hijos de la etiqueta donde creamos la variable. Tambien podemos usar esas variables si estan definidas en otro archivo css
+        - Local: cuando los declaras en linea dentro de la etiqueta y tambien se aplica a todos sus descendientes, solo existe en ese entorno.
+*/
+
+:root{
+    --color: red
+}
+
+h1{
+    color:var(--color)
+}
+
+article p{
+    /* --color-text: white;
+    --bg: red */
+
+    background-color: var(--bg);;
+    color: var(--color-text);
+}
+p{
+    --color-text-1: red;
+    color: var(--color-text-1);
+}   
+
+/* Hoisting: es la acción que hace el lenguje para reordenar la declación de las variables */
+
+
+p{
+    color: var(--color-text-2);
+}
+:root{
+    --color-text-2: red;
+}

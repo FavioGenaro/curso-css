@@ -1,0 +1,16 @@
+/* background-attachment
+    para indicar que el fondo va hacer scroll con el contenido o se va a quedar fijo
+*/
+body,html{
+    width: 105%;
+    height: 105%;
+}
+.box{
+    width: 600px;
+    height: 400px;
+    background-image: url(https://images.unsplash.com/photo-1644245991167-b1f5202e8211?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+    margin: 100px auto;
+    background-attachment: fixed; /* hace que el fondo se quede fijo con el scroll, dando un efecto(no funciona con overflow) */
+    
+    /* background-attachment: scroll; es la propiedad por defecto, hace que le fondo se mueva con el elemento*/
+}

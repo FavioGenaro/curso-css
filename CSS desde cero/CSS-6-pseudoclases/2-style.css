@@ -1,0 +1,97 @@
+
+/* HOVER
+    pasar el mouse sobre el elemento
+    inicialmente creado para enlaces, aunque ahora tiene otros usos */
+.box{
+    background: yellowgreen;
+    width: 400px;
+    height: 250px;
+    transition: all .3s;/*para que realice el cambio con una transición suave*/
+}
+.box p{
+    display: none;/* el parrafo desaparece */
+}
+.box:hover p{
+    display: block; /* al pasar el mouse por el .box hace que p se muestre*/
+}
+.box:hover{
+    background: pink;
+    width: 300px;
+    height: 180px;
+}
+
+/* el orden para que las pseuclases funcionen(por cascada)
+    es VISITED-HOVER-ACTIVE */
+
+/* VISITED
+    para los enlaces que ya visitamos, por defecto el color es morado
+*/
+    a:visited{
+        /*  */
+        color: green;
+    }
+
+    a:hover{
+        color: blue;
+    }   
+
+/* ACTIVE
+    cuando hago click
+*/
+    a:active{
+        /* al hace click el texto se hace rojo, esto se usa para que el usuario sienta que hizo click */
+        color: red;
+}
+
+/* TARGET
+    sirve para estilizar un elemento destimos cuando se pulsa un enlace
+*/
+    p:target{
+        /* al dar click e ir al texto, este texto pasara a tener color rojo */
+        color: red;
+    }
+
+    .secreto{
+        /* inicialmente el mensaje esta oculto */
+        display: none;
+    }
+    .secreto:target{
+        /* al hacer click y direccionarnos al mensaje, este aparece */
+        display: block;
+    }
+/* NOT
+    lo que hace es negar una condición
+*/
+    p:not(.p2){
+        /* colorea todos los parrafos, menos a los que tengan la clase p2 */
+        color: royalblue;
+    }
+
+    .not{
+        background: yellow;
+        width: 300px;
+        padding: 1em;
+    }
+    .not p{
+        margin: 0; /*para que los parrafos se pegen*/
+    }
+    .not p:not(:last-child){
+        /* todos menos el ultimo hijo de los p va a tener un margen hacia abajo */
+        /* hago esto para que los parrafos tengan una misma separación entre ellos y las caja que los contiene (si solo colocara margenes el top se desborda y el botton se suma por lo que no seria lo mismo para todos los lados por eso quito todos los margenes y todos menos el ultimo tendra un margen hacia abajo para que todos se regularice)*/
+        margin-bottom: 1em;
+    }
+/* EMPTY
+    detecta cuando un elemento esta vacio */
+.vacio{
+    margin: 10px;
+    background: yellow;
+}
+.vacio:empty{
+    /* si la clase vacio esta vacio entonces tendra un padding de 16px */
+    padding: 16px;
+    background: green;
+}
+.vacio:not(:empty){
+    /* con esto digo que todos los que no esten vacios tengan fondo rojo*/
+    background: red;
+}

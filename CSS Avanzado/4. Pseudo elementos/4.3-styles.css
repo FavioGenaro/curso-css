@@ -1,0 +1,74 @@
+/* attr(): nos permite acceder a los atributos del elemento */
+
+body{
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+
+span::before{
+    content: attr(class); /* escribo antes del contenido, todas las clases del elemento span*/
+}
+
+/* a cada pseudoelemento le puedo dar estilos distintos */
+p::before{
+    content: attr(data-code);
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+p::after{
+    content: attr(data-money);
+    font-weight: 600;
+}
+
+
+/* EJEMPLO 1 */
+
+.container{
+    position: relative;
+    color: white;
+}
+img{
+    width: 100%;
+    display: block; /* elemento de bloque ocupara todo el width, además de que el before y after estaran antes y depues, comportandose como bloque*/
+}
+.container::before{ /* Antes */
+    transition: transform 0.25s;
+    content: attr(data-name); /* nombre del curso */
+    /* para que ocupe el tamaño del container y poder centrarlo como es debido */
+    width: 100%;
+    height: 100%;
+
+    /* Se sobrepone a la imagen,cubre toda la imagen(tiene su tamaño), además de que ayuda al display: block de la imagen */
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    /* Centrado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container::after{ /* Despues */
+    content: 'Level - ' attr(data-level);
+
+    /* Se sobrepone a la imagen,cubre toda la imagen(tiene su tamaño), además de que ayuda al display: block de la imagen */ 
+    position: absolute; /*sale su posición original para poder nosotros moverlo*/
+    bottom: 1rem; /*para que este un poco más arriba y se pueda notar*/
+
+    width: 100%; /* para que ocupe todo el ancho y podamos centrarlo con text-align: center*/
+    text-align: center; /*centra el texto dentro del bloque en el que esta*/
+
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.container::after, .container::before{
+    transform: scale(0);
+}
+.container:hover::after, 
+.container:hover::before{
+    transform: initial; /* puede ser transform: scale(1);*/
+}

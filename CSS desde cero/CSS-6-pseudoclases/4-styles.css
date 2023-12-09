@@ -1,0 +1,38 @@
+/* 
+    first-child first-child
+    selecciona en primer y ultimo hijo respectivamente
+*/
+
+/* NOTA: first-child y first-child funcionan con clases y elementos*/
+
+/* ul :first-child{ /*el primero de los descendinetes de ul
+    background: yellow;
+} */
+li:first-child{
+    /* selecciona el li que sea primer hijo de algun elemento */
+    background: yellow;
+}
+.li:last-child{
+    /* selecciona el que tenga la clase li que sea ultimo hijo de algun contenedor*/
+    background: yellow;
+}
+
+
+
+/* NOTA: first-of-type y last-of-type (primer y ultimo de su tipo) funcionan solo con elementos, porque solo seleccionan estos*/
+
+p:first-of-type{
+    /* coje el primer p de cada contenedor*/
+    /* pinta el hola2 de la segunda lista */
+    background: green;
+}
+p:last-of-type{
+    /* coje el primer p de cada contenedor*/
+    /* pinta el hola 8 de la segunda lista, porque hola 9 es un a */
+    background: green;
+}
+
+.p:first-of-type{
+    /* esto no funciona, porque  es una clase y no una etiqueta que es un tipo*/
+    background: yellow;
+}

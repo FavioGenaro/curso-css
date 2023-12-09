@@ -1,0 +1,64 @@
+
+:root{
+    /* definimos un color y un color alternativo para nuestro botones*/
+    --color: tomato; /*color debil*/
+    --color-alt: red; /*color fuerte*/
+}
+
+div{
+    margin-bottom: 2rem;
+}
+
+.button{
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    font-weight: 600;/*grosor de la letra*/
+    border-radius: 0.25rem;
+
+    color: #fff;
+    background-color: var(--color); /* el color siempre es el color debil*/
+    border: 1px solid var(--color);
+}
+
+/* para cada color que queramos agregar, podemos solo agregar una clase y cambiar el valor de las variables, estas solo se aplican a los botones con esas clases, además que debe estar depues de button por temas de cascada */
+.button.green{
+    --color:limegreen;
+    --color-alt: green;
+}
+
+.button.blue{
+    --color:steelblue;
+    --color-alt: blue;
+}
+/* normal, de hecho a todos les afecta esta clase, solo que se modifica por cascada  */
+.button:hover{
+    background-color: var(--color-alt);
+}
+
+/* ghost */
+.button.ghost{
+    background-color: transparent;
+    color: var(--color);
+}
+.button.ghost:hover{
+    background-color: var(--color);
+    color: #fff;
+}
+
+/* dark - incialmentes esta el color fuerte(red), luego con hover se cambia al color debil (tomato)*/
+.button.dark{
+    background-color: var(--color-alt);
+}
+.button.dark:hover{
+    background-color: var(--color);
+}
+
+/* transparent */
+.button.transparent{
+    background-color: transparent;
+    border: none;
+    color: var(--color);
+}
+.button.transparent:hover{
+    color: var(--color-alt);
+}

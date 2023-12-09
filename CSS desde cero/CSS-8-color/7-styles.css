@@ -1,0 +1,65 @@
+/* 
+
+background-image: radial-gradient(color1, color2, color3,..)
+
+background-image: radial-gradient(color1 stop, color2 stop, color3 stop,..)
+
+at- representa las coordenadas que toma el centro del circulo
+background-image: radial-gradient( at x y, color1 stop, color2 stop, color3 stop,..)
+
+size: es el tamaño  shape: es la forma(circulo o elipse)
+background-image: radial-gradient(size shape at x y, color1 stop, color2 stop, color3 stop,..)
+
+
+*/
+body,html{
+    height: 100%;
+    margin: 0;
+}
+
+body{
+    /* es responsivo */
+    background-image: radial-gradient(yellow,red);
+    /* solo entre 50 y 60% hay degradado */
+    background-image: radial-gradient(yellow 50% ,red 60%);
+    background-image: radial-gradient(yellow 50% ,red 50%);
+    
+    /* centro a la esquina superior izquierda */
+    background-image: radial-gradient(at 0 0, yellow 50% ,red 50%);
+    /* centro en la esquina inferior izquierda */
+    background-image: radial-gradient(at 0 100%, yellow 50% ,red 50%);
+    background-image: radial-gradient(at 0 -50%, yellow 50% ,red 50%);
+
+    /* coloco la forma, en este caso se adapta esa forma en el tamaño de pantalla(el circulo se queda como circulo y la elipse igual, antes segun el tamaño de pantalla se adaptaba a la forma) */
+    background-image: radial-gradient(circle at 50% 50%, yellow 50% ,red 50%);
+    background-image: radial-gradient(ellipse at 50% 50%, yellow 50% ,red 50%);
+
+    /* el tamaño se queda fijo a cualquier tamaño de pantalla */
+    background-image: radial-gradient(200px circle at 50% 50%, yellow 50% ,red 50%);
+    /* en el caso de circle da igual si lo mencionamos, ya que el 200px significaria su diametro */
+    background-image: radial-gradient(200px at 50% 50%, yellow 50% ,red 50%);
+    /* para la elipse necesitamos 2 valores, su alto y ancho */
+    background-image: radial-gradient(200px 300px at 50% 50%, yellow 50% ,red 50%);
+    background: none;
+}
+.box{
+    width: 500px;
+    height: 500px;
+    border: 2px solid #000;
+    margin: 50px auto;
+
+    /* Formas de poner el tamaño
+    closest-corner: la esquina más cercana(como es un cuadrado el 50% se toma de la distancia entre las esquinas y el centro)
+    */
+    background-image: radial-gradient(closest-corner  at 50% 50%, yellow 50% ,red 50%);
+    /* closest-side: el lado más cercano(el 50% se toma desde los lados) */
+    background-image: radial-gradient(closest-side at 50% 50%, yellow 50% ,red 50%);
+    /*  farthest-corner: esquina más lejana
+        farthest-side: lado más lejano
+     */
+    background-image: radial-gradient(farthest-side at 50% 50%, yellow 50% ,red 50%);
+
+    background-image: radial-gradient(farthest-corner at 0 0, yellow 20%,red);
+    background-size: 150%;
+}
+

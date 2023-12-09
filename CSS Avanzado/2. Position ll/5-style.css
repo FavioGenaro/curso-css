@@ -1,0 +1,59 @@
+/* z-index: nos permite cambiar el nivel de apilamiento d de un elemento
+
+este z-index no solo se usa en elementos posicinados, se usa en:
+    - Elementos posicionados
+    - Elementos hijos de flex y grid container con z-index distinto a auto
+    - Elemento con opacity, filtros, mix-blend-mode y perspective con valor diferente al inicial
+si se tiene el mismo nivel de apilamiento, se define con el flujo
+*/
+
+
+.element{
+    width: 200px;
+    height: 200px;
+    position: relative; /* todos los elementos tienen el mismo nivel(nivel 3, por agregarle posicionamiento), por lo que el red no se pone sobre green sino debajo de el (chocan o se intersectan) ya que green no se mueve*/
+}
+
+.element:nth-of-type(1){
+    /* el elemento 1 se sobrepone al elemento 2, el elemento 2 no desaparece */
+    /* position: absolute; nivel 3 y el resto nivel 2 */
+    background-color: red;
+    top: 100px;
+}
+.element:nth-of-type(2){
+    background-color: green;
+    /* top: 100px; para que green baje y red pueda mostrarse por completo */
+    /* verde se pone sobre yellow */
+    z-index: 1;
+}
+.element:nth-of-type(3){
+    background-color: yellow;
+    /* con static, yellow estaria a nivel 2, siendo menor al resto y es por eso que green esta sobre él */
+    /* position: static; */
+    display: flex;
+    /* si al padre le doy un nivel de apilamiento, crea un contexto a los hijos, y los hijos no podrian competir con el nivel del padre, es decir, no podriamos hacer que un hijo este detras de su padre, el zindex del hijo solo funcionaria entre los hermanos */
+    z-index: 1;
+    
+}
+.child{
+    width: 150px;
+    height: 150px;
+    background-color: crimson;
+    /* al ser hijo de amarillo que tiene display flex, entonces el z index si le afecta y con un valor de 4 se colocaria delante de los demás*/
+    /* z-index: 4; */
+    position: relative;
+    left: 100px;
+    /* al ser hijo de un padre con z-index, su z-index solo servira con sus hermanos y no con su padre */
+    z-index: 1;
+
+}
+.child:nth-child(2){
+    background-color: cornflowerblue;
+    left: 50px;
+    /* El hijo rojo esta sobre su hermano azul, pues es por su nivel de apilamiento, a pesar de que azul tenga nivel -1 y su padre 1, este no se coloca debajo de su padre pues su padre es su contexto y solo afectaria su relacion con sus hermanos */
+    z-index: -1;
+}
+
+.element:nth-of-type(4){
+    background-color: blue;
+}

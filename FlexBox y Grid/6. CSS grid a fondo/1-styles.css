@@ -1,0 +1,49 @@
+/*  */
+
+
+.grid {
+    display: grid; /* hacemos que los items ocupen todo el spacio posible*/
+    width: 500px;
+    height: 500px;
+    margin: 2em auto; /* centrado */
+    border: 2px solid #000;
+    grid-gap: 10px;
+    grid-template: auto / 1fr 1fr 1fr; /* filas / columnas*/
+    font-size: 2.5em;
+
+/* Popiedades para alineacion */
+    /*  Alinear items en x (en horizontal)
+        justify-items (para el container, alineamos los items)
+        justify-self (para los items, se aplica a cada item)
+    */
+        
+    /* Alinear items en y (en vetical)
+        align-items (para el container, alineamos los items)
+        align-self (para los items, se aplica a cada item)
+    */
+/* NOTA: estas alineaciones se dan respecto a los track(filas y colunmas), vemos en el inspector que se alinean respecto a su columnas o fila no asu padre .grid */
+
+    /* justify-items: start; por defecto, esta a la derecha */
+    /* justify-items: center; centrado */
+}
+
+.item {
+    background: yellow;
+    width: 80px;
+}
+
+.item:nth-child(2) {
+    height: 60px;
+    justify-self: end;
+    align-self: flex-end;
+    /* justify-self: center; */
+    /* podemos usar margenes ya que tambien toma al track como referencia */
+    /* margin: 0 auto; */
+}
+
+.item:nth-child(3) {
+    
+    /* justify-self: left; */
+    /* tmb usamos margen */
+    margin-left: auto;
+}

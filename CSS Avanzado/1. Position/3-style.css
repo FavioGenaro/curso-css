@@ -1,0 +1,26 @@
+/* absolute:
+contrap parte de relative
+    - El elemento pierde el espacio reservado  
+    - La referencia es ancestro más cercano que esté posicionado(con relative | absolute | fixed | sticky). si no hay ancestros posicionado, su referencia será el body
+*/
+
+.container{
+    border: 2px solid black;
+
+    /* position: relative; */
+    /* al colocar el absolute, el container pierde su espacio reservado(sin importar el espacio de su hijo), este inicia desde su posición de flujo normal, pero tendremos que definirle un alto y ancho para notarlo */
+    position: absolute;
+    /* debo ponerle un height, porque container no tenia espacio reservado por si mismo, sino que era de su hijo */
+    height: 500px;
+    width: 500px;
+    left: 50px;
+}
+.p-2{
+    /* se pierde el espacio reservado y los elemento continuan como si no existiera */
+    position: absolute;
+    background: tomato;
+    opacity: 0.5;
+    /* se toma a partir del body por no tener ancestros posicionados */
+    top: 50%; 
+    left: 10%;
+}

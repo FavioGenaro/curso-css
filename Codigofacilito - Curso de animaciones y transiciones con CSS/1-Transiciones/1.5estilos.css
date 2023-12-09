@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.element{
+    width: 200px;
+    height: 200px;
+    background-color: tomato;
+    margin: 20px;
+
+    clip-path: circle(80%);
+    /* con esta propiedad colocamos la propiedad a la que queremos aplicar una transisción */
+    /* si coloca mos all, selecciona todos los elementos animables que tiene este elemento, esto de por si consume muchos recursos y no es recomendable
+        Si colocamos background tampoco es recomendable, ya que es un shorthand y cogera todas las propiedades que contiene. Podemos colocar backgroung color.
+    */
+    transition-property: clip-path, transform; /* colocamos 2 propiedades separadas por una coma*/
+    /* este es la segunda propiedad que necesitamos para una transicón pueda funcionar 
+    Define la duración de la transición, se pueden usar milisegundos(ms) o segundos (s), su valor por defectos es 0s 
+    Si colocamos un solo valor, se aplica para todos los elementos, si colomamos 2 o más se intercalan, dado que por ejemplo:
+        si hay 2 propiedades y 2 tiempos, se aplica uno a cada uno en orden+
+        si hay 3 propiedades y 2 tiempos, se aplica al 1-1 2-2 3-1, al tercero le toca el primer tiempo dado que se reinicia o intercala
+        si hay 4 propiedades y 2 tiempos, 1-1 2-2 3-1 4-2
+    De esta forma es que se asignan los tiempos
+    */
+    transition-duration: 2s;
+    /* transition: clip-path 1s, transform 1s; */
+    /* transition: flex-grow 2s; */
+}
+
+.container:hover .element{ /* cuando container este en hover, element hará lo siguiente*/
+    clip-path: circle(30%);
+    transform: translate(100%); /* se translada */
+}
+
+.container{
+    width: 90%;
+    border: 3px solid;
+    margin: 0 auto;
+    /* transition-property: ; */
+    /* transition: justify-content 2s; */
+}

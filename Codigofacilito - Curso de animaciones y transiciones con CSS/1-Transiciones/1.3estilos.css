@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.element{
+    width: 200px;
+    height: 200px;
+    background-color: tomato;
+    margin: 20px;
+    /* crea una región de recorte que establece qué parte de un elemento debe mostrarse, circle hará un recorte y el radio será el 50% del alto del elemento */
+    /* clip-path: circle(50%); */
+    /* transition: clip-path 2s; tarda de pasar al clip-path de 50% al de 30% */
+    transition: flex-grow 2s;
+}
+
+.element:hover{
+    /* pasamos de 50% a 30% */
+    flex-grow: 1;
+    /* clip-path: circle(30%); */
+}
+
+.container{
+    width: 90%;
+    border: 3px solid;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    transition: justify-content 2s;
+}
+.container:hover{
+    /* justify-content: flex-end; */
+}

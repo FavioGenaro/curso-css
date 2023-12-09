@@ -1,0 +1,54 @@
+/* 
+    Pseudoelementos para generar contenido
+    ::after
+    ::before
+*/
+
+body{
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+
+
+h1{
+    /* los pseudoelementos pertenece al h1 */
+    display: inline;
+    border: 2px solid black;
+}
+
+/* Lo que va ir antes del contenido (al inicio del h1) */
+h1::before{
+    /* el contenido no existe en el DOM, por eso no podemos seleccionar el ¿, pretende ser un elemento pero no lo es */
+    content: '¿';
+    background: rebeccapurple;
+}
+
+/* lo que va ir despues del contenido (al final del h1) */
+h1::after{
+    content: '?';
+    background: rebeccapurple;
+}
+
+
+/* EJEMPLO 1 */
+
+.teacher::before{
+    content: 'Prof.';
+}
+.username::before{
+    content: '@'
+}
+
+
+/* EJEMPLO 2 */
+
+.container{
+    width: 300px;
+    height: 100px;
+    background-color: tomato;
+}
+
+.container:empty::before{ /* se aplica cuando el container esta vacio*/
+    /* background-color: blue; */
+    content: 'No hay contenido';
+}

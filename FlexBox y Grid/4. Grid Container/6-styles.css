@@ -1,0 +1,50 @@
+body{
+    display: grid;
+    min-height: 100vh; 
+    /* crearemos más colunmas para que integremos los feature, creamos 12 columnas para que por mcm se acomoden los demás */
+    /* repeat permite crear muchar columnas, primero recibe la cantidad y despues el alto o ancho dependiendo de que se trate, fila o columna */
+    grid-template-columns: repeat(12,1fr); 
+    grid-template-rows: 4em 8em 1fr 4em; 
+
+    grid-gap: 1em;
+}
+/* a cada elemento le cambiamos las columnas que vayan a cubrir */
+aside{
+    background-color: hsl(200, 100%, 60%);
+    grid-row: 3;
+    grid-column: 1 / span 3;
+}
+
+header{
+    background-color: hsl(60, 100%, 60%);
+
+    grid-row: 1;
+    grid-column: 1 / span 12;
+}
+
+footer{
+    background-color: hsl(300, 100%, 60%);
+
+    grid-row: 4;
+    grid-column: 1 / span 12;
+
+}
+main{
+    background-color: lightgreen;
+    grid-row: 3;
+    /* omitimos la linea de inicio porque ya sabemos donde inicia, y solo colocamos las columnas que va a ocupar */
+    grid-column: span 9; /* 9, porque el aside cubre 3*/
+
+}
+
+.feature{
+    background-color: hsl(270, 100%, 70%);
+    grid-column: span 4;
+}
+.block{
+    /* el centrado funciona con flex y grid */
+    /* display: flex; */
+    display: grid;
+    justify-content: center;
+    align-items: center; /* centramos el item, en este caso el texto*/
+}

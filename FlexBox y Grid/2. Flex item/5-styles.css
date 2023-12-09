@@ -1,0 +1,28 @@
+/* flex: es un shorthand que agrupa flex-grow(aumenta) flex-shrink(reduce) flex-basis(definimos el tamaño que toma cada item) */
+.container {
+    display: flex;
+    font-size: 1.5em;
+    background: yellow;
+  /*   flex-direction: column; */
+}
+
+.item {
+    background: pink;
+
+    flex: 1 1 0;
+    
+
+    /* flex: initial; (0 1 auto) es lo mismo que no hacer nada porque tiene los valores por defecto */
+    /* flex: auto; (1 1 auto) crecen y se reducen, pero el flex-basis es auto, por lo que va a crecer segun su contenido */
+    /* flex: none; (0 0 auto) es que no exista flex, no hace nada, no reduce ni aumenta, solo se acomodan a su tamaño, es decir, no hace nada */
+    /* flex: 1; (n 0 0) solo hacemos un flex-grow, el resto se mantiene en cero. lo que hace es items de medida igual y responsive */
+    flex: 1; /* podemos colocar valores enteros positivos*/
+
+    /* flex: auto; */
+}
+
+.item:nth-child(even) {
+    background: cyan;
+}
+
+

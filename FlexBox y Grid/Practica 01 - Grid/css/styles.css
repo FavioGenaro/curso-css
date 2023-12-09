@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    color: #666666;
+    font-family: "Lobster", cursive;
+    width: 90%;
+    margin: 20px auto;
+    display: grid;
+
+    grid-template-columns: 10% repeat(3, 30%);
+    grid-template-rows: 100px 400px 300px 100px;
+
+    row-gap: 1em;
+}
+/* CONTENIDO */
+
+header{
+    /* background-color: yellow; */
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+    text-align: center;
+    border-bottom: 1px solid #666666;
+    padding: 1rem;
+    width: 100%;
+}
+
+/* Menú */
+nav{
+    padding: 1em;
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+    padding: 1em;
+}
+nav div{
+    padding-bottom: 20px;
+}
+
+
+/* Main */
+main{
+    width: 90%;
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    border: 1px solid #aaaaaa;
+    border-radius: 1em;
+    text-align: center;
+    padding: 1em;
+    justify-self: center; /* se coloca al centro de su celda*/
+}
+main img{
+    width: 80%;
+    height: 70%;
+    border-radius: 1em;
+}
+
+article { /* el primer article*/
+    border: 1px solid #aaaaaa;
+    border-radius: 1em;
+    padding: 1em;
+    text-align: center;
+}
+article img{
+    border-radius: 1em;
+    height: 60%;
+    width: 100%;
+}
+
+/* articles */
+article:nth-of-type(2),
+article:nth-of-type(3),
+article:nth-of-type(4) {
+    justify-self: end; /* se coloca a la derecha de su celda*/
+    width: 90%;
+}
+
+/* footer */
+
+footer{
+    grid-column: 1 / 5;
+    grid-row: 4 / 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+    border-top: 1px solid #aaaaaa;
+    
+}
+footer img{
+    width: 50px;
+}

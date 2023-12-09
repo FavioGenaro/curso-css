@@ -1,0 +1,61 @@
+/* Para RWD(Responsive web design): primero desarrollamos el modo mobile(con variables), para que cuando llegue al tamaño de una computadora de escritorio, se cambien los valores de las variable*/
+
+:root{
+    --header-heigth: 2rem;
+    --header-margin: 1rem;
+    --font-size:1rem;
+    --title-font-size: 1.5rem;
+    --columns: 1; /* en celular todo se convierte a una columna*/
+    --show-elemnt: none; /*el h3 no se muestra en celulares*/
+}
+
+@media screen and (min-width: 1000px) { /*cuando tenga minimo 1000px*/
+    :root{
+        --header-heigth: 4rem; /*cambio el valor de la variable, en este caso el ancho del header*/
+        --header-margin: 2rem; /*margen del header al texto*/
+        --font-size:1.25rem; /*tamaño del texto*/
+        --title-font-size: 1.75rem; /*tamano del h1*/
+        --columns: 4; /*numero de columnas del grid*/
+        --show-elemnt: block; /*para que h3 se muestre*/
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin-top:calc(var(--header-heigth) + var(--header-margin));
+    font-size: var(--font-size);
+}
+
+h1{
+    font-size: var(--title-font-size);
+}
+
+div{
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+
+}
+h2{
+    padding: 1rem;
+    background-color: tomato;
+}
+
+h3{
+    display: var(--show-elemnt);
+}
+
+main{
+    grid-column-start: span 3;
+}
+header{
+    position: fixed; /*para que la barra este fija y nos siga con el scroll*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: var(--header-heigth);
+    background-color: black;
+}
+

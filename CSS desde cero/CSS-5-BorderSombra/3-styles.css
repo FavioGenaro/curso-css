@@ -1,0 +1,19 @@
+/* Propiedad outline
+    dibuja una linea exterior
+*/
+
+:root{
+    --width:400px;
+    --height: 250px;
+    --bg: yellow;
+    --br:50px;/*br de border-radius*/
+}
+.box-4{
+    width: var(--width);
+    height: var(--height);
+    background: var(--bg);
+    border: 10px solid black;
+    /* dibuja una linea exterior al border, pero este outline no empuja los demás elementos y no es un reemplazo del border */
+    /* normalmente es usado para resaltar algunos elementos, para mostrar un error, o indicar algo */
+    outline: 5px solid red;
+}

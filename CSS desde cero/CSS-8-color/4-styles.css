@@ -1,0 +1,24 @@
+/* Notacion hexadecimal
+
+    tiene la misma cantidad de colores
+
+    tiene 6 cifras
+    0 1 2 3 4 5 6 7 8 9 A B C D E F - tienen 16 valores por cada cifra
+    16^6= 16.5 millones aprox.
+
+    rgb(255,0,0) = #FF0000 - cada canal se representa por 2 cifras
+    rgb(0,255,0) = #00FF00
+    rgb(0,0,255) = #0000FF  
+    rgb(0,0,0) = #000000
+    rgb(255,255,255) = #FFFFFF
+    rgb(128,128,128) = #808080
+
+*/
+body{
+    background-color: #FF0000;
+    background-color: #F00;/* cuando hay repetición podemos reducir cada canal en un cifra(si es que las 2 cifras de cada canal son iguales), siempre se reducen los 3, no puede reducir solo un canal*/
+
+    /* para el RGBA añadimos 2 cifras más, haciendo un total de cifras*/
+    background-color: #FF000080;/*80 de transparencia*/
+
+}

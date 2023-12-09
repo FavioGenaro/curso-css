@@ -1,0 +1,93 @@
+/*
+    nth-child()  nth-last-child()
+    encontramos un hijo(enfasis en que son todos los hijos) segun su posición
+
+:nth-child(even)---selecciona pares 
+:nth-child(odd) ---selecciona impares
+
+nth-child(X)---con un numero x cuenta desde el inicio
+nth-last-child(X) --con un numero x cuenta desde el final
+
+nth-child(Xn)---con un multiplo Xn cuenta desde el inicio
+nth-last-child(Xn) --con un multiplo Xn cuenta desde el final
+
+*/
+/* primera lista */
+p:nth-child(even){
+    /*todos los p que sean elementos pares */
+    background: yellow;
+}
+p:nth-child(odd){
+    /*todos los p que sean elementos impares */
+    background: greenyellow;
+}
+/* Segunda lista */
+li:nth-child(2){
+    /* cuenta desde arriba */
+    background: gray;
+}
+li:nth-last-child(5){
+    /* cuenta desde abajo */
+    background: gray;
+}
+/* Tercera lista */
+h3:nth-child(3n){
+    /* cuenta desde arriba 
+        multiplos de 3 (n comienza de cero)*/
+    background: gray;
+}
+h3:nth-last-child(9n){
+    /* cuenta desde abajo 
+    los multimos de 9 (n comiensa de cero)*/
+    background: gold;
+}
+h2:nth-child(3n+1){
+    /* a todos los multiplos de 3 le suma 1
+    3*0+1=0+1=1
+    3*1+1=3+1=4
+    3*2+1=6+1=7
+    3*3+1=9+1=10 */
+    background: blue;
+}
+
+/* Trucos CSS 
+    encontrar los primeros X elementos
+    min 6:10
+*/
+
+/* h4{
+    display: none;
+} */
+
+h4:nth-child(-n + 5){ /*encontrar los primeros X elementos*/
+    background: yellow;
+    /* display: block; */
+}
+
+h4:nth-last-child(-n+5){ /*encontrar los ultimos X elementos*/
+    background: greenyellow;
+}
+
+/* seleccionar los elementos a partir de un numero X */
+    /* h4:nth-child(n + 5){
+        X=0+5=5
+        X=1+5=6 ...
+        background: yellow;
+    } */
+
+/* Selecciona los elementos impares y multiplos de 3 */
+/* h4:nth-child(odd):nth-child(3n){
+        background: yellow;
+    } */
+
+
+/* como en la sesión anterior :nth-of-type y :nth-last-of-type , solo funcionan con etiquetas de html */
+.h5:nth-child(3){ /*nth-child() y nth-last-child() aceptan clases y etiquetas*/
+    background: pink;
+}
+h5:nth-of-type(3){ /*el elemento 3 de los h5 (será el hola 5)*/
+    background: teal;
+}
+h5:nth-last-of-type(2){ /*desde la parte final, cuenta al segundo elemento h5*/
+    background: lime;
+}

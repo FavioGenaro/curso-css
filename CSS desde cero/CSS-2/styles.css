@@ -1,0 +1,143 @@
+/* SELECTORES */
+/* Nos permite definir e indicar a que vamos aplicar los estilos
+    selector {
+    }
+
+    Tipos:
+    1. simples: 1 palabra
+        h1{}
+    2. compuestos: + de 1 palabra
+        h1 span {}
+    3. con operadores
+        h1+span{}
+    4 pseudoclases
+*/
+/* Las etiquetas (h1,span) pueden escribirse en mayuscula y minuscula, da igual */
+/* Todos los atributos(id clases) distingue minusculas de mayusculas, por convencia usamos minusculas*/
+
+
+/* Selectores simples: Etiqueta */
+/*  no pueden iniciar con numero
+    pueden comenzar con - y _
+    pueden tener :
+    pueden ser de una letra */
+
+h1{
+    color:red;
+}
+p{ /* primero se aplica este*/
+    color: blue;
+}
+/* Selectores simples: clases */
+.title{
+    color:green
+}
+.description{ /*luego este para los p*/
+    background: blueviolet;
+}
+.button{
+    display: inline-block;
+    padding: .75em 2em;
+    background: steelblue;
+    color: white;
+    border-radius: .25em;
+}
+/* Selectores simples: id */
+/*  -el id es unico y no se pueden repetir en html 
+    por lo que no es muy usado
+    -No se pueden sobreescribir los id de forma normal en cascada, por lo que otra razon de no usarlos*/
+#title{
+    background: pink;
+}
+h1{
+    background: yellow;
+}
+
+
+/* Selectores COMPUESTOS: agrupados */
+h2,p{ /*para el h1 y p*/
+    color: red;
+}
+
+
+/* Selectores compuesto: combinados */
+/* creas un unico selector */
+.purple{
+    color: purple;
+}
+h2.title.purple#title{ /*selecciona la etiqueta h1 y la clase title*/
+    color: blue;
+}
+
+/* Selectores compuesto: descendentes */
+/* se hacen segun la secuencia de etiquetas, descendencia */
+body div span{
+    color: blue;
+}
+
+
+/* OPERADORES o COMBINADORES  * > +  */
+
+/*selector universal * ,usado para recetar todo como el tamaño y tipo de letra, pero no es recomendable usarlo*/
+/* * { 
+    background: orange;
+} */
+
+p > span{ /*para indicar que span es hijo directo de p, todos los span hijos de p*/
+    color: green;
+    background: yellow;
+}
+p + div{ /*hermano siguiente - el primer div que este despues de p (se aplica a todos los divs que sean posteriores a los ps, sera el primer div)*/
+    border: 1px solid;
+}
+
+p ~ div{ /*hermanos siguientes - luego del p, a todos los div*/
+    background: yellow;
+}
+
+
+/*Selectores de atributos - aparte de las clases y id
+    usan []
+    [attr="value"] - que tenga cierto valor
+    [attr] - todos los atribitos
+*/
+[type="text"]{
+    border: 1px solid green;
+}
+[required]{
+    border: 1px solid red;
+}
+[type="submit"]{
+    background: steelblue;
+    border: none;
+    color: white;
+}
+/* Selectores de atributos que empienzan y terminan con cierta letra 
+    [attr^=""]
+    ayuda a identificar rutas*/
+[type^="sub"]{ /*type que empiecen con sub*/
+    background: green;
+}
+/* selector combinado */
+a[href^="http://"]{ /*a que empiecen con http://, significa que son enlaces no seguros*/
+    color: red;
+    border-bottom: 1px dashed red;
+}
+
+/* Termina con [attr$="value"] */
+
+a[href$=".mp4"]{/*si termina en mp4, usado para identificar video*/
+    background: blue;
+}
+/* Contiene [attr*="value"] */
+a[href*="team"]{ /*si tiene team en cualquier lugar*/
+    color: white;
+    background: blue;
+}
+
+
+.lista{
+    /* le quita el estilo a la lista, más concretamente los puntos */
+    list-style: none;
+
+}

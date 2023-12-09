@@ -1,0 +1,16 @@
+/* fondos o background
+
+    es un shorthand(agrupa propiedades)
+    agrupa a background-color
+
+ */
+body{
+    background-color: yellow;/*el amarillo esta detras de la imagen, no se sobreescribe el fondo porque son distintas propiedades*/
+    /* la dirección puede ser relativa(dentro del proyecto) o absoluta(link de una pagina web) */
+    background-image: url(https://images.unsplash.com/photo-1644245991167-b1f5202e8211?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+    /* background-repeat: no-repeat;para que la imagen de fondo no se repita */
+    /* background-repeat: repeat-x; hace que la imagen se repita en la horizontal (reducir el zoom de ser necesario para ver los cambio) */
+    background-repeat: repeat-y;/*repite la imagen en la vertical*/
+}
+
+

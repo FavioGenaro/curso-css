@@ -1,0 +1,23 @@
+/* Color
+
+    frente(color) y fondo(background-color)
+*/
+body{
+    background-color: black;
+    color: pink;
+}
+h1{
+    /* toma el color white */
+    border: 1px solid;
+    /* currentColor- toma el valor de la propiedad color del padre(en este caso pink, del body) */
+    box-shadow: 5px 5px 5px currentColor;
+    /* background: pink; */
+}
+P{
+    /* el a dentro del parrafo toma este color */
+    color: lime;
+}
+a{
+    /* los a toman el color de su padre */
+    color: currentColor;
+}

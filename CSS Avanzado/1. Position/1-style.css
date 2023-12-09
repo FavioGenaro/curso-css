@@ -1,0 +1,23 @@
+
+/* 
+    position de CSS especifica cómo un elemento es posicionado en el documento. Las propiedades top, right, bottom, y left determinan la ubicación final de los elementos posicionados.
+
+    Valores:
+    static | relative | absolute | fixed | sticky
+
+    static: es el valor por defecto, cuando decimos que un elemento esta posicionado decimos que no esta usando static
+    NOTA: Podemos usar top, right, bottom, y left, si es que usamos relative | absolute | fixed | stick, no staitc.
+
+
+*/
+
+.p-2{
+    position: relative;
+    background: tomato;
+    opacity: 0.5;
+    /* top, right, bottom, y left - se toman segun una referencia */
+    /* top: 2rem; distancia desde el top(desde arriba) */
+    /* top: 50%; hay problemas con los % en top y botton, el elemento debe estar dentro un contenedor padre con altura o ancho fijo (height o width - no toma el min o max) */
+    left: 5em;
+}
+

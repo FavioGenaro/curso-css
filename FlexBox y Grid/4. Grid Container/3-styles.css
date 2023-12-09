@@ -1,0 +1,35 @@
+/* tenemos 2 formas de definir tracks
+    grid-template-columns: colocamos el ancho de las columnas ;
+    grid-template-rows:    
+*/
+
+.container {
+    display: grid;
+    height: 300px;
+    background: yellow;
+    font-size: 2em;
+    /* fr: es una fracción del espacio disponible, 3 + 1 = 4, a la primera columa le dan 3 fracciones y a la segunda 1 fracción */
+    grid-template-columns: 3fr 1fr;
+    /* pasa lo mismo con las demás filas,  */
+    grid-template-rows: 1fr 6fr 3fr;
+
+    /* grid-column-gap: 2em; para las columnas
+    grid-row-gap: 5em; para las filas */
+    /* grid-gap: es un shorthand que nos permite dar una separación entre los items */
+    /* grid-gap: 3em 1em; (filas columnas) */
+
+    grid-gap: 1em; /* para filas y columnas*/
+
+    /* NOTA: 
+        - grid-template-columns y grid-template-rows pueden ser demasiados para que con el container los contenga y por ende esos se desbordan
+        - grid-gap: si colocamos mucha distancia podemos generar desborde y el fr no funciona en desborde
+    */
+}
+
+.item {
+    background: pink;
+}
+
+.item:nth-child(even) {
+    background: cyan;
+}

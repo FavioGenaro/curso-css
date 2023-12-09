@@ -1,0 +1,53 @@
+body{
+    font-size: 4rem;
+}
+
+/* estos de forma predeterminada se acomodan a lo largo del main-axis */
+.flex-item{
+    /* por defecto se acomodan de forma horizontal y de izquierda a derecha */
+    border: 1px solid #000;
+    margin: 1rem;
+}
+
+
+.flex-container{
+    /* se aplica al padre */
+    /* El main axis, es el eje principal, por defecto es horizontal y va de izquierda a derecha */
+    display: flex;
+    background-color: yellow;
+    margin-bottom: 10px;
+}
+
+/* revisar la imagen de: https://www.w3.org/TR/css-flexbox-1/images/flex-direction-terms.svg */
+
+.flex-container-1{
+    display: flex;
+    background-color: yellow;
+    margin-bottom: 10px;
+    /* nos permite cambiar la dirección del eje main axis*/
+    flex-direction: column; /* vertical, de arriba abajo, cambia de lugar con el cross axis. */
+}
+
+.flex-container-2{
+    display: flex;
+    background-color: yellow;
+    margin-bottom: 10px;
+    /* nos permite cambiar la dirección del eje main */
+    flex-direction: column-reverse; /* vertical,pero de abajo arriba, revertimos el sentido. en sentido contrario del cross axis */
+}
+
+.flex-container-3{
+    display: flex;
+    background-color: yellow;
+    margin-bottom: 10px;
+    /* nos permite cambiar la dirección del eje main */
+    flex-direction: row; /* horizontal, de izquierda a derecha, es por defecto */
+}
+
+.flex-container-4{
+    display: flex;
+    background-color: yellow;
+    margin-bottom: 10px;
+    /* nos permite cambiar la dirección del eje main */
+    flex-direction: row-reverse; /* horizontal, de derecha a izquierda, revertimos el sentido del main axis*/
+}

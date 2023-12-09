@@ -1,0 +1,39 @@
+
+/* MODELO DE CAJA: esta conformado por el tamaño interno (definido por el witdh y height), seguido del padding y por ultimo del border(el tamaño total seria: tamaño interno + padding + border)
+    -tamaño interno es content-box
+    -padding es padding-box
+    -border es border-box
+
+-el margen es algo externo a la caja */
+
+/* Padding
+    el es margen interno de la caja
+*/
+.box{
+    width: 200px;
+    height: 100px;
+    background: pink;
+    margin: 50px;
+    /* el padding hace crecer la caja unos 50 px a cada lado
+        usado mayormente para separar el borde y que el contenido se vea mejor
+    */
+    padding: 50px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+    padding: 10px 20px 30px;
+    padding: 10px 20px;
+    /* en este caso el 10% se calcula de la anchura del mismo elemento,
+    distinto al margin que se calculaba de la anchura de su papá */
+    padding: 10%;
+}
+
+/* Borde
+    es otro elemento que pertenece a la caja*/
+
+.box{
+    /* solid dibuja una linea recta para los lados */
+    border: 4px solid black;
+    /* dashed, dibuja una linea punteada */
+}

@@ -1,0 +1,45 @@
+/* Degradados lineales(el otro tipo es el radial) 
+
+    puedo poner cuantos colores quiera, el navegador realiza el degradado
+    background-image: linear-gradient(color1, color2,color3,...);
+
+    el stop es opcional, indica hasta donde abarca el color puro y desde donde comienza el degradado
+    background-image: linear-gradient(color1 stop, color2 stop,color3 stop,...);
+
+
+    angle, es el angulo - es opcional
+    background-image: linear-gradient(angle, color1 stop, color2 stop,color3 stop,...)
+}   
+*/
+
+body,html{
+    height: 100%;/*un alto que cubra toda la pantalla*/
+    margin: 0;
+}
+
+body{
+    /*  */
+    background-image: linear-gradient(yellow, red,green);
+    background-repeat: no-repeat;
+    /* los porcentajes se sacan del padre */
+    /* desde 0 a 30% el color el yellow puro, luego de 30% a 60% comienza el degradado, y de 60% al 100% es red puro */
+    background-image: linear-gradient(yellow 30%, red 60%);
+    /* tambien puede indicarlo con pixeles */
+    background-image: linear-gradient(yellow 100px, red 500px);
+
+
+    
+    /* al chocar puedo generar colores puros(coloco 2 red para marcar su inicio y fin- pues el degradado de 25 a 60 es nulo por ser el mismo color) */
+    background-image: linear-gradient(yellow 25%, red 25%, red 60%,green 60%);
+    /* 180 es el valor por defecto */
+    background-image: linear-gradient(30deg,yellow, red);
+
+
+
+    /* TO RIGHT, le indico que inicie en la derecha(red en la derecha y yellow a la izquierda)*/
+    background-image: linear-gradient(to right,yellow, red);
+    /* tambien podemos indicar una esquina (arriba a la derecha(inicia red y luego yellow))*/
+    background-image: linear-gradient(to top right,yellow, red);
+    background-size: 500px 500px;
+
+}

@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.banner{
+    display: flex;
+    background-color: yellow;
+    height: 300px;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.banner__item{
+    flex: 1;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+
+    /* centrado del texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: flex-grow 0.2s;
+}
+
+
+.banner__item:hover{
+    /* el elemento seleccionado va a crecer y desplazara a los demás */
+    flex-grow: 10;
+}
+
+.banner__item:hover .banner__title{
+    /* que el banner title del hijo rote a su posición en horizontal*/
+    transform: rotate(0);
+
+}
+
+.banner__item:nth-child(1){
+    background-color: hsl(90, 100%, 40%);
+}
+.banner__item:nth-child(2){
+    background-color: hsl(30, 100%, 40%);
+}
+.banner__item:nth-child(3){
+    background-color: hsl(200, 100%, 40%);
+}
+.banner__item:nth-child(4){
+    background-color: hsl(280, 100%, 40%);
+}
+
+
+
+
+.banner__title{
+    /* rotamos 90 grados */
+    transform: rotate(-90deg);
+    transition: transform 0.2s 0.2s;
+
+}

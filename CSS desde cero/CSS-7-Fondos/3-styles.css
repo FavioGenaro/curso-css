@@ -1,0 +1,24 @@
+/* Position
+    permite posicionar al fondo 
+*/
+html, body{
+    height: 100%;
+    margin: 0;
+}
+body{
+    background-color: yellow;
+    background-image: url(https://images.unsplash.com/photo-1644245991167-b1f5202e8211?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+    background-repeat: no-repeat;
+    background-size: 300px;
+    /* background-position: 0 0; este es valor por defecto(cero a la derecha-X y cero abajo-Y)*/
+    background-position: 200px 500px; /* 200px a la derecha y 500px a hacia abajo */
+    background-position: 20% 10%;/*el porcentaje se calcula segun el elemento padre(el body abarca el 100% de la pantalla)*/
+
+
+    /* background-position: left center right | top center bottom; 
+                            (por el lado de X)  (por lado de Y)*/
+    background-position: center center;/* (X)(Y)centramos el fondo*/
+
+    background-position: right 20px bottom 10px; /* aparece a la derecha(20px desde la derecha) y abajo(10px de margen desde abajo)*/
+
+}

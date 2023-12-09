@@ -1,0 +1,57 @@
+/* minmax(), auto-fil y auto-fill  */
+
+/* min-max. colocamos el minimo valor y el maximo valor, el navegador calcula el tamaño segun las circunstancias. define un rango de tamaño mayor o igual que min y menor o igual que max. */
+
+
+
+
+.container {
+    font-size: 2em;
+    background: red;
+    padding: 1em;
+    display: grid;
+    margin-top: 20px;
+    
+    /* grid-template-columns: minmax(200px,300px) minmax(50px,100px);le damos un maximo y un minimo a cada columna y el contenido se acomodara segun eso */
+    /* ahora la primera tiene otro rango y la segunda lo que sobra */
+    grid-template-columns: minmax(360px,480px) 1fr;
+    grid-gap: 1em;
+}
+
+.container-2 {
+    font-size: 2em;
+    background: red;
+    padding: 1em;
+    display: grid;
+    margin-top: 20px;
+    /* auto-fit: intenta crear nuevas columnas siempre que cuente con el espacio, sin embargo, si el contenido es vacío hace que las columnas que si tienen contenido se expandan (siempre que sea posible ocupando el espacio disponible)
+    */ 
+    /* no crea nuevas columnas si no hay contenido */
+    grid-template-columns: repeat(auto-fit,200px);/* en nuestro caso crea columnas de 200px de ancho y hace cuantas columnas el espacio les permita */
+    /* auto-fill: intenta crear nuevas columnas siempre que cuente con el espacio, sin embargo, si el contenido es vacío hace que ellas aunque no existan, ocupen el espacio como si existieran Me apoyé en este sitio web: https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/ */
+    /* auto-fill: crea columnas sin haber contenido, si hay espacio se crea (ver el inspector) */
+    grid-template-columns: repeat(auto-fill,200px);
+    
+    grid-gap: 1em;
+}
+
+
+.container-3 {
+    font-size: 2em;
+    background: red;
+    padding: 1em;
+    display: grid;
+    margin-top: 20px;
+    /* hacemos que la columnas midan minimo 200px y maximo todo el ancho, haciendo que tengamos un sistema de columnas flexive, es decir, que no vana a medir 200px sino que se van a ajusta a un tamaño para que cubran toda la pantalla, 200px sera el indicador para que se aumente una columna más o no */
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    grid-gap: 1em;
+}
+
+.item {
+    background: yellow;
+}
+
+.item img {
+    width: 200px;
+}
+

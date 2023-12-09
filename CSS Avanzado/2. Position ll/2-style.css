@@ -1,0 +1,58 @@
+
+/* fixed: pierde su espacio reservado, igual que absolute, pero  tiene como referencia al viewport, es decir, la pantalla completa que se nos muestra, el elemento permanecera en su misma posición en pantalla incluso cuando estemos moviendonos con el scroll */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* .fixed{
+    top:0;
+    position: fixed;
+    background-color: red;
+    opacity: 0.7;
+} */
+
+body{
+    min-height: 200vh; /* para que mida el doble del tamaño de la pantalla, esto para generar un scroll*/
+    margin-top: 4rem; /* para que exsita un espacio para el header (3rem) y el texto (1rem de separación del header y texto) */
+}
+
+/* .container{
+    position: relative; /* como vemos fixed no toma de referencia a su padre posicionado más cercano
+    width: 100%;
+    height: 300px;
+    background-color: blue;
+} */
+
+/* Ejercicio 2 */
+.header{
+    width: 100%;
+    background-color: black;
+    
+    /* centrado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    height: 3rem; /* ocupa 3rem del margin top del body */
+    top: 0; /* para que se pegue al margin-top */
+}
+
+.menu{
+    display: flex;
+}
+
+li{
+    margin-right: 1rem; /* para */
+}
+
+a{
+    display: inline-block;
+    color: white;
+}
+
+:target{
+    padding-top: 3rem;
+}

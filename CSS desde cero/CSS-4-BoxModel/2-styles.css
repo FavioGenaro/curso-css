@@ -1,0 +1,46 @@
+/* Propiedad display
+        block: hace que el elemneto se comporte como bloque
+        inline: hace que el elemento se comporte como de linea
+        inline-block: combina ambos, un inline con dimensiones
+        none: sirve para ocultar elementos
+        flex: en otro curso
+        grid: en otro curso
+
+*/
+
+
+h1{
+    background: yellow;
+    width: 200px;
+    height: 100px;
+}
+
+span{
+    /* es un elemento de linea, pero con block se hace de bloque(el span cubre toda la linea) */
+    background: yellowgreen;
+    display: block;
+}
+p{ 
+    /* es un elemento de bloque, pero con inline se hace de linea(los p se pone uno al lado de otro) */
+    background: pink;
+    display: inline;
+    /* las dimensiones no funcionan porque el elemento ahora es de linea */
+    width: 500px;
+    height: 100px;
+}
+.parr{
+    display: inline-block;
+    /* combina linea y bloque, podemos añadir las dimensiones */
+    /* son de linea, porque se ponen uno al lado del otro */
+    width: 100px;
+    height: 100px;
+}
+img{
+    /* las imagenes ya son inline block por defecto */
+    /* el height se calcula a partir del width y viceversa */
+    width: 64px;
+}
+.im{
+    /* oculta, en este caso a la imagen*/
+    display: none;
+}

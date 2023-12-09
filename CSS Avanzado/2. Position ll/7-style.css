@@ -1,0 +1,57 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* min-height: 200vh; */
+    font-family: sans-serif;
+}
+
+main{
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+p{
+    margin-bottom: 2rem;
+}
+
+.modal{
+    position: fixed; /* para que se quede en la ventana y no le afecte el scroll*/
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    /* z-index: -1; */
+    opacity: 0;
+    pointer-events: none;
+}
+.content{
+    position: absolute;
+    /* centrado */
+    left: 50%;
+    top: 50%;
+    text-align: center;
+
+    transform: translate(-50%,-50%);
+    width: 90%;
+    max-width: 400px;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.25rem;
+}
+.content h1, .content p{
+    margin-bottom: 1rem;
+}
+/* Con el nivel de apilamiento */
+.modal.active{
+    /* z-index: 1000; */
+    opacity: 1;
+    pointer-events: initial;
+}
+
+
+/* con el pointer event */

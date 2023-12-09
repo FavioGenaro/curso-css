@@ -1,0 +1,29 @@
+/* Por defecto todos lo items tienen order:0 */
+
+.container {
+    display: flex;
+    font-size: 1.5em;
+    background: yellow;
+    height: 300px;
+    flex-wrap: wrap;
+}
+
+.item {
+    background: pink;
+    height: 100px;
+    width: 100px;
+    margin: 20px;
+}
+.item:nth-child(even) {
+    background: cyan;
+}
+
+.disccount { /* articulos con descuentos*/
+    /* podemos hacer que los articulos con descuento aparescan primero */
+    border: 2px solid red;
+    /* como todos tienen order 0, al colocarles -1 o menos, ellos tienen un orden menor, por lo cual se colocan primero */
+    order: -1;
+    /* si les doy order 1 o más, esos se van al final por ser mayores al cero */
+
+    /* con esto tambien puedo colocar elementos en medio de otros pero tamb tendria que colocar un order a los demás */
+}

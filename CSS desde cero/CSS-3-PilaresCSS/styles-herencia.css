@@ -1,0 +1,43 @@
+/* HERENCIA - TERCER PILAR*/
+body{
+    /* todo el texto del body es de color azul */
+    color: blue;
+    /* font-size: 2em; letra al 200% */
+}
+
+/* Colocar body h2 es innecesario, dado que body hereda sus propiedades a sus hijos, en este caso al h2*/
+/* body h2{
+    color: blue;
+} */
+
+h2{
+    /*sobreescribimos el color azul(h2 hereda de body), los h2 se hacen rojos*/
+    /* el span tambien hereda el color rojo*/
+    color: red;
+}
+ul{
+    /* los li se hacen verdes, ya que heredan de ul */
+    color:green;
+}
+.last{
+    color:yellow
+}
+
+p{
+    color:sienna;
+}
+
+/* ALGUNAS PROPIEDADES 
+    inherit: significa heredar
+    initial: significa inicia o primero, en este caso receteamos la propiedad, haciendo que no herede de su padre
+*/
+/* ejemplo: la etiqueta de enlace 'a' tiene estilos por defecto y no le afecta el cambio de color, a menos que lo hagamos directamente */
+a{
+    /* color:black; */
+    color:inherit; /*con esto le decimos que herede el color de su padre, siendo en este caso el p*/
+}
+span{
+    font-size: initial; /*que regrese a su tamaño por defecto*/
+    font-weight: initial; /*que no tenga estilo de letra, en este caso le quita la negrita que tenia por ser hijo de h2*/
+}
+

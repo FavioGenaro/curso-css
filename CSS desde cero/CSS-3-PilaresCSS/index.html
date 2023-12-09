@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pilares de CSS</title>
+</head>
+<body>
+    <h1>Pilares de css</h1>
+    <p>Estos conceptos nos ayudan a entender como funciona CSS, como resuelve los conflictos y como se definen las arquitecturas CSS</p>
+
+    <!-- ESPECIFICIDAD -->
+    <h2>1. Especificidad</h2>
+    <p>Va de lo general a lo particular</p>
+    <p>Sale de color magenta porque es el que tiene mayor especificidad de todos, ver el archivo de estilos con los valores</p>
+    <h3 id="title" class="title">Hola mundo</h3>
+
+    <!-- CASCADA -->
+    <h2>2. Cascada</h2>
+    <p>Los estilos que estan despues sobreescriben a los que estaban antes, con otro selector o en el mismo selector</p>
+    <!-- Stylo dentro de la etiqueta tiene más especificidad, no se puede cambiar dentro de css, solo important puede superarlo -->
+    <!-- <h4 style="color: yellowgreen;">Hola mundo</h4> -->
+
+    <h4 id="title2" class="title2">Hola mundo</h4>
+
+    <!-- HERENCIA -->
+    <h2>3. Herencia</h2>
+    <p>Algunas arquitecturas CSS:</p>
+    <ul>
+        <li>SMACSS</li>
+        <li>OOCSS</li>
+        <li>ITCSS</li>
+    </ul>
+</body>
+</html>

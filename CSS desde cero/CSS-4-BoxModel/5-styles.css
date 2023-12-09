@@ -1,0 +1,25 @@
+/* Box Sizing
+    Como sabemo el tamaño total de la caja seria: tamaño interno + padding + border. pero tambie podemos definir este tamaño pues con Box Sizing indicamos cual va a hacer el tamaño total de la caja(witdh y el height) */
+
+/* aqui usamos:
+    content-box
+    padding-box
+    border-box 
+   para indicar desde donde va a contar el witdh y el height*/
+
+.box{
+    width: 200px;
+    height: 100px;
+    background: pink;
+    margin: 50px;
+    padding: 20px;
+    border: 4px solid black;
+    /* con decir border-box, tomado el tamaños desde el border */
+    /* el contenido se desborda por la falta de espacio */
+    box-sizing: border-box;
+}
+
+/* por eso es mejor usar el selector universal para hacer que se respeten los  witdh y height*/
+*, *:before, *:after{  
+    box-sizing: border-box;
+}

@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 200vh; /* para que mida el doble del tamaño de la pantalla, esto para generar un scroll*/
+    margin-top: 4rem; /* para que exsita un espacio para el header (3rem) y el texto (1rem de separación del header y texto) */
+}
+.header{
+    width: 100%;
+    background-color: black;
+    
+    /* centrado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    height: 3rem; /* ocupa 3rem del margin top del body */
+    top: 0; /* para que se pegue al margin-top */
+}
+
+.menu{
+    display: flex;
+}
+
+li{
+    margin-right: 1rem; /* para */
+}
+
+a{
+    display: inline-block;
+    color: white;
+}
+
+:target{
+    padding-top: 3rem;
+}
+
+.container{
+    display: grid;
+    /* 4 columnas de 1fr */
+    min-height: 200vh;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+main{
+    /* ocupa 3 columnas de las 4 */
+    grid-column-start: span 3;
+}
+.sidebar{
+    /* el problema al usar fixed para un sidebar es que no ocupa toda la columna, con width: 100% hace que mida todo el viewport porque es su referencia (con left: 0 notamos que el sidebar cubre todo el width) */
+    /* position: fixed;
+    width: 100%;
+    left: 0; */
+
+    /* sticky: no pierde su espacio reservado, su referencia es el scroll de la pagina */
+
+    position: sticky;
+    width: 100%;
+
+    /* cuando el scroll llegue a 4rem por arriba, entonces a partir de ahi el sidebar se queda en esa posición */
+
+    top: 4rem; /* para que se mida el scroll desde arriba, right y left serian para el scroll horizontal */
+
+    background-color: tomato;
+    height: 400px;
+}

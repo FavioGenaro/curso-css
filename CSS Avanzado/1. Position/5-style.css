@@ -1,0 +1,64 @@
+/* Menu desplegable */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+/* contenedor principal */
+.header{
+    width: 100%;
+    background-color: black;
+}
+/* barra de navegación */
+.nav{
+    display: flex;
+    /* centrado */
+    justify-content: center;
+}
+/* ul */
+
+.menu{
+    /* contiene a los li, con flex hago que se pongan uno al lado del otro */
+    display: flex;
+    list-style: none;
+}
+
+.submenu{
+    /* display: flex; ya que no lo estamos mostrando */
+    flex-direction: column;
+    position: absolute; /* en referencia a item (li)*/
+    top: 100%; /* se colocara debajo de item(100% es todo el tamaño de item), este tamaño se define gracias a los paddings de link, ademas es inline-block, lo que asegura tener dimensiones*/
+    background-color: black;
+    display: none; /* al inicio no se muestra - lo hará con hover*/
+}
+
+.submenu .submenu{
+    left: 100%; /* para que aparesca a la derecha */
+    top: 0; /* ya que .submenu esta en 100% y no queremos que aparesca debajo, sino a la misma altura */
+}
+
+.item{
+    position: relative;
+}
+.item:hover > .submenu{ /* para que se muestre el submenu que sea hijo directo*/
+    /* display: block; */
+    /*.submenu: ya tiene el  lex-direction: column; para que se muestre uno debajo de otro */
+    display: flex;
+}
+
+
+.link{
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    color: white;
+    text-decoration: none;
+    width: 100%; /* para que el hover cubra todo el li */
+}
+.link:hover{
+    background-color: gray;
+}

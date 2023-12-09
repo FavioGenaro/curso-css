@@ -1,0 +1,30 @@
+
+/* flex-basis, con el definimos el tamaño de la linea principal, este tamaño es fijo, no se añade ni se quita nada, todos los item miden lo mismo por que todos tiene el mismo flex-basis */
+/* Acepta cualquier tipo de medida */
+.container {
+    display: flex;
+    font-size: 1.5em;
+    background: yellow;
+    /* hacemos que eje principal sea vertical */
+    /* flex-direction: column; */
+}
+
+.item {
+    background: pink;
+    /* el tamaño del eje main es 100px, como es horizontal flex-direction: row, define el ancho(width) */
+    /* al tener flex-direction: column, el eje main es vertical por lo que basis ahora define el height */
+    flex-basis: 300px;
+
+    /* pero el width no funciona, debido a que basis tiene mayor peso, tampoco funciona colocar important */
+    /* width: 200px !important; */
+
+
+    /* flex-basis: 0;  */
+    /* al colocar 0 hacemos que el navegador tome como tamaño inicial de cada item a 0, por lo que al hacer el flex-grow hacemos que se añada el mismo espacio a todos, por lo que todos va a medir los mismo. a esto podemos añadir más contenido y se acomodara, todos mediran igual(creamos columnas que midan lo mismo y sean responsivas)*/
+    
+    /* flex-grow: 1; hacemos que se crecan hasta que cubran todo el tamaño */
+}
+
+.item:nth-child(even) {
+    background: cyan;
+}

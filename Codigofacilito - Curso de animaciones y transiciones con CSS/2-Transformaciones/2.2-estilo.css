@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 90%;
+    margin: 30px;
+    border: 5px solid; /* el color por defecto es negro, este color cambia si defirnimos un color para el container*/
+    display: flex;
+    align-items: center;
+}
+.element{
+    width: 200px;
+    height: 200px;
+    background-color: steelblue;
+    margin: 20px;
+    transition: transform 1s; /*en caso sea 360 o una vuelta debe tener una transicion para poder notarlo*/
+    
+    /* en rotaciones, se define el punto de rotación con transform-origin */
+    /* Primero pasamos el valor para el eje de las Y y luego al eje X */
+    /* Podemos colocar valores en porcentaja, px o usar center,top,bottom,right,left */
+    /* Su valor por defecto es 50% 50% que representa el centro del elemento */
+    /* transform-origin: top right; arriba y a la derecha es el origen */
+
+
+    transform-origin:top left;
+    z-index: -1;
+}
+.container:hover .element{
+    /* transform: rotate(120deg); */
+    /* Acepta valores:   
+        grados de 0 a 360 deg
+        gradianes de 0-400 grad
+        radianes de 0-6.28319 rad
+        vueltas de 0-1 turn
+    */
+    /* solo acepta numeros enteros y decimales, negativos o positivos
+        Tambien acepta porcentajes. 100% o 1 son el ancho o alto del elemento,es un valor por defecto.
+        Con 200% o 2 hacemos que aumente el doble y 50% o .5  para recudir su tamaño.
+
+    */
+    /*  scaleX(100px):a lo largo del eje X, width
+        scaleY(100px): en el eje Y, height
+        scale(x,y): acepta dos valor, tambien se puede colocar un solo valor, que lo tomaria para X y Y
+    */
+    /* transform: scaleY(1.5); */
+
+    transform: scale(2);
+}

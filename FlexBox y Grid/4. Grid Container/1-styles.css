@@ -1,0 +1,7 @@
+
+/* display grid o inline grid: visualemente no se notan cambios, pero internamente si lo hace */
+.container {
+    display: inline-grid;
+    background: yellow;
+    font-size: 2em;
+}

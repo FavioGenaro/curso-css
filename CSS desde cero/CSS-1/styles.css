@@ -1,0 +1,17 @@
+
+/* Varibles CSS (custom properties) */
+/* Forma de reutizar codigo */
+:root{
+    /* Con los -- se dice que esta es una propiedad nueva inventada por nosotros */
+    --color: green;
+
+}
+h1 {
+    color:var(--color);
+    font-size: 3em;
+    margin: 1px;
+}
+p {
+    color:var(--color);
+    margin: 2px;  
+}

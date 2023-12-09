@@ -1,0 +1,23 @@
+
+body{
+    background-color: cadetblue;
+}
+.yingyang{
+    
+    --size: 200px;
+    --size2: calc(var(--size)/2);
+
+    width: var(--size);
+    height: var(--size);
+    border: 2px solid #000;
+    border-radius: 50%;
+    margin: 50px auto;
+    background-image: 
+        radial-gradient(var(--size2) circle at 50% 25%, black 10%, transparent 10%), /*circulo pequeño negro*/
+        radial-gradient(var(--size2) circle at 50% 25%, white 50%, transparent 50%), /*circulo grande blanco superior*/
+        radial-gradient(var(--size2) circle at 50% 75%,white 10%, transparent 10%), /*circulo blanco pequeño*/
+        radial-gradient(var(--size2) circle at 50% 75%,black 50%, transparent 50%),/*circulo negro grande inferior*/
+        linear-gradient(to right, white 50%, black 50%); /*divide el circulo a la mitad en blanco y negro*/
+    ;   
+
+}

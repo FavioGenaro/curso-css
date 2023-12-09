@@ -1,0 +1,47 @@
+/* Box model
+
+Layout model: es la geometria que usa el navegador para decidir donde va cada elemento, que tamaño tiene y cuando se separa o aproxima a los demás elementos
+Modulos que definen como armar el layout:
+    *Box model (modelo de caja): todos los elementos de HTML son rectángulos 
+    *Position:
+    *Flexbox
+    *CSS grid
+
+*/
+/* 
+Box model (modelo de caja): todos los elementos de HTML son rectángulos 
+    Existen 2 tipos de caja
+    *Bloque: 
+        *Ocupa todo el espacio horizontal disponible
+        *Crea una nueva línea (a pesar de haber espacio disponible, reserva ese espacio, porque crea una linea)
+        *tienen un ancho (width) y alto (height)
+    *Inline(en linea): 
+        * ocupan solo el espacio necesario para su contenido
+        * No tienen dimensiones, a excepsión de las imagenes
+    Unidades de medida
+        - Pixeles px
+        - em  (% del tamaño de fuente o letra actual)
+        - rem (% del tamaño de fuente o letra del body)
+*/
+
+/* Elementos de Bloque */
+h1{
+    background: yellow;
+    /* a pesar de definir su tamaño, se sigue reservando espacio en toda la línea */
+    width: 200px;
+    height: 100px;
+}
+p{
+    background: pink;
+}
+/* Elemento en línea */
+span{
+    background: yellowgreen;
+    /* las dimensiones no funcionan, porque es un elemento de linea */
+    width: 900px;
+    height: 200px;
+}
+img{
+    /* solo aqui funcionan las dimensiones */
+    width: 64px;
+}

@@ -1,0 +1,44 @@
+/* Pseudoclase
+    permiten seleccionar elementos según su estado o condición. aplicamos el estilo segun su estado
+    se indican con :(dos puntos) */
+
+/* si no se coloca un selector, entonces el hover se aplica a todos los elementos, más abajo se van modificando el hover de cada elemento*/
+/* :hover{
+    background: green;
+} */
+
+h1:hover{ /*esta es la forma más usada*/
+    /* cuando el mouse este encima del h1 */
+    background: yellow;
+}
+h1 :hover{/*con el espacio hacemos referencia a los descendientes de h1*/
+    /* en este caso el span, que es hijo de h1, se hara rojo cuando el mouse este encima*/
+    background: red;
+}
+
+
+/* hace referencia al elemento html
+    es lo mismo poner:
+html{
+
+
+}
+pero al ser una pseudoclase tiene una mayor especificidad(igual que una clase osea 10) por eso usamos esta pseudoclase
+*/
+/* 
+Nota: en cualquier etiqueta podemos crear variables
+en root conviene hacer la declaración de variables, porque la etiqueta 'html' es padre de todas las demás, y este hereda estas variables a todos los elementos(las variables se heredan de padre a hijos)*/
+:root{
+    --color: pink;
+}
+h1{
+    background: var(--color);
+}
+
+div{
+    --colo2: green;
+}
+p{
+    /* podemos hacer uso de la variable --color2 porque p lo hereda de div, por ser su hijo */
+    background: var(--colo2);
+}

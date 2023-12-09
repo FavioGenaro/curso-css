@@ -1,0 +1,14 @@
+/* font-family- me permite elegir el tipo de fuente */
+
+
+p{
+    border: 1px solid black;
+    background: #eee;
+
+
+    font-family: 'Open Sans';
+
+    /* tipo de letra */
+    font-family: 'Roboto Mono', monospace; /*la primera es la de google, la segunda es otro tipo de letra que es una alternativa en caso la primera falle o no se encuentre*/
+    font-weight: 200; /*con esto escojo el ancho de letra que traje de google, me traja el de 200 y 700, puedo escoger entre estos dos*/
+}

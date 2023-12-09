@@ -1,0 +1,24 @@
+
+
+.main-nav{
+    margin-top: 10px;
+    list-style: none;
+    padding-left: 0;
+    background-color: cadetblue;
+}
+.main-nav-item{
+    display: inline-block;
+    color: white;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.main-nav-item:hover{
+    background: blue;
+}
+
+/* Los pseduelementos se marcan con 2 veces el doble punto, estos permiten agregar estilos a una parte especifica del elemento */
+.main-nav-item::after{ /*despues del elemento*/
+    /* a cada etiqueta se le agrega " | " a la derecha o despues del elemento */
+    content: " | "; /*el el contenido del elemento*/
+}

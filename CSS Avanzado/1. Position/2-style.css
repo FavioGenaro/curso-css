@@ -1,0 +1,17 @@
+/* relative: 
+    - El elemento no pierde el espacio reservado  
+    - La referencia es su posición inicial
+*/
+
+.container{
+    border: 2px solid black;
+}
+
+.p-2{
+    position: relative;
+    background: tomato;
+    opacity: 0.5;
+    /* vemos como no pierde su espacio reservado, que vendria a ser el marco que lo contenia, con el top y left vemos como también podemos poner un elemento encima de otro */
+    top: 5rem; 
+    left: 1rem;
+}

@@ -1,0 +1,58 @@
+/* las varibles ayudan a manejar los cambios, pues si queremos hacer un cambio general del color podemos solo cambiar el valor de la variable y no hacer los uno por uno */
+
+/* Valores que puede recibir
+
+    - colores, hsl | rgba | HEX
+    - border 1px solid red
+    - cadenas de texto (pseudoelementos)
+    - shadow: 2px 2px red,2px 2px red,2px 2px red,2px 2px red
+    - podemos alamacenar una variable dentro de otra variable(--color-two: var(--color))
+*/
+
+/* Tambien podemos usar fallback
+    que es colocar un color auxiliar en caso el color colocado no este disponible o lo haya escrito mal.
+    podemo usar esto para detertar errores, pues este se mostrara cuando el primer color no se este mostrando
+*/
+
+/* Declaracion de variables */
+:root{
+    /* --custom-name: value; sintaxis*/
+    --color: red;
+    --primary-color: green;
+    --warning-color: yellow;
+    --min-size: 2rem;
+    --max-size: 3rem;
+
+    /* --size: var(--min-size) + var(--max-size)  esto no funciona*/
+    /* podemos realizar operaciones con calc, esto en si no retorna un valor(5rem en este caso), pues hace un calculo en tiempo real,es por eso que el inspector no muestra 5rem  */
+    --size: calc(var(--min-size) + var(--max-size))
+}
+
+
+.element{
+    width: var(--size);
+    height: var(--size);
+    background-color: red;
+}
+
+/* uso de la variable */
+header{
+    width: 100%;
+    height: 3rem;
+    background-color: var(--color);
+    background-color: var(--primary-color,blue);
+    /* podemos comenter un error al escribir el nombre de la variable, como poner una mayuscula o obviar alguna letra */
+    /* el colocar otra variable como fallback, dentro de la misma podemos seguir colocando fallbacks pero los ideal es solo quedarnos con 1 o 2 colores de resplado */
+    background-color: var(--primary-Color,var(--warning-color));
+}
+
+h1{
+    color: var(--color);
+}
+
+h2{
+    color: var(--color);  
+}
+p{
+    color: var(--color);
+}

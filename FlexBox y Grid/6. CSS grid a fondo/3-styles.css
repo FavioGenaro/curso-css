@@ -1,0 +1,54 @@
+
+/* Grid placement: es el algoritmo que usa CSS gird para poner los elementos en el grid */
+.grid{
+    display: grid;
+    /* solo defino las columnas, 6 columnas el resto  */
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(3,100px);
+    grid-gap: 5px;
+
+    /* grid-auto-flow propiedad CSS controla cómo funciona el algoritmo de colocación automática, es decir, el Grid placement. */
+    /* grid-auto-flow: row; es valor por defecto, el orden se da por la 1ra fila, luego las 2da y asi*/
+    grid-auto-flow: column; /* el orden va por las columnas, la vista cambia de orientacion, en caso no definamos las filas, todos los elementos se pondran en una sola fila */
+    
+
+    /* especifíca el tamaño de una columna o fila de cuadrícula creada implícitamente(que no ha sido creada por nosotros sino automaticamente de ser necasario para los demás items que no caben) track */
+    grid-auto-rows: 100px;/* alto */ 
+    grid-auto-columns: 70px; /* ancho */
+
+    /* dense: lo que hace es que rellena todos los huecos que puedan haber
+        El algoritmo de empaquetamiento "denso" intenta llenar los agujeros antes en la cuadrícula, si aparecen elementos más pequeños más tarde. Esto puede hacer que los artículos parezcan desordenados, cuando al hacerlo se llenarían los huecos que dejan los artículos más grandes.
+
+        Si se omite, se usa un algoritmo "disperso", en el que el algoritmo de ubicación solo se mueve "hacia adelante" en la cuadrícula al colocar elementos, nunca retrocede para llenar los huecos. Esto garantiza que todos los elementos colocados automáticamente aparezcan "en orden", incluso si esto deja huecos que podrían haberse llenado con elementos posteriores.
+        https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow
+    */
+    grid-auto-flow: column dense;
+}
+
+.item{
+    background-color: yellow;
+    border: 1px solid black;
+
+    /* height: 100px;revisar el inspector, ya que el track del item4 ocupa en si toda la columna, pero el item de por si solo mide 100px, lo mismo pasa con el item18 */
+    justify-items: center;
+    display: grid;
+    align-items: center;
+    font-size: 2em;
+}
+
+/* .item-20{ */
+    /* hacemos el item 20 tome otro lugar en el track- veremos como para acomodarse se iran creando filas y columnas implicitas */
+    /* grid-row: 5 / 8; ocupa desde el row 5 hasta la columnas 8 */
+/* } */
+.item-4{
+    /* grid-row: 8 / 12; */
+    grid-row: span 5;
+}
+
+.item-9{
+    grid-column: span 3;
+}
+
+.item-18{
+    grid-area: span 2 / span 3;
+}

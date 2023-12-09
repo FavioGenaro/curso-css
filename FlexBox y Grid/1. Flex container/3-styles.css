@@ -1,0 +1,139 @@
+/* 
+- Alineacion de items
+
+    - **justify-content**: Alinea los items en el EJE PRINCIPAL (main axis)
+    
+    flex-start(al inicio) | flex-end(al final) | center(al centro) | space-between(entre ello hay un espacio) | space-around(alrededor hay un espacio) | space-evenly()
+    https://developer.mozilla.org/es/docs/Web/CSS/justify-content
+    
+    - **align-items**: Alinea los items a lo largo del EJE SECUNDARIO (cross axis)
+
+    flex-start() | flex-end() | center() | baseline() | stretch()
+    
+
+
+- Alineación de lineas
+
+    - **align-content**: Alinea las lineas RESPECTO AL CONTAINER. Controla el espacio entre las líneas de flexión en el eje transversal.
+    flex-start() | flex-end() | center() | space-between() | space-around() | space-evenly() | stretch()
+    
+
+*/
+
+/* BLOQUE 1 */
+.flex-container{
+    display: flex;
+    background: yellow;
+    /* margin-top: 10px; */
+    font-size: 2rem;
+    flex-flow: wrap; /* para que puedan saltar de linea y no comprimir los items*/
+    /* justify-content: flex-start; es valor por defecto*/
+
+    /* alinea al centro horizontal, ya que la linea main axis esta horizontal */
+    /* justify-content: center; */
+
+    /* le da un margen externo, de modo que esten centrados con un margen-rigth y left iguales para cada item  */
+    /* justify-content: space-around; */
+
+    /* se distribuyen uniformemente sobre la línea, generando un espacio entre los mismo items para que puedan cubrir toda la linea. Cuando hay 2 items, El primer item al inicio, el último al final */
+    justify-content: space-between;
+
+}
+.flex-item{
+    border: 1px solid #000;
+    margin: 1rem;
+
+    width: 200px;
+    height: 200px;
+}
+
+/* BLOQUE 2 */
+
+/* align-items */
+.flex-container-2{
+    display: flex;
+    background: yellow;
+    margin-top: 20px;
+    height: 800px;
+    font-size: 2rem;
+    flex-flow: wrap; /* para que puedan fluir en varia lineas*/
+
+    justify-content: space-between;
+
+    /* align-items: flex-start; es el valor por defecto */
+    /* align-items: flex-end; lo manda abajo o final */
+    align-items: center;
+    /* align-items: center; centra respecto a la altura(cross que esta en vertical) */
+
+    /* align-items: stretch; toma toda la altura posible, no debemos tener un height definido */
+    /* align-items: baseline; la altura la define la cantidad de información que hay, debemo quitar el height */
+
+}
+.flex-item-2{
+    border: 1px solid #000;
+    margin: 1rem;
+
+    width: 200px;
+    height: 200px;
+}
+
+
+/* BLOQUE 3 */
+
+/* align-content - tiene los mismos atributos que  justify-content */
+.flex-container-3{
+    display: flex;
+    background: yellow;
+    margin-top: 20px;
+    height: 600px;
+    font-size: 2rem;
+    flex-flow: wrap;
+
+    justify-content: space-between;
+
+    align-items: flex-end; /* se acomoda la final de la linea, divide en dos la linea y a los items los coloca al final de su linea respectiva, no se nota del todo bien */
+
+    align-content: flex-end;
+    /* cada linea se junta o comprimen y se colocan arriba */
+    /* align-content: flex-start; */
+
+    /* centra todas las lineas */
+    /* align-content: center; */
+
+    /* align-content: space-around; genera un espacio alredor(margen a cada lado de las linas) para cada linea y que esta pueda cubrir toda la altura o toda la caja de por si */
+
+    /* hace que las lineas cubran toda la altura con un espacio entre ellos */
+    /* align-content: space-between; */
+
+}
+.flex-item-3{
+    border: 1px solid #000;
+    margin: 1rem;
+
+    width: 200px;
+    /* height: 200px; */
+}
+
+
+/* BLOQUE 4 */
+
+/* flex reconoce al texto como item, tambien reconoce como item al before y after(pseudoelementos) */
+.flex-container-4 {
+    display: flex;
+    background: yellow;
+    flex-flow: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+    height: 300px;
+    align-items: flex-end;
+    font-size: 4rem;
+  /*   align-content: space-between; */
+}
+.flex-container-4::before {
+    content: 'S/';
+    background-color: aqua;
+}
+.flex-container-4::after {
+    content: '.00';
+    background-color: aquamarine;
+}

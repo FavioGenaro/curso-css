@@ -1,0 +1,69 @@
+
+*, *:before, *:after{  
+    box-sizing: border-box;
+}
+.box{
+    width: 400px;
+    height: 250px;
+    background: yellow;
+    /* shorthand, es una propiedad que agrupa varia propiedades */
+    /* border: 1px solid black; border-width border-style border-color */
+
+    /* de igual manera podemos colocar un formato para cada lado */
+    /* el borde es parte de la caja, este sino usamos box-sizing, hace más grande la caja */
+    border-width: 1px 2px 4px 8px; /*shorthand*/
+    border-style: solid dashed dotted double;/*shorthand*/
+    /* por defecto el color del borde es el mismo color que el elemento(color de la letra)*/
+    /* border-color: black blue red brown; */ /*shorthand*/
+
+
+    /* Propiedades no shorthand */
+    /* border-top-width: 20px;
+    border-top-style: dashed;
+    border-top-color: black; */
+    border-top: 20px dashed black;
+
+    /* border-right-width: 10px;
+    border-right-style: solid;
+    border-right-color: red; */
+    border-right: 10px solid red;
+
+    /* border-bottom-width: 15px;
+    border-bottom-style: double;
+    border-bottom-color: blue; */
+    border-bottom: 15px double blue;
+
+    /* border-left-width: 30px;
+    border-left-style: dotted;
+    border-left-color: purple; */
+    border-left: 30px dotted purple;
+}
+
+h1{
+    border-bottom: 1px solid;
+    padding: 10px;
+    /* recordemos: h1 es un elemento de bloque, por lo que el borde ocuapa toda la linea, asi que con inline-block hago que sea de linea y ocupe el tamaño de texto */
+    display: inline-block;
+}
+h2{
+    border: .25px dashed;
+    padding: 10px;
+    display: inline-block;
+}
+
+/* como se cruzan las líneas */
+h3{
+    /* se curzan con una diagonal */
+    border: 25px solid;
+    border-color: black red;
+    padding: 10px;
+}
+
+/* haciendo un triangulos */
+h4{
+    border: 25px solid;
+    border-color: transparent;
+    border-left-color: red;
+    padding: 0; /*colocar solo cero, sin unidad(px rem em), porque es más eficiente*/
+    display: inline-block;/*para que mida segun el texto*/
+}

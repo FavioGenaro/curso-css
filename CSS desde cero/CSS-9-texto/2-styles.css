@@ -1,0 +1,39 @@
+/* Unidades de medida 
+    font-size:  px % em rem
+
+    %: sacado del root
+
+    em: tamaño de la m, 100% del tamaño del contexto, es decir, 100% del padre directo o de la misma etiqueta. es bueno usarlo em margenes, paddings para que dependan del tamaño de la letra
+    rem: tamaño de la letra relativo a la raíz o root, pues por defecto su font-size es de 16px==1rem, podemos cambiar esto directamente en el root.
+    es bueno usarlo en la normalización de los estilos, todos un mismo tamaño
+
+*/
+
+:root{
+    font-size: 16px;
+}
+
+h1{
+    font-size: 3rem;/*(1rem = 16px) por ende 3rem = 48px*/
+}
+p{
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+span{
+    /* el span de h1 mide 3rem*1.5 */
+    /* el span de p mide 2rem*1.5 */
+    font-size: 1.5em;
+}
+
+.button{
+    /* padding y border radius, esta en funcion del tamaño de texto */
+    background-color: hsl(200, 80%, 45%);
+    text-decoration: none;
+    
+    /* no es bueno poner en px porque al aumentar el tamaño de letra el padding y border no crecen con el y tendriamos que ajustarlo. con em no tendriamos este problema */
+    padding: 1em 2em;/*con font-size de 16px el padding es:16px 32px*/
+    color: #fff;
+    border-radius: .25em;/*con font-size de 16px border-radius es:4px*/
+    font-size: 3rem;
+}

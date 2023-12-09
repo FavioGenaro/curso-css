@@ -1,0 +1,44 @@
+/* tanto los lienales y circulares se pueden repetir */
+
+
+body,html{
+    height: 100%;
+    margin: 0;
+}
+
+.box{
+    width: 500px;
+    height: 500px;
+    border: 2px solid #000;
+    margin: 50px auto;
+
+    /* se hacen 25 cuadrados con el degradado circular */
+    background-image: radial-gradient(yellow,red);
+    /* background-size: 20% 20%; */
+
+    /* del 10% es yellow y del 20% es rojo(el patron se repite) */
+    background-image: repeating-radial-gradient(yellow 10%,red 20%);
+
+}
+
+.box-2{
+    width: 500px;
+    height: 500px;
+    border: 2px solid #000;
+    margin: 50px auto;
+
+    /* circulo blanco y negro
+        por defecto calcula el 5% de la distancia del centro a una de las puntas, pero con closest-side escorjo el lado más cercano(por ser cuadrado sera para todos igual) y por ende por ser 10% habran 10 franjas de blanco y negro.
+    */
+    background-image: repeating-radial-gradient(closest-side,white 0,white 5%,black 5%, black 10%);
+}
+
+.box-3{
+    width: 500px;
+    height: 500px;
+    border: 2px solid #000;
+    margin: 50px auto;
+
+    /* Libreta de notas, el negro tiene un ancho de 1px y el blanco de 40px */
+    background-image: repeating-linear-gradient(white 0,white 40px,black 40px, black 41px);
+}

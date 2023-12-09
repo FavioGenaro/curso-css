@@ -1,0 +1,70 @@
+/* unicode: caracteres especiales que podemos usar en nuestro sitio web 
+    https://unicode-table.com/en/
+
+    quotes: La propiedad CSS quotes indica cómo debe renderizar las citas el navegador.
+    https://developer.mozilla.org/es/docs/Web/CSS/quotes
+    
+*/
+
+body{
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+
+/* EJEMPLO 1 */
+
+.container{
+    position: relative;
+    color: white;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.container::before{ /* Antes */
+    transition: transform 0.25s;
+    content: attr(data-name); 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container::after{ /* Despues */
+    /* puedo agrerle el unicode o de por si el emoticon */
+    content: '\1F49A' '💚' 'Level - ' attr(data-level);
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    text-align: center; 
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.container::after, 
+.container::before{
+    transform: scale(0);
+}
+.container:hover::after, 
+.container:hover::before{
+    transform: initial;
+}
+
+/* EJEMPLO 2 */
+
+p{
+    /* se pueden añadir varios pares */
+    quotes: "\201F" "\201D" "‹" "›"; /* Especifica open-quote y close-quote */
+}
+p::before{
+    content: open-quote;
+}
+
+p::after{
+    content: close-quote;
+}

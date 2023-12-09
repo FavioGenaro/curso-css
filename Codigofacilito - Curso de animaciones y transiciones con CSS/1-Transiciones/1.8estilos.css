@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.element{
+    width: 200px;
+    height: 200px;
+    background-color: tomato;
+    margin: 20px;
+
+    clip-path: circle(80%);
+    /* transition-property: clip-path, transform,background-color;
+    transition-duration: 4s;
+    transition-timing-function: cubic-bezier(.12,1.16,.08,.81), ease; */
+
+    /* delay es un tiempo de espera, colocamos por ejemplo 1s o 1000ms que nos dice que esperemos ese tiempo para que despúes se ejecute la animación 
+        podemos colocar varios valores y funcionan igual que duration y timing-function. Su valor por defecto es 0s, es decir, que todas las propiedades van a iniciar inmediatamente se ponga el mouse sobre el elemento.
+    */
+    /* Si colocamos 0s, 1s. hace que primero se ejecute clip-path (de forma normal como lo hacia antes, ya que cero es valor por defecto), pero despues de 1s se ejecuta transform. dado que la animacion dura 4s, transform se ejecuta del segundo 1 al segundo 4 */
+    transition-delay: 2s,0s;
+    /* Tambien podemos colocar valores negativos, ejemplo: si colocamos -1s es como si ya hubiera pasado 1s de la animación y se ejecuta desde el segundo 1 al 4(3 ultimos segudos). Si duration y delay tienen el mismo tiempo, entonces es como si no hubiera animación ya que por el delay directamente iria al final */
+    /* transition-delay: -1s; */
+
+    /* Forma de usar el shorthand */
+    /* transition: 1s clip-path,transform,background-color 0s,1s cubic-bezier(.12,1.16,.08,.81);
+
+    transition: clip-path,transform,background-color 1s 0s,1s cubic-bezier(.12,1.16,.08,.81);
+
+    transition: clip-path 2s cubic-bezier(.12,1.16,.08,.81), 
+                transform 1.5s ease-out 2s; */
+
+}
+
+.container:hover .element{ /* cuando container este en hover, element hará lo siguiente*/
+    clip-path: circle(30%);
+    transform: translate(100%); /* se translada */
+    background-color: black;
+}
+
+.container{
+    width: 90%;
+    border: 3px solid;
+    margin: 0 auto;
+    /* transition-property: ; */
+    /* transition: justify-content 2s; */
+}

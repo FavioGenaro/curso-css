@@ -1,0 +1,63 @@
+/* 
+Position
+
+    por defecto esta en static
+
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.parent{
+    border: 2px black dotted ;
+    display: inline-block;
+}
+.Box{
+    display: inline-block;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
+#two{
+    background-color: green;
+    /* el 3 esta debajo de 2, el 2 pierde su posicion y se coloca encima de todos los elementos, con top, left, bottom y right podemos modificar el su posición respecto a toda la pantalla*/
+    position: absolute;
+    top: 50px;
+    left: 600px;
+}
+#three{
+    background-color: blue;
+    /* El elemento mantiene su posición pero podemos hacer uso de top, left, bottom y right, con respecto a su contenedor padre */
+    position: relative;
+    bottom: 10px;
+}
+.desafio{
+
+    min-width: 200px;
+    max-width: 400px;
+
+    min-height: 200px;
+
+    margin: 100px auto;
+    padding: 20px 70px 50px;
+    background-color: rgb(188, 195, 195);
+    
+    border-radius: 45px;
+    border: 1px solid black;
+}
+.title{
+    width: 80%;
+
+    background-color: red;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 25px;
+
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    bottom: 60px;
+}

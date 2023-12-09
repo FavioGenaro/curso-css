@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+}
+
+.container::before,
+.container::after {
+    content: "";
+    display: block;/*por defecto los pseduelementos son inline, y lo hago bloque para poder agregarle altura, además el flex hace que los bloques se junten*/
+    height: 5px;
+    flex: 1;/*con esto hago que se expandan o contraigan segun el tamaño de pantalla*/
+    background: linear-gradient(to left, red,white);/* fondo lineal*/
+    margin-right: .5em; /* distancia del hola mundo*/
+}
+
+.container::after {
+    background: linear-gradient(to right, red,white);
+
+    margin-right: 0;
+    margin-left: .5em; /* distancia del hola mundo*/
+}

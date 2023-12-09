@@ -1,0 +1,36 @@
+/* Unidad fr */
+
+
+.container {
+    font-size: 2em;
+    background: red;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(5,1fr); /*creamos 5 columnas del mismo tamaño */
+    grid-gap: 1em; /*separación */
+}
+
+.item {
+    background: yellow;
+}
+
+.container-1 {
+    font-size: 2em;
+    background: red;
+    padding: 1em;
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: repeat(10,1fr); /*creamos 10 columnas del mismo tamaño, pero vemos como fr no esta restringido al tamaño del contenido del item, pues no todos miden lo mismo */
+    grid-gap: 1em; /*separación */
+}
+
+
+.container-2 {
+    font-size: 2em;
+    background: red;
+    padding: 1em;
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: repeat(10,1fr); 
+    grid-gap: 1em; /*separación: cuando reducimos mucho el tamaño de pantalla, vemos que se desborda el contenido, dado que el 1em de separacion es fijo y significa que la separacion entre los items es mayor al tamaño de pantalla y ocasiona el desborde(la sepacion no es flexible) */
+}

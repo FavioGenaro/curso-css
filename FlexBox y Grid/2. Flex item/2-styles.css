@@ -1,0 +1,84 @@
+
+/* flex-grow: indica el factor de crecimiento (por defecto esta en cero)
+
+    El factor de crecimiento especifica qué cantidad del espacio restante dentro del contenedor flexible, debería ocupar el item en cuestión.
+
+    La dirección principal puede ser la altura o el ancho del elemento, dependiendo del valor de flex-direction
+
+    divide el espacio disponible entre la cantidad total de factores de crecimiento y se le aumenta a los items, es responsivo */
+
+    /* Funcionamiento: 
+        si el tamaño disponible es 100px y le doy flex-grow: 10, es decir, a cada item le doy 10, como son 5 elementos en total otorgue 50 factores de crecimiento. como la pantalla mide 100: entonce 100/50=2 factores de crecimiento. despues 2*10=20, ese 20 va para cada uno, se agrega a su tamaño original
+    */
+
+/* BLOQUE 1 */
+.container{
+    display: flex;
+    font-size: 3em;
+    background-color: yellow;
+}
+.item{
+    
+    background-color: pink;
+    /* inicialmente cada uno de los items mide lo necesario para su contenido */
+    /* flex-grow acepta numero positivo enteros o decimales, no negativos */
+    flex-grow: 1;/* con esto hace que todos los items midan los mismo y cubran el ancho de la pantalla */
+}   
+.item:nth-child(even){ /*a los pares*/
+    background-color: cyan;
+}
+.item:nth-child(3){ /* al elemento 3 */
+    /* no necesariamente es 4 veces mas que el resto, este es un valor calculado segun el tamaño de pantalla por lo que es responsivo */
+    flex-grow: 4;
+}
+
+/*  
+    Cantidad total de flex-grow:
+    1
+    1
+    4
+    1
+    1
+    = 8
+
+    Calcular factor de crecimiento:
+        espacio disponible/8
+
+    Suponiendo que el espacio disponible sea: 160, 160 / 8 = 20
+
+    Teniendo el factor de crecimiento, el navegador lo multiplica por el valor de flex-grow en cada caso y lo suma.
+
+    1*20 = 20
+    1*20 = 20
+    4*20 = 80
+    1*20 = 20
+    1*20 = 20
+
+    Ese valor se suma al tamaño original. Suponiendo que sus tamaños originales sean:
+
+    20 + 20 = 40
+    10 + 20 = 30
+    100 + 80 = 180
+    30 + 20 = 50
+    15 + 20 = 35
+
+*/
+
+
+/* BLOQUE 2 */
+.page {
+    display: flex;
+    height: 100vh;/* ocupa todo el alto de pantalla, en si toma el tamaño real del alto, por lo que puede considerarse un tamaño fijo*/
+    background: yellow;
+}
+
+.aside {
+    width: 200px; /*este tamaño es fijo, no se expande ni se contrae*/
+    background: red;
+}
+
+.main {
+    background: green;
+    /* sin importar que numero le ponga, este se expande en el resto de pantalla, además de ser responsivo, se le agrega el tamaño necesario con grow */
+    flex-grow: 1;
+}

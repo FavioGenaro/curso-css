@@ -1,0 +1,14 @@
+/* El mouse solo afecta al elemento que esta en frente */
+
+.element{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    background-color: red;
+    opacity: 0.5;
+    /* le dice al navegador que elemento sea detectado por el mouse
+        esto para poder seleccionar el texto detras del elemento
+    */
+    pointer-events: none;
+}

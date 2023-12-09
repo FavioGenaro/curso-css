@@ -1,0 +1,39 @@
+/* Stacking-context o contexto de apilamiento
+    en referencia del eje z, un eje que indica el orden en el se sobreponen o apilan los elementos.
+
+
+*/
+
+/* Niveles de apilamiento
+    1 - elemento con nivel de apilamiento negativo
+    2 - elementos con position static
+    3 - elementos con nivel de apilamiento cero o auto (cuando posicionamos un elemento)
+    4 - elementos con nivel de apilamiento mayor a cero (cuando modificamos el nivel de apilamiento) 
+
+
+*/
+
+.element{
+    width: 200px;
+    height: 200px;
+    position: relative; /* todos los elementos tienen el mismo nivel(nivel 3, por agregarle posicionamiento), por lo que el red no se pone sobre green sino debajo de el (chocan o se intersectan) ya que green no se mueve*/
+}
+
+.element:nth-of-type(1){
+    /* el elemento 1 se sobrepone al elemento 2, el elemento 2 no desaparece */
+    /* position: absolute; nivel 3 y el resto nivel 2 */
+    background-color: red;
+    top: 100px;
+}
+.element:nth-of-type(2){
+    background-color: green;
+    top: 100px; /* para que green baje y red pueda mostrarse por completo*/
+}
+.element:nth-of-type(3){
+    background-color: yellow;
+    /* con static, yellow estaria a nivel 2, siendo menor al resto y es por eso que green esta sobre él */
+    position: static;
+}
+.element:nth-of-type(4){
+    background-color: blue;
+}

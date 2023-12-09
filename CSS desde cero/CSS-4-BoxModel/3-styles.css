@@ -1,0 +1,91 @@
+/* MARGIN
+    Genera un espacio alrededor del elemento, este solo funciona para elementos de bloque, no para inline o inline-block
+*/
+div{
+    width: 200px;
+    height: 100px;
+    background: pink;
+}
+.box{
+    
+    margin: 10px; /* se aplica a todos los lados */
+
+    /* margin-top: 20px; arriba
+    margin-right: 30px; a la derecha
+    margin-bottom: 10px; abajo
+    margin-left: 50px; izquierda */ 
+
+    /* si no coloco el margen para los 4 lados,  */
+    margin: 20px 30px 10px 50px; /* arriba-derecha-abajo-izquierda */
+    margin: 20px 30px 10px; /* arriba-derecha(izquierda)-abajo */
+    margin: 20px 30px;/*arriba(abajo)-derecha(izquierda)*/
+    margin: 20px; /*para todos los lados*/
+    margin: 10%; /*el 10% del padre, en este caso body, muy poco usual usar porcentajes en margenes*/
+
+    /* float: es una propiedad que rompe el bloque, para ponerlo uno al lado del otro */
+    /* float: left; */
+}
+
+
+
+
+/* Algunos trucos con el margen */
+    /*CENTRANDO CON MARGENES*/
+.derecha{
+    /* te calcula el margen y te pega a la derecha */
+    margin-left: auto;
+}
+.izquierda{
+    /* ya de por si esta pegado a la izquierda */
+    margin-right: auto;
+}
+h1{
+    /* para que pueda centrarse, debe de tener declarado un amcho, porque al se elemento de bloque ocuapa toda la línea */
+    width: 250px;
+    text-align: center; /*con esto centramos el texto*/
+    background: palegoldenrod;
+}    
+.centro{
+    /* auto: calculado por el navegador, divide el margen entre 2 y te coloca al centro, coloca el mismo margen a ambos lados */
+    margin-left: auto;
+    margin-right: auto;
+    /* margin: 0 auto;arriba-abajo es cero, derecha e izquierda auto */
+    /* margin: auto; todos los lados tiene auto, aunque no es muy recomendable usarlo*/
+}
+
+img{
+    /* centrada de imagen */
+    margin-left: auto;
+    margin-right: auto;
+    /* debe ser un elemento de bloque para que pueda funcionar, dado que la imagen es un elemento inline-block y solo adquiere dimensiones más no se comporta como bloque */
+    display: block;
+}
+
+
+/*COLAPSADO DE MARGENES VERTICALES(no se suman se atraen, tmb funciona de padres a hijos)*/
+
+/* esto tambien lo observamos al inicio, cuando el margen-abajo de Hola1 y el margen-top de Hola2 no se suman, sino que colapsan */
+.container{
+    width: 400px;
+    height: 300px;
+    background: yellow;
+    /* podemo arreglar el colapsado, al colocar un padding dentro de la caja paddre */
+    /* padding: 1px; */
+}
+.hijo{
+    /* se pega a la esquina superior izquierda */
+    /* margin: 0; */
+
+    /* el margen se aplica, solo que el margen top(tambien pasa al de abajo) aparece fuera de la caja, pero da la impresión de que no se aplica */
+    margin: 50px;
+}
+
+
+/* Margen negativo */
+.box-2{
+    margin: 30px;
+}
+.colapsado{
+    /* al el hola2 subir, tambien lo hacen los elemento de la parte de bajo como Hola3 */
+    margin-top: -30px;
+}

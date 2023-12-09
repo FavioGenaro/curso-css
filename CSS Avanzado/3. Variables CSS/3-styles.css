@@ -1,0 +1,27 @@
+/* Herencia
+
+    Cascada
+
+
+*/
+
+body{
+    --color: red;
+    color: red;
+}
+
+.container{
+    color: blue;
+}
+/* por herencia */
+.container p{
+    /* heredo la variable, no el valor del color */
+    --color: inherit;
+    color: var(--color);
+}
+/* por cascada */
+.container p{
+    /* sobreescribo la variable */
+    --color: green;
+    color: var(--color);
+}

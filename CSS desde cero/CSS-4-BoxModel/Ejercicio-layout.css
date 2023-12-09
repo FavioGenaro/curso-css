@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.header{
+    width: 100vw;
+    background-color: cornflowerblue;
+    height: 50px;
+}
+.header p{
+    display: inline-block;
+}
+.menu{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+.menu li{
+    list-style: none;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+}
+
+
+nav{
+    width: 20%;
+    height: 720px;
+    background-color: indianred;
+    display: inline-block;
+    margin:0;
+}
+nav div{
+    width: 85%;
+    height: 20%;
+    background-color:lightcyan;
+    margin: 0 auto;
+    margin-top: 28px;
+    border-radius: 5px;
+}
+
+section{
+    display: inline-block;
+    width: 79%;
+    height: 720px;
+    padding: 20px;
+    background-color: darkgrey;
+}
+footer{
+    width: 100vw;
+    height: 50px;
+    background-color: yellow;
+}

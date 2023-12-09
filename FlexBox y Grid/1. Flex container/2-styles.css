@@ -1,0 +1,92 @@
+
+body{
+    font-size: 4rem;
+}
+
+
+/* PRIMERA PARTE */
+
+/* los flex-item de forma predeterminada se acomodan a lo largo del main-axis */
+.flex-item{
+    /* por defecto se acomodan de forma horizontal y de izquierda a derecha */
+    border: 1px solid #000;
+    margin: 1rem;
+}
+
+p{
+    font-size: 20px;
+}
+
+.flex-container-4{
+    display: flex; /* podemos ver que cada container ocupa toda la linea, es decir, como un elemento en bloque */
+    background-color: yellow;
+    margin-bottom: 10px;
+    /* nos permite cambiar la dirección del eje main */
+    flex-direction: row-reverse; /* horizontal, de derecha a izquierda, revertimos el sentido del main axis */
+}
+/* INLINE FLEX */
+.flex-container{
+    /* inline-flex: hace que el papa se comporte como elemento de linea, los hijos se comportan igual(flex), solo el papa cambia */
+    /* en container se comporta como un elemento en linea */
+    display: inline-flex;
+    background-color: yellow;
+    margin-bottom: 10px;
+    /* nos permite cambiar la dirección del eje main */
+    flex-direction: row-reverse;  /* horizontal, de derecha a izquierda, revertimos el sentido del main axis */
+}
+
+
+
+/* SEGUNDA PARTE */
+/* WRAP */
+
+.flex-container-1{
+    display: flex;
+    background: yellow;
+}
+.flex-item-1{
+    border: 1px solid #000;
+    margin: 1rem;
+    /* los items se hacen más grandes y cuando sobre pasan su espacio, salen de la caja */
+    /* cuando los item no caben dentro del container, estos se comprimen, pero si tiene alguna propiedad que impida su compresión, como el padding que va desde adrento, entonces estos salen del container */
+    /* padding: .5em 2em; */
+
+    /* al achicar el tamaño de pantalla, estos se comprimen, porque witdh y height no impiden eso, dado que no tendra el espacio suficiente para estar en el container, entonces se comprimen los más que pueden para poder entrar, en ese caso, el ancho o width medira menos de 100px*/
+    width: 100px;
+    height: 100px;
+}
+
+
+
+.flex-container-2{
+    display: flex;
+    background: yellow;
+    margin-top: 10px;
+    /* flex-wrap: especifica si los elementos "hijos" son obligados a permanecer en una misma línea o pueden fluir en varias líneas. */
+    
+    /*flex-wrap: wrap, hace que los items ya no se compriman y puedan realizar un salto de linea, actua de forma responsiva */
+    /*flex-wrap: nowrap, hace que los items se compriman y no haya salto de linea, esta es la propiedad por defecto */
+    flex-wrap: wrap;
+    /* flex-wrap: wrap-reverse:lo mismo que wrap, pero hace que las lineas inviertan su sentido */
+    /* en todo caso podemos decir que flex-wrap controla el cross (a pesar de que el main este en otro sentido, es decir, controlaria el eje perpendicular al main axis.)
+        flex-wrap: wrap-reverse va de abajo hacia arriba, 9-8-7-6-5-4-...
+        flex-wrap: wrap: va de arriba abajo, 1-2-3-4-5-6-...
+    */
+    flex-wrap: wrap-reverse;
+
+    /* podemos combinar el flex-direction y wrap en un shorthand 
+        flex-flow: direction wrap
+    */
+    
+    /* main va de derecha a izquiera y croos de abajo arriba */
+    flex-flow: row-reverse wrap-reverse;
+
+}
+.flex-item-2{
+    border: 1px solid #000;
+    margin: 1rem;
+    
+    /* si no hubiera espacio, los items se comprimen para poder entrar en el container haciendo que no midan 100px de ancho(width) sino menos en el ancho; pero como estamos usando flex-wrap: wrap-reverse, se realizará un salto de linea en vez de comprimirse*/
+    width: 100px;
+    height: 100px;
+}

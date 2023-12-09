@@ -1,0 +1,65 @@
+/* propiedad box-shadow (sombra de caja) 
+                horizontal vertical
+    box-shadow: h-offset v-offset blur spread color | inset;
+    - offset, es que tanto se va a mover en h(horizontal-a la derecha) y v(vertical hacia abajo)
+    - bur, es el difuminado
+    - spread, es que tanto va a crecer
+    - color, color de la sombra
+    - inset, hace que la sombra sea interna y no externa al objeto
+*/
+
+.circle{
+    width: 200px;
+    height: 200px;
+    background: red;
+    /* sombra con 10px a la derecha y 50px a hacia abajo */
+    box-shadow: 10px 50px;
+}
+.circle-2{
+    margin-top: 100px;
+    margin-left: 50px;/*lo puse para poder ver la sobra*/
+    width: 200px;
+    height: 200px;
+    background: red;
+    /* ba a mover 50px a la izquierda y mover 10px hacia abajo */
+    box-shadow: -50px 10px;
+}
+
+.tablero{
+    margin-top: 100px;
+    margin-bottom: 600px;
+    width: 200px;
+    height: 200px;
+    color: black;/* las sombras toman el color del elemento, no el background , por ende su color predeterminado sera black*/
+    background: green;
+    
+    /* la sombra se va 400px a la derecha y  0px horizontales, es decir, ni arriba ni abajo*/
+    /* con la ',' podemos generar más sombras, parecen copias */
+    box-shadow: 400px 0 red,
+                800px 0 blueviolet,
+                200px 200px 20px 20px ,
+                600px 200px 10px -40px,
+                0 400px, 400px 400px;
+}
+.caja{
+    width: 700px;
+    height: 400px;
+    padding: 0.1px;
+    background: black;
+}
+.inset{ /*Circulo*/
+    width: 200px;
+    height: 200px;
+    background: red;
+    margin: 100px auto;
+    border-radius: 50%; /*para generar el circulo*/
+
+    /* al ser una sombra interna tiene coordenada contrarias a las externas */
+    box-shadow: -15px -15px 20px 0 rgba(0, 0, 0, .5) inset 
+                /*para la sobra de la parte de abajo del circulo*/ ,
+                5px 5px 5px 0 rgba(255, 255, 255, .3) inset
+                /*para la sobra blanca de la partede arriba del circulo*/,
+                5px 5px 15px 0 rgba(255, 255, 255, .3)
+                /*para una sobra exterior en la parte de abajo*/; 
+
+}

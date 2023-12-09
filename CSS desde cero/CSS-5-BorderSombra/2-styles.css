@@ -1,0 +1,82 @@
+
+/* Border radius */
+:root{
+    --width:400px;
+    --height: 250px;
+    --bg: yellow;
+    --br:50px;/*br de border-radius*/
+}
+
+
+.box{
+    width: var(--width);
+    height: var(--height);
+    background: var(--bg);
+    border:1px solid;
+    /* el borde redondeado mide 50 px de alto y ancho */
+    border-radius: var(--br);
+}
+.box-2{
+    width: 100px;
+    height: 100px;
+    /* 50% es el maximo, ya que después choca con la otra esquina */
+    border-radius: 50%;
+    background: red;
+}
+
+.box-3{
+    width: var(--width);
+    height: var(--height);
+    background: var(--bg);
+    margin: 20px;
+    border:1px solid;
+    /* en este caso toma el 20% de la altura y anchura(X y Y), aplicandolo a su lado respectivo formando una elipse- ya no es circula porque el ancho y alto son distintos */
+    border-radius:20%;
+}
+.box-4{
+    width: var(--width);
+    height: var(--height);
+    background: var(--bg);
+    border:1px solid;
+    margin: 20px;
+    /* border-top-left-radius: 40px; arriba a la izquierda
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 120px;
+    border-bottom-left-radius: 160px; */
+
+    /* border-radius: X Y (es un shorthand) */
+    border-top-left-radius: 100px 200px;
+    border-top-right-radius: 50px 20px;
+    border-bottom-right-radius: 80px 120px;
+    border-bottom-left-radius: 200px 120px;
+
+    /* border-radius: X X X X / Y Y Y Y   (es un shorthand)*/
+    border-radius: 100px 50px 80px 200px / 200px 20px 120px 120px;
+
+    /* omitiendo algunos bordes */
+    /* toma el valor del lado opuesto(la otra esquina) 
+        - border-top-left-radius == border-bottom-right-radius
+        - border-top-right-radius == border-bottom-left-radius
+    */
+    /* border-radius: 100px 50px / 200px 20px 120px 120px; */
+    /* border-radius: 70px/100px; */
+}
+
+/* LOGO DE YOUTUBE */
+.youtube{
+    width: var(--width);
+    height: var(--height);
+    background: red;
+    border-radius: 70px/100px;
+    padding: 0.01px;
+}
+.triangulo{
+    width: 150px;
+    height: 150px;
+    border: 75px solid;/*la mitad del la caja para que pueda salir un triangulo*/
+    border-color: transparent;
+    border-left-color: white;
+    box-sizing: border-box;
+    margin:50px auto 50px 165px;
+    transform: scaleY(0.65); /*parte de css animaciones*/
+}
