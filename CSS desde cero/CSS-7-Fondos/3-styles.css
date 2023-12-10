@@ -12,13 +12,13 @@ body{
     background-size: 300px;
     /* background-position: 0 0; este es valor por defecto(cero a la derecha-X y cero abajo-Y)*/
     background-position: 200px 500px; /* 200px a la derecha y 500px a hacia abajo */
-    background-position: 20% 10%;/*el porcentaje se calcula segun el elemento padre(el body abarca el 100% de la pantalla)*/
+    /*background-position: 20% 10%;*//*el porcentaje se calcula segun el elemento padre(el body abarca el 100% de la pantalla)*/
 
 
     /* background-position: left center right | top center bottom; 
                             (por el lado de X)  (por lado de Y)*/
-    background-position: center center;/* (X)(Y)centramos el fondo*/
+    /*background-position: center center;*//* (X)(Y)centramos el fondo*/
 
-    background-position: right 20px bottom 10px; /* aparece a la derecha(20px desde la derecha) y abajo(10px de margen desde abajo)*/
+    /*background-position: right 100px bottom 50px;*/ /* aparece a la derecha(20px desde la derecha) y inicia desde abajo(10px de margen desde abajo)*/
 
 }

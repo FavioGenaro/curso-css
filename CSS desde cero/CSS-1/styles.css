@@ -2,7 +2,7 @@
 /* Varibles CSS (custom properties) */
 /* Forma de reutizar codigo */
 :root{
-    /* Con los -- se dice que esta es una propiedad nueva inventada por nosotros */
+    /* Con los -- se dice que esta es una propiedad(variable) nueva inventada por nosotros */
     --color: green;
 
 }

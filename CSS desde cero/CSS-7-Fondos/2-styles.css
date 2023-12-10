@@ -7,11 +7,11 @@ html, body{
 
 body{
     background-color: yellow;
-    background-image: url(https://images.unsplash.com/photo-1644245991167-b1f5202e8211?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+    /* background-image: url(https://images.unsplash.com/photo-1644245991167-b1f5202e8211?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80); */
     background-repeat: no-repeat;
     /* background-size: auto; es el valor por defecto, es el tamaño de la imagen original*/
     background-size: 500px;/*le doy el ancho y el alto se calcula de forma automatica- es mejor usar este tipo*/
-    background-size: 800px 200px;/*(ancho-witdh)(alto-heigth)*/
+    /* background-size: 800px 200px;*//*(ancho-witdh)(alto-heigth) */
 
     /* background-size: 12%; para poder expandir o reducir su tamaño, % del tamaño original de la imagen*/
 
@@ -19,5 +19,15 @@ body{
     /* background-size: contain; se ajusta(no es que se estire para cubrir todo sino va de acorde a sus proporciones, no se desborda, parece responsivo) al contenido de la etiqueta(en este caso el body) */
     /* background-size: contain; */
 
-    background-size: cover;/* rellena todo el espacio pero se desborda, es decir, que se recorta para rellenar el espacio*/
+    /*background-size: cover;*//* rellena todo el espacio pero se desborda, es decir, que se estira en ancho hasta rellenar el espacio disponible, estirandose sin deformarse */
+    /* background-size: cover; */
+}
+
+h1{
+    width: 500px;
+    height: 500px;
+    background-color: red;
+    background-image: url(https://images.unsplash.com/photo-1644245991167-b1f5202e8211?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+    /* background-size: contain; */
+    background-size: cover;
 }
