@@ -1,0 +1,61 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+}
+
+/* Usamos variables para almacenar contenido en iconos y texto */
+.message{
+    --bg:blue;
+    --message: 'Este es un mensaje';
+    --icon: '😀';
+    color: white;
+    background-color: var(--bg);
+    padding: 1rem 1.25rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+}
+/* en cada pseudoelemento colocamos el contenido */
+.message::before{
+    content: var(--icon);
+    margin-right: 0.25rem;
+}
+
+.message::after{
+    content: var(--message);
+}
+
+
+/* Generamos variaciones del mensaje */
+.message.alert{
+    --icon: '⚠';
+    --message:'Esta es una acción peligrosa';
+    --bg:goldenrod;
+}
+
+.message.success{
+    --icon: '✅';
+    --message:'Compra realizada con éxito';
+    --bg:limegreen;
+}
+
+.message.error{
+    --icon: '❌';
+    --message:'Error al terminar tu compra';
+    --bg:tomato;
+}
+
+.message.error.two{
+    --message:'No se pudo iniciar sesión';
+}

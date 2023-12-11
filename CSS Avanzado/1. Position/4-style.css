@@ -44,7 +44,7 @@ body{
     background-color: black;
     width: 10px;
     height: 10px;
-    transform: translate(-50%, 50%) rotate(45deg); /* centrado */
+    transform: translate(-50%, 50%) rotate(45deg); /* centrado y rota 45grados para que se muestre como triangulo cuando es un cuadrado */
     position: absolute;
     left: 50%;
     bottom: 0;
