@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="7.14-styles.css">
+</head>
+<body>
+    <form action="#">
+        <h2>Formulario de registro</h2>
+        <!-- usamos fielset porque podemos aplicar atributos como disabled
+            que se apliquen a todos los demás campos que contiene. Tambien podemos
+            pasarle pseudaclase como :valid o invalid para que valide todos los inputs.
+        -->
+        <fieldset class="row">
+            <legend>Datos de la cuenta</legend>
+            <div class="container">
+                <input type="text" name="name" id="name">
+                <label for="name">Nombre</label>
+            </div>
+            <div class="container">
+                <input type="text" name="name" id="lastname">
+                <label for="lastname">Apellidos</label>
+            </div>
+            <div class="container">
+                <input type="email" name="name" id="email">
+                <label for="email">Correo electrónico</label>
+            </div>
+        </fieldset>
+        <!-- Información del usuario -->
+        <fieldset class="row" disabled>
+            <legend>Información del usuario</legend>
+            <div class="container">
+                <input type="text" name="name" id="direction">
+                <label for="direction">Dirección</label>
+            </div>
+            <div class="sub">
+                <div class="container">
+                    <input type="text" name="name" id="numbre">
+                    <label for="numbre">No.</label>
+                </div>
+                <div class="container">
+                    <input type="email" name="name" id="cp">
+                    <label for="cp">C.P.</label>
+                </div>
+            </div>
+            
+        </fieldset>
+        <input type="submit" value="Registrarme">
+    </form>
+</body>
+</html>

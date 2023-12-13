@@ -1,0 +1,16 @@
+
+
+textarea{
+    /* none: bloquea el comportamos de aumentar o reducir el tamaño del textarea 
+        both: x e y se pueden modificar
+        vertical: se extiene de arriba a abajo
+        horizontal: Se extiende o reduce para los lados
+        NOTA: su uso principal son los textarea. pero podemos aplicarlo a cualquier otro elemento
+    */
+    resize: vertical;
+}
+
+p{
+    resize: both; /* ambos lados, pero por si solo no hace que aparezca la viñeta con la que podemos expandir*/
+    overflow: scroll; /* hace que aparezca la viñeta y tambine barras de scroll */
+}

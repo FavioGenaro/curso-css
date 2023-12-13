@@ -1,0 +1,40 @@
+body{
+    font-family: sans-serif;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    empty-cells: hide;
+}
+
+/* todos los tr que no tengan la clase .tr-head*/
+tr:not(.tr-head):hover{
+    /* Se selecciona una fila */
+    background-color: #e7e7e7;
+}
+td:hover,
+th:not(.th-head):hover{
+    /* selección de una celda */
+    background-color: #ccc;
+}
+
+thead tr{
+    background-color: royalblue;
+    color: white;
+}
+
+thead th{
+    border: none;
+}
+
+th{
+    text-align: left;
+}
+
+td{
+    text-align: right;
+}
+
+

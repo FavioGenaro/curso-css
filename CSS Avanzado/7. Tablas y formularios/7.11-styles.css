@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+form{
+    padding: 1rem;
+}
+
+.container{
+    position: relative;
+}
+
+.container:focus-within label,
+input:not(:placeholder-shown) + label{ /*cuando tiene contenido se desaparece el label que actua como placeholder*/
+    display: none;
+}
+
+/* El labe hace de placehoder */
+.container label{
+    position: absolute;
+    left: 0.25rem;
+    /* opacity: 0.5; */
+}
+
+label{
+    color: #ccc;
+}
+
+/* Podemos hacer que los input requeridos apliquen estilos a sus hermanos label con pseudoelementos*/
+input:required + label::before{
+    content: '*';
+    color: red;
+}
+
+/* Tambien tenemos la pseudoclase optional */
+input:optional + label::after{
+    content: '(Opcional)';
+    color: red;
+}
+
+
+/* pseudoclase :read-only, identifica a los inputs con esta propiedad 
+    Incluso toma a el input submit porque no podemos ingresar datos ahí.
+    Tbm son afectados los campos con disabled
+    NOTA: esto dependerá mucho del navegador
+*/
+/* input:read-only{
+    background-color: steelblue;
+} */
+
+/* Tambien tenemos el lado contrario :read-write, que es para input donde se puede leer y escribir. */
+/* input:read-write{
+    background-color: red;
+} */
+
+/* Para campos desactivados podemos usar */
+/* input:disabled{
+    background-color: black;
+} */
+/* Para campos ctivados podemos usar, este si incluso detecta inputs de solo lectuta porque no tienen la propiedad disabled */
+input:enabled{
+    background-color: blue;
+}
+

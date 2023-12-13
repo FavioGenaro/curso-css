@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* El focus de un elemento es cuando se esta seleccionado el elemento
+    A un input se le da el foco cuando se hace click */
+
+/* Usaremos la pseudoclase :focus */
+/* input:focus{
+    background-color: red;
+} */
+
+/* Este tambien detecta el foco, pero no solo se puede aplicar 
+al elemento en sí sino que aplica al contenedor padre. 
+Detecta si uno de los hijos del contenedor padre tiene un foco y aplica los estilos al padre
+*/
+/* input:focus-within{
+    background-color: yellow;
+} */
+
+form{
+    padding: 1rem;
+}
+/* para ello lo aplicamos al form, los estilos del hijo del form */
+/* form:focus-within{
+    background-color: yellow;
+} */
+
+/* .container{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+} */
+
+/* cuando el form este con el foco(en uno de sus hijos) se aplicará este estilo al hermano .container */
+/* form:focus-within + .container{
+    background-color: yellow;
+} */
+
+.container{
+    position: relative;
+}
+.container:focus-within label{
+    display: none;
+}
+
+/* El labe hace de placehoder */
+.container label{
+    position: absolute;
+    left: 0.25rem;
+    opacity: 0.5;
+}

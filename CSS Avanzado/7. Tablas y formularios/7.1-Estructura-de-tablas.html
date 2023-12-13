@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="7.1-styles.css">
+</head>
+<body>
+    <!-- nos agrega un borde a la tabla y sus celdas -->
+    <table border="1">
+        <!-- 
+            thead: cabecera de la tabla 
+            tbody: Contenido de la tabla
+            tfoot: Footer de la tabla
+        -->
+        <!-- tr (filas) y td (columnas), th indica la cabezara de la columna o fila -->
+        <caption>Informes de venta</caption>
+        <thead>
+            <tr>
+                <th>Columna 1</th>
+                <th>Columna 2</th>
+                <th>Columna 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Columna 1</th>
+                <td>Columna 2</td>
+                <td>Columna 3</td>
+            </tr>
+            <tr>
+                <th>Columna 1</th>
+                <td>Columna 2</td>
+                <td>Columna 3</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Columna 1</th>
+                <!-- <td>Columna 2</td>
+                <td>Columna 3</td> -->
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- Tabla a partir de divs -->
+    <div class="table">
+        <div class="caption">Informes de venta</div>
+        <div class="thead">
+            <div class="tr">
+                <div class="td">Columna 1</div>
+                <div class="td">Columna 2</div>
+                <div class="td">Columna 3</div>
+            </div>
+        </div>
+        <div class="tfoot">
+            <div class="tr">
+                <div class="td">Columna 1</div>
+                <div class="td">Columna 2</div>
+                <div class="td">Columna 3</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

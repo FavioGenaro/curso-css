@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* El focus de un elemento es cuando se esta seleccionado el elemento
+    A un input se le da el foco cuando se hace click */
+
+/* Usaremos la pseudoclase :focus */
+/* input:focus{
+    background-color: red;
+} */
+
+/* Este tambien detecta el foco, pero no solo se puede aplicar 
+al elemento en sí sino que aplica al contenedor padre. 
+Detecta si uno de los hijos del contenedor padre tiene un foco y aplica los estilos al padre
+*/
+
+form{
+    padding: 1rem;
+}
+
+.container{
+    position: relative;
+}
+
+/* Mientras este activo el placeholder se aplican ciertos estilos al input */
+/* Se podría decir que estamos detectando si un input tiene contenido, si no tiene contenido se aplica esto: */
+.container:focus-within label,
+input:not(:placeholder-shown) + label{ /*cuando tiene contenido se desaparece el label que actua como placeholder*/
+    display: none;
+}
+
+/* El labe hace de placehoder */
+.container label{
+    position: absolute;
+    left: 0.25rem;
+    /* opacity: 0.5; */
+}
+
+/* Selector de atributo */
+/* Aplicamos estilos al atributo que es requerido */
+/* input[required]{
+    background-color: red;
+} */
+
+/* Tenemos una psedudoclase para solo atributos requeridos, hace exactemente los mismo.
+    La diferencia es que con el selector podemos seleccionar cualquier atributo, pero esta
+    pseudoclase es especifica
+*/
+/* input:required{
+    background-color: red;
+} */
+
+label{
+    color: #ccc;
+}
+
+/* Podemos hacer que los input requeridos apliquen estilos a sus hermanos label con pseudoelementos*/
+input:required + label::before{
+    content: '*';
+    color: red;
+}
+
+/* Tambien tenemos la pseudoclase optional */
+input:optional + label::after{
+    content: '(Opcional)';
+    color: red;
+}
+
+/* Normalmente usamos :required u :optional no ambos a la vez */

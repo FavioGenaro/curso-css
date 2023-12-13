@@ -1,0 +1,24 @@
+
+/* Seleccionamos los inputs tipo text */
+input[type="text"]{
+    /* background-color: red; */
+
+    /* -moz-appearance es una propiedad no soportada. 
+        Permite estilos de otro tipo de input, a pesar de tener otra apariencia tiene el mismo comportamiento
+        No me funciona en mi chrome de version 118
+    */
+    -moz-appearance: checkbox;
+}
+
+input[type="checkbox"]:checked + label{
+    /* appearance: textfield */ /* puede que la propiedad ahora se llamé así */
+    background-color: red;
+}
+
+/* esto sirve normalmente para hacer inputs checkbox o radio tipo más personalizados 
+   si colocamos -moz-appearance: none; el radio o check desaparecen, menos el texto que lo acompaña
+   lo que nos permite agregar un circulo o cuadrado con pseudoelementos, pero los inputs al no tener
+   etiqueta de cierre no pueden tener pseudoelementos, lo que se hacia era encapsular en un div para
+   agregar pseudoelementos en ese div, pero con -moz-appearance: none; ya podemos agregar pseudoelementos.
+
+*/

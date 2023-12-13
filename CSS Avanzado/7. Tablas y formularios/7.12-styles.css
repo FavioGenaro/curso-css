@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+form{
+    padding: 1rem;
+}
+
+.container{
+    position: relative;
+}
+
+.container:focus-within label,
+input:not(:placeholder-shown) + label{ /*cuando tiene contenido se desaparece el label que actua como placeholder*/
+    display: none;
+}
+
+/* El labe hace de placehoder */
+.container label{
+    position: absolute;
+    left: 0.25rem;
+    /* opacity: 0.5; */
+}
+
+label{
+    color: #ccc;
+}
+
+
+/* Sirve para validar si la información ingresada es correcta */
+/* Podemos usarlos para los type email por ejemplo, debe cumplir con ciertar cosas
+    Si los inputs no tienen required, se consideran validos desde el inicio
+*/
+input:valid{
+    background-color: limegreen;
+    color: white;
+}
+
+input:invalid{
+    background-color: red;
+    color: white;
+}
+
+

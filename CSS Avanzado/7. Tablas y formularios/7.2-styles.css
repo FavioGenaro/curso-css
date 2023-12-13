@@ -1,0 +1,44 @@
+table,tr,th,td{
+    border: 1px solid black
+}
+
+/* table{
+    border-collapse: collapse;
+} */
+
+table{
+    border-collapse: separate;
+    border-spacing: 1rem 0.25rem; /* acepta solo 1 (aplicar a X y Y) y 2 valores (X y Y por separado)*/
+}
+
+/* 
+    display: table; Añade comportamiento de tabla
+*/
+.table{
+    display: table;
+    border: 1px solid black;
+}
+/* Cabecera de la tabla */
+.thead{
+    display: table-header-group;
+}
+
+/* Fila */
+.tr{
+    display: table-row;
+}
+
+/* Celda */
+.td{
+    display: table-cell;
+}
+
+/* Titulo */
+.caption{
+    display: table-caption;
+}
+
+/* Footer de la tabla */
+.tfoot{
+    display: table-footer-group;
+}
