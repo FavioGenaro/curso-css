@@ -1,0 +1,89 @@
+body{
+    font-family: sans-serif;
+}
+
+p{
+    background-color: steelblue;
+    width: 300px;
+}
+
+p::before{
+    /* el contenido es la clase del elemento p */
+    content: attr(class);
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+/* text-overflow */
+
+/* 
+    overflow:
+    - visible: valor por defecto
+    - hidden: Se oculta el contenido desvordado. Si aplicamos para un solo eje(X o Y) en el otro eje aparece un scroll.
+    - scroll: Hacemos que aparezcan barras de scroll en eje definido aunque esta barra no hiciera falta.
+    - auto: Aparecen las barras de scroll si hacen falta.
+*/
+.overflow .visible{
+    overflow: visible; /* valor por defecto */
+}
+p:nth-child(1).visible{
+    height: 200px;
+    margin-bottom: 200px
+}
+
+
+.overflow .hidden{
+    overflow: hidden; /* se oculta el texto que no alcanza */
+}
+p:nth-child(2).hidden{
+    height: 200px;
+}
+
+
+.scroll-text{
+    width: 300px;
+    height: 200px;
+    overflow-y: scroll; /* le asignamos scroll a Y, pero si es necesario aparecerá scroll en X*/
+    overflow-x: hidden; /* podemos ocultar el scroll de X si es que aparece*/
+}
+.scroll{
+    width: 400px;
+}
+
+
+.scroll-text-auto{
+    width: 300px;
+    height: 200px;
+    overflow: auto; /* el navegador decide que scroll crear */
+}
+.auto{
+    width: 400px;
+}
+
+
+/* text-overflow */
+
+.text-overflow p{
+    white-space: nowrap; /* una sola línea */
+    width: 300px;
+    height: 210px;
+}
+
+.clip{
+    overflow: hidden;
+    text-overflow: clip; /*  Este es el valor predeterminado. Si el contenido desborda el contenedor, simplemente se recorta y no se muestra. */
+}
+
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis; /* Si el contenido desborda, se mostrará con puntos suspensivos al final.*/
+}
+
+.string{
+    overflow: hidden;
+    /* Puedes proporcionar tu propio texto para indicar el desbordamiento. */
+    /* El desbordamiento de texto: "cadena" solo funciona en Firefox. */
+    text-overflow: " [...]";
+}

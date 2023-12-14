@@ -1,0 +1,39 @@
+
+body{
+    font-family: sans-serif;
+}
+
+p{
+    background-color: steelblue;
+    max-width: 300px;
+}
+
+p::before{
+    /* el contenido es la clase del elemento p */
+    content: attr(class);
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+/* white-space */
+.white-space .normal{
+    white-space: normal; /* detecta todo como si fuera una sola línea de texto */
+}
+
+.white-space .nowrap{
+    white-space: nowrap; /* coloca todo el texto en una sola línea y no hace saltos de línea (sale del contenedor) */
+}
+
+.white-space .pre{ /* se usa normalmente para representar código(tal y como esta)*/
+    white-space: pre; /* Respeta el espacio en blanco(tabs) y saltos de línea. Pero no reordena el contenido, una línea puede salir del contenedor */
+}
+
+.white-space .pre-wrap{ 
+    white-space: pre-wrap; /* Respeta el espacio en blanco(tabs) y saltos de línea. Evita que el contenido se desborde y hace saltos de línea necesarios */
+}
+
+.white-space .pre-line{ 
+    white-space: pre-line; /* Respeta los saltos de línea.pero no los espacios en blanco como los tabs, tmb reordena el contenido para que no se desborde */
+}

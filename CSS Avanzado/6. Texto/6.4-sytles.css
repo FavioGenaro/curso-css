@@ -1,0 +1,32 @@
+@font-face{
+    font-family: 'tittle-font';
+    font-style: normal;
+    /* En nuestros titulos si o si queremos que se cargue la fuente */
+    font-display: block;
+    font-weight: 400;
+    /* en el src faltaria la url y el format('woff2') */
+    src: local('kaushanscrip-regular'), local('kaushanscript');
+}
+
+@font-face{
+    font-family: 'body-font';
+    font-style: normal;
+    /* Si el usuario tiene conexión lenta se puede optar por no cargar la fuente */
+    font-display: optional;
+    font-weight: 400;
+    src: local('cantarell-regular') local('cantarell');
+}
+
+:root{
+    --title-font: 'tittle-font', cursive;
+    --body-font:  'body-font', sans-serif;
+}
+
+body{
+    font-family: var(--body-font);
+}
+
+/* colocamos una clase por si queremos que tenga la letra de un titulo y no sea una h */
+h1, h2, h3, h4, h5, h6, .title-font{
+    font-family: var(--title-font);
+}

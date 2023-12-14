@@ -1,0 +1,68 @@
+body{
+    font-family: sans-serif;
+}
+
+p{
+    background-color: steelblue;
+    max-width: 300px;
+}
+
+p::before{
+    /* el contenido es la clase del elemento p */
+    content: attr(class);
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+/* word-break */
+
+.word-break .normal{
+    word-break: normal; /* valor por defecto, hace el salto de línea del texto sin romper palabras en dos, sino que trata de que las palabras este enteras */
+}
+
+.word-break .break-all{
+    word-break: break-all; /* corta el contenido del parrafo si este llega al límite, puede hasta partir una palabra y hacer el salto de línea */
+}
+
+.word-break .break-word{
+    word-break: break-word; /* busca un punto de corte en el texto y rompe la palabra, esta obsoleto */
+}
+
+.word-break .break-all{
+    word-break: break-all; /* reservado y orientado a idiomas orientales (chino) que hace que las palabras no se rompan si es que se leen de forma corrida */
+}
+
+
+/* overflow-wrap antes llamado word-wrap */
+
+.overflow-wrap .normal{
+    overflow-wrap: normal; /* valor por defecto */
+}
+
+.overflow-wrap .anywhere{
+    overflow-wrap: anywhere; /* corta la palabra si es muy grande, en normal la palabra no se corta y se desborda (común en enlaces) */
+}
+
+.overflow-wrap .break-word{
+    /* En un inicio puede parecer a anywhere */
+    overflow-wrap: break-word; /* busca un punto de intersección donde sea más recomendable contar la palabra, como un - o . de un link u otra letra, en anywhere se corta donde sea */
+}
+
+
+/* hyphens */
+/* Lo que hace es cortar el texto y colocarle un guion, corta la palabra por silaba, no por letra. */
+
+.hyphens .none{
+    hyphens: none; /* valor por defecto, sin guion */
+}
+
+.hyphens .manual{
+    /* En este caso nosotros debemos colocar el guion para que pueda establecer el punto de corte */
+    hyphens: manual; /* realiza el corte cuando encuentre ciertos carácteres como un guion */
+}
+
+.hyphens .auto{
+    hyphens: auto; /* realiza el corte por silabas de forma automatica, si tenemos una silaba muy grande pues habria que usar otras de las propiedades que hemos aprendido */
+}

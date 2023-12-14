@@ -1,0 +1,22 @@
+/* Formartos digitales para fuentes
+
+    - True Type Font (TTF): es usados en cualquier sitio, documento de word, etc.. 1er formato estandar
+    - Open True Type Font (OTF): Parecido a TTF solo que la diferencia era para las personas que 
+        hacian fuentes implementando una forma diferente de hacer curvas besier. Para uso cotidiano TTF y OTF
+        no se diferencian.
+    - Embedded Open Type (EOT): Este fue el primer formato digital propuesto para sitios web. Lo que los diferencia
+        de los otros es que EOT es comprimido para que las paginas cargen más rápido. Adicionalmente añadio una forma
+        de identificar fuentes no licensiadas, porque las que tienen licencia habia que pagarlas para usarlas en tus 
+        sitios a pesar de poder descargarla gratis. Esto solo se quedo en Internet Explorer.
+    - Web Open Font Format (WOFF) (WOFF2): El primer formato estandarizado para web. Este no es comprimido sino que con
+        metadatos para que sea más rápido y ligero.
+    - Scalable Vecto Graphics (SVG): Al crear una fuente todo inicia como si fuera un vector. Este traia problemas como
+        que al querer seleccionar una letra tenias que hacerlo para la palabra completa.
+*/
+
+/* 
+    Para descargar fuentes: https://www.fontsquirrel.com/. Tambien permite cambiar el formato de la fuente
+    Podemos cambiar de TTF a WOOF y usarlo en nuestro sitio web.
+    En este sitio podemos comprar derechos de la fuentes: https://www.myfonts.com/.
+    Debemos comprarlo según el uso que le demos, ya sea en web, desktop, etc.
+*/

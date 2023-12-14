@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Regla @font-face, que nos permite señalar aun archivo fuente en especifico para que nos traíga a nuestro formatos */
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Roboto'; /* asignamos el nombre de la familia, este nombre lo pasaremos a usar en font-family posteriores */
+    font-style: normal; /* tenemos nomarl, italic y oblique*/
+    font-weight: 400; /* grosor de la fuente, sino tenemos las variaciones lo dejamos en 400 */
+    font-display: swap; /* lo veremos más adelante */
+    /* src es para indicar el archivo. este en la url e indicamos el formato */
+    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
+    /* unicode-range tiene que ver más con el idioma y que carácteres usa el idioma */
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+@font-face {
+    font-family: 'Brush'; /* Podemos colocar cualquier otro nombre */
+    font-style: oblique;
+    font-weight: 400;
+    /* Usamos local por si ya tenemos las fuentes, sino usará la url */
+    src: local('Alex Brush'), local('Alex Brush Regular'), url('./fonts/AlexBrush-Regular.ttf') format('truetype');
+}
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Brush', cursive; */
+}
+
