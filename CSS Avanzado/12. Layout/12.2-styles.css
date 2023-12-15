@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+.wrapper{
+    max-width: 1200px;
+    /* quitamos 2 rem porque a cada lado le añadimos un margen de 1 rem */
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+header, aside, main, footer{
+    background-color: goldenrod;
+    padding: 2rem;
+}
+
+/* Limitamos el contenido */
+.grid{
+    display: grid;
+    /* grid-template-columns: 250px auto 250px; */
+    grid-template-rows: min-content auto min-content;
+    gap: 1rem;
+    min-height: 100vh;
+}
+
+.body{
+    display: grid;
+    /* grid-template-columns: 250px auto 250px; */
+    gap: 1rem;
+    /* Para que abarque solo el contenido que tiene */
+    grid-template-rows: repeat(3, min-content);
+}
+
+main{
+    /* grid-row-start: 1; */
+    /* --columns: 1; */
+    /* display: grid; */
+    
+
+    /* 
+        Auto-fill: no decimos cuantas columnas queremos sino que se llene de forma automatica según el espacio que tenga.
+            Es más recomendable para información que queremos que salte de línea.
+        minmax: pasamos el tamaño minimo y segundo el maximo
+    */
+    /* grid-template-columns: repeat(auto-fill, minmax(250px,1fr)); */
+    /* grid-template-columns: repeat(var(--columns), 1fr); */
+    display: flex;
+    /* gap: 1rem; */
+    flex-wrap: wrap;
+}
+
+article{
+    /* Lo malo de flexbox es que las columnas las manejamos desde si mismo y no desde el padre con lo hace grid */
+    /* Vamos a tener que calcular el porcentaje que ocupará la columna */
+    /* Usamos flexbox en columnas cuando tenemos pequeños items y queremos que esten uno al lado del otro y alinear el contenido (contenido pequeño) */
+    width: 100%;
+}
+
+/* Tamaño table */
+@media screen and (min-width: 680px) {
+    
+    article{
+        /* para que esten dos columnas */
+        width: 50%;
+    }
+
+    main{
+        /* --columns: 2; */
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .body{
+        grid-template-columns: 250px auto 250px;
+        grid-template-rows: auto; /* para que cubra todo el alto*/
+    }
+    .wrapper{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    article{
+        /* para 3 columnas */
+        width: 33.33%;
+    }
+    main{
+        /* para que el main este en el medio de los aside */
+        /* grid-column: 2; */
+        /* --columns:3; */
+    }
+}
+
+
+article{
+    padding: 1rem;
+    /* background-color: cadetblue; */
+    outline: 6px dashed cadetblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+

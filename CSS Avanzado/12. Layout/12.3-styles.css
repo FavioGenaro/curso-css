@@ -1,0 +1,116 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+.wrapper{
+    max-width: 1200px;
+    /* quitamos 2 rem porque a cada lado le añadimos un margen de 1 rem */
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+header, aside, main, footer{
+    background-color: goldenrod;
+    padding: 2rem;
+}
+
+/* Limitamos el contenido */
+.grid{
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+    gap: 1rem;
+    min-height: 100vh;
+}
+
+.body{
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: repeat(3, min-content);
+}
+
+main{
+    /* Recibe la cantidad de columnas que se hacen en el contenido */
+    /* Dependiendo del contenido, 1ro llena la primera columna y luego pasa a la segunda, 
+        por eso se ve 1 y 2 en la 1ra y 3 en la segunda.
+        Tambien se ve que el 2 sale cortado y el 3 un poco más alto, esto porque parte del contenido de
+        2 esta en la otra columna
+    */
+    /* column-count: 3; */
+    /* Es el tamaño minimo que deben medir las columnas, si pasa ese valor pues se colocan uno debajo de otro */
+    /* column-width: 250px; */
+
+    /* Podemos usar este shorthand */
+    /* columns:  column-width column-count */
+
+    /* Agregamos un gap entre las columnas */
+    /* column-gap: 5rem; */
+    /* Agregamos un borde entre las columnas, justo en medio del espaciado de gap */
+    /* column-rule: 3px solid black; */
+}
+
+.container{
+    height: 250px;
+    columns: 250px 3;
+    column-gap: 3rem;
+    column-rule: 3px solid black;
+    /* column-fill: funciona con una altura definida */
+    /* 
+        balance: Llenar los espacios de forma balanciada o equitativa (las columnas tendrá el mismo contenido)
+        auto: La columna se trata de llenar y luego va a las otros columnas
+    */
+    column-fill: auto;
+}
+
+/* article:nth-child(2){ */
+    /* background-color: crimson; */
+
+    /* Hacemos que este segundo article abarque más columnas, no podemos especificar un número,
+        solo all para que cubra todas las columnas
+    */
+    /* column-span: all; */ 
+/* } */
+
+hr{
+    column-span: all;
+}
+
+
+/* Tamaño table */
+@media screen and (min-width: 680px) {
+    
+    /* article{
+    }
+
+    main{
+    } */
+}
+
+@media screen and (min-width: 1024px) {
+
+    .body{
+        grid-template-columns: 250px auto 250px;
+        grid-template-rows: auto; /* para que cubra todo el alto*/
+    }
+    .wrapper{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+article{
+    padding: 1rem;
+    background-color: cadetblue;
+    /* outline: 6px dashed cadetblue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+

@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin-top: 0;
+}
+
+.grid{
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    background-color: #1A72B2;
+    color: white;
+}
+
+/* Usamos frist-mobile */
+.wrapper{
+    width: calc(100%-2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.grid .wrapper{
+    --columns: 1;
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+}
+
+.img-banner{
+    display: flex;
+    justify-content: center;
+}
+
+/* Tablet */
+@media screen and (min-width: 680px) {
+    .grid .wrapper{
+        --columns:2;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+    .wrapper{
+        width: 100%;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
