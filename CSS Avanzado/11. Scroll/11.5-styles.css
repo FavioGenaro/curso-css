@@ -1,0 +1,86 @@
+body{
+    margin: 0;
+}
+
+/* Al igual que scroll-behavior el scroll-snap-type no funciona en body por lo que lo aplicamos en el html*/
+html{
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+a{
+    display: inline-block;
+    padding: 0.5rem;
+    position: relative;
+}
+
+a:hover::before{
+    transform: scale(2);
+}
+
+a:hover::after{
+    opacity: 1;
+}
+
+a::after{
+    content: attr(href);
+    position: absolute;
+    left: -3.5rem;
+    top: 0.25rem;
+    opacity: 0;
+    font-family: sans-serif;
+    font-size: 0.75rem;
+    color: white;
+    transition: opacity 0.25s;
+}
+
+a::before{
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: white;
+    margin-bottom: 0.5rem;
+    transition: transform 0.25s;
+}
+
+section{
+    min-height: 100vh;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem;
+    /* el scroll va al centro del elemento */
+    scroll-snap-align: center;
+    /* Define como se comporta al momento de que el usuario detiene el scroll */
+    /* scroll-snap-stop: ; Aun esta en fase de pruebas */
+}
+
+section:nth-of-type(1){
+    background-color: #FF5F45;
+}
+
+section:nth-of-type(2){
+    background-color: #0798EC;
+}
+
+section:nth-of-type(3){
+    background-color: #FC6C7C;
+}
+
+section:nth-of-type(4){
+    background-color: #FEC401;
+}
+

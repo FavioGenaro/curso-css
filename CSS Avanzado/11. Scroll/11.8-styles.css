@@ -1,0 +1,65 @@
+:root{
+    --track-bg:#eee;
+    --thumb-bg: #ccc;
+    --thumb-hover: #aaa;
+    --scroll-radius:10px;
+}
+
+@media (prefers-color-scheme:dark){
+    :root{
+        --track-bg:#2d3134;
+        --thumb-bg: #464d50;
+    }
+
+    body{
+        background-color: #141618;
+    }
+    .container{
+        background-color: #282d31;
+        color: white;
+    }
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container{
+    width: 300px;
+    height: 300px;
+    overflow: auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.container::-webkit-scrollbar{
+    width: 14px;
+    height: 14px;
+}
+.container::-webkit-scrollbar-thumb{
+    background-color: var(--thumb-bg);
+    border-radius: var(--scroll-radius);
+    border: 3px solid var(--track-bg);
+}
+
+.container::-webkit-scrollbar-thumb:active,
+.container::-webkit-scrollbar-thumb:hover{
+    background-color: var(--thumb-hover);
+}
+
+.container::-webkit-scrollbar-track{
+    background-color: var(--track-bg);
+    border-radius: var(--scroll-radius);
+}
+
+.container::-webkit-scrollbar-corner{
+    display: none;
+}
+
+p{
+    width: 400px;
+}
+

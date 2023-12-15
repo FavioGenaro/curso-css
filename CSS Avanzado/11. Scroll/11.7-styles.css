@@ -1,0 +1,99 @@
+/* 
+    :horizontal - selecciona la barra horizontal
+    :vertical - Selecciona la barra vertical
+
+*/
+
+/* Para modificar los estilos del scroll usaremos muchos pseudoelementos
+    Solo con compatibles con navegadores webkit como chrome, edge, brave, opera, pero no firefox
+*/
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container{
+    width: 300px;
+    height: 300px;
+    overflow: auto;
+}
+/* Solo es soportado por webkit, luego va el nombre del pseudoelemento */
+/* podemos cambiar el ancho, colocar bordes, sombras, radios y alguna pseudoclase */
+/* Em un inicio puede desaparecer el scroll, esto es porque accedimos al pseudolemento y debemos
+    de agregar los estilos para que se vea.
+*/
+.container::-webkit-scrollbar{
+    /* width seria el ancho del scroll Vertical y height para el horizontal */
+    width: 20px;
+    height: 20px;
+    background-color: red; /*se pinta todo, porlo que no podremos notar el scroll*/
+}
+/* Scroll de vertical, solo podemos usar el with y en horizontal el height */
+.container::-webkit-scrollbar:vertical{
+    width: 40px;
+}
+
+.container::-webkit-scrollbar-thumb:vertical:hover{
+    background-color: orange;
+}
+.container::-webkit-scrollbar-button:horizontal{
+    background-color: darkgreen;
+}
+
+.container::-webkit-scrollbar-track{
+    background-color: green; /* pinta todo tmb pero es que aún no pintamos los botones*/
+}
+
+.container::-webkit-scrollbar-button{
+    background-color: blue;
+}
+
+.container::-webkit-scrollbar-thumb{
+    background-color: yellow;
+}
+
+.container::-webkit-scrollbar-thumb:hover{
+    background-color: pink;
+}
+/* mientras tengamos el mouse dando clic en el elemento */
+.container::-webkit-scrollbar-thumb:active{
+    background-color: white;
+}
+
+.container::-webkit-scrollbar-track-piece{
+    background-color: red;
+}
+
+.container::-webkit-scrollbar-corner{
+    display: block;
+    background-color: green;
+}
+
+p{
+    width: 400px;
+}
+
+
+
+/* End y Start son otras pseudoclases, que permite acceder al los botones y al track-piece */
+.container::-webkit-scrollbar-button:start{
+    background-color: deeppink;/* cambia el color del primer boton (donde empieza el contenido) en horizontal y vertical*/
+}
+
+.container::-webkit-scrollbar-track-piece:end{
+    background-color: deeppink;/* cambia el color del primer boton (donde empieza el contenido) en horizontal y vertical*/
+}
+
+/* increment y decrement son otras pseudoclases, que permite acceder al los botones y al track-piece */
+.container::-webkit-scrollbar-button:increment{
+    /* Pinta los botones con los que incrementamos, sería el end de cada scroll*/
+    background-color: saddlebrown;
+}
+
+.container::-webkit-scrollbar-track-piece:decrement{
+    /* Pinta la parte que vamos dejando, el increment seria la parte que falta recorrer*/
+    background-color: aqua;
+}

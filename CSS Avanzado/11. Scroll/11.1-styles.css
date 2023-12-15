@@ -1,0 +1,67 @@
+
+
+.container{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    /* overflow: auto; */
+    overflow-y: scroll;
+    /* 
+        visible: por defecto. el contenido desbordado pueder observar
+        hidden: Oculta el contenido que se desborda
+        auto: Solo crea las barras de scroll necesarias
+        scroll: generamos barras de scroll en X y Y a pesar de no necesitarlas en esos dos ejes.
+        
+        Tambien podemos aplicar estas propiedades en alguno de los ejes
+            overflow-y: scroll - Genera el scroll solo en el eje y
+            overflow-x
+        Pero si nosotros aplicamos una overflow a uno de los ejes, el otro eje pasa a tener auto, es decir,
+        va a aparecer un scroll en el otro eje si es que se necesitase de forma automatica. 
+        (Modificas un eje y el otro se coloca en auto)
+    */
+}
+
+.element{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(35, 33, 33);
+    position: absolute;
+    right: -50px;
+    bottom: -50px;
+}
+
+/* Para modificar el comportamiento de los ejes al usar overflow debemos cambiar la estructura de nuestro html */
+.container2{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: red;
+}
+.overflow{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+/* Contexto de formato de bloque, no confundir con el contexto de apilamiento
+
+    Contexto de formato de bloque es el área donde conviven los elementos flotantes con el resto de los elementos.
+    En este caso tenemos a un elementos flotante y al lado un elemento con overflow (distinto a visible) se crea
+    un nuevo contexto de formato de bloque que pasa para evitar que el contenido que esta al lado del flotante no 
+    genera un movimiento raro(evitar conflictos al hacer scroll). Es un dato curioso sobretodo.
+*/
+.container3{
+    margin: 3rem;
+}
+.element1{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(35, 33, 33);
+    float: left; /* comienza a flotar y el texto se coloca de lado */
+}
+
+.overflow2{
+    overflow: hidden;
+}
+

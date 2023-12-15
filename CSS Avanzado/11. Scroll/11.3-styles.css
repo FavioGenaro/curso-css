@@ -1,0 +1,45 @@
+html{
+    margin: 0;
+    scroll-behavior: smooth;
+    /* Podemos aplicarle padding a la scroll, este se aplica al elemento padre */
+    /* scroll-padding-top: 4rem; */
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    background-color: white;
+    padding: 1rem;
+}
+
+section div{
+    /* Podemos tambien añadir margin, este se aplica a cada elemento.
+        Como es hacia los hijos, podemos aplicar el margin a cada uno de forma personalizada.
+    */
+    scroll-margin-top: 4rem;
+
+    flex: none;
+    width: 100%;
+    height: 100vh; /* cada div mide el body */
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    color: white;
+}
+
+section div:nth-child(1){
+    background-color: crimson;
+}
+
+section div:nth-child(2){
+    background-color: gold;
+}
+
+section div:nth-child(3){
+    background-color: lightgreen;
+}
+
+section div:nth-child(4){
+    background-color: lightskyblue;
+}

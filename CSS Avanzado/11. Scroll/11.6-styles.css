@@ -1,0 +1,69 @@
+/* Para modificar los estilos del scroll usaremos muchos pseudoelementos
+    Solo con compatibles con navegadores webkit como chrome, edge, brave, opera, pero no firefox
+*/
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container{
+    width: 300px;
+    height: 300px;
+    overflow: auto;
+}
+
+/* Solo es soportado por webkit, luego va el nombre del pseudoelemento */
+/* podemos cambiar el ancho, colocar bordes, sombras, radios y alguna pseudoclase */
+/* Em un inicio puede desaparecer el scroll, esto es porque accedimos al pseudolemento y debemos
+    de agregar los estilos para que se vea.
+*/
+.container::-webkit-scrollbar{
+    /* width seria el ancho del scroll Vertical y height para el horizontal */
+    width: 20px;
+    height: 20px;
+    background-color: red; /*se pinta todo, porlo que no podremos notar el scroll*/
+}
+
+.container::-webkit-scrollbar-track{
+    background-color: green; /* pinta todo tmb pero es que aún no pintamos los botones*/
+}
+
+.container::-webkit-scrollbar-button{
+    background-color: blue;
+}
+
+.container::-webkit-scrollbar-thumb{
+    background-color: yellow;
+}
+
+.container::-webkit-scrollbar-thumb:hover{
+    background-color: pink;
+}
+/* mientras tengamos el mouse dando clic en el elemento */
+.container::-webkit-scrollbar-thumb:active{
+    /* mientras tengamos el mouse presiona se cambia el color a blanco */
+    /* Debemos colocarlo después del hover, porque sino el color de hover se sobrepone */
+    background-color: white;
+}
+
+.container::-webkit-scrollbar-track-piece{
+    background-color: red;
+}
+
+.container::-webkit-scrollbar-corner{
+    display: block; /* a este si debemos darle un display block, no es como los otros pseudoelementos */
+    background-color: green;
+    /* El corner se puede reemplazar por el resize, pero este no utiliza scrollbar, por lo que no se considero
+        Pero además este resize permite redimensionar el container.
+    */
+}
+
+
+
+p{
+    /* ancho mas que su contenedor, por lo que el contenido se desborda */
+    width: 400px;
+}

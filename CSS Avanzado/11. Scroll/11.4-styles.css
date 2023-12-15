@@ -1,0 +1,69 @@
+html{
+    margin: 0;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    background-color: white;
+    padding: 1rem;
+}
+
+section{
+    width: 300px;
+    height: 300px;
+    overflow: auto;
+    /* Esta propiedad debe recibir 2 valores
+        - El el eje donde nos movemos con el scroll puede ser X o Y o ambos indicando both
+        - type o tipo de ajuste que le vamos a poner
+            mandatory: cuando hago scroll me manda automaticamente a la siguiente sección (un pequeño desplazamiento me manda al siguiente)
+            proximity: Cuando estamos cerca del siguiente elemento, termina el scroll en la alineación que colocamos con scroll-snap-align en el elemento.
+    */
+    scroll-snap-type: y proximity;
+}
+
+section div{
+
+    /* Tambien a los items debemos poner en que parte de ellos vamos ajustar */
+    /* Esta propiedad recibe start center o end */
+    /* center: El scroll va a terminar en el centro del elemento al terminar el scroll 
+        Lo mismo pasa con start que es inicio y end al final. Esto independientemente de mandatory o proximity
+    */
+    scroll-snap-align: end;
+    width: 100%;
+    height: 100%;
+    font-size: 5rem;
+    color: white;
+    background-color: blue;
+}
+
+section div:nth-child(1){
+    background-color: crimson;
+}
+
+section div:nth-child(2){
+    background-color: gold;
+}
+
+section div:nth-child(3){
+    background-color: lightgreen;
+}
+
+section div:nth-child(4){
+    background-color: lightskyblue;
+}
+
+/* Grilla de elementos */
+.section2{
+    /* width: 300px;
+    height: 300px; */
+    overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(4,300px);
+    grid-template-rows: repeat(4,300px);
+    gap: 1rem;
+    /* se aplica a ambos ejes y un pequeño scroll hace que nos mande a la siguiente sección. */
+    scroll-snap-type: both mandatory;
+    /* Podemos aplicar un padding y ver como se puede ver parte del contenido de los otros bloques. */
+    scroll-padding: 3rem 0 0 5rem;
+}
