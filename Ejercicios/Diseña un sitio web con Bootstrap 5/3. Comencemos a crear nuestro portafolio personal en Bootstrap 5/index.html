@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- fondo: clase en el css -->
+    <div class="row fondo align-items-center">
+        <h1 class="text-white text-center">Programador Full Stack</h1>
+    </div>
+
+    <!-- MENU -->
+    <!-- Agregando Menu: https://getbootstrap.com/docs/5.1/components/navbar/   
+        navbar-expand-md: se expande a partir de los 768px (pasa del icono a un header normal)
+        navbar-light: tono o tema del nav
+        bg-light:  fondo de color blanco
+    -->
+    <!-- sticky-top: le añadimos usabilidad al menú, en este caso poder navegar por las diferentes secciones y tambien fijamos el menu 
+        fixed-top: fijamos el menu en la parte de arriba
+        sticky-top: se pega al scroll, esto para que el navbar no se muestre en la primera imagen
+    -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+        <!-- 100% del ancho -->
+        <a class="navbar-brand" href="#"
+        ><img src="images/Bootstrap_logo.png" width="30px" alt=""
+        /></a>
+        <!-- icono de bootstrap -->
+        <!-- 
+            class="navbar-toggler": hace que se muestre el icono al reducir el tamaño de pantalla
+            navbar-toggler: icono de menu hamburguesa 
+            data-bs-target="#navbarSupportedContent": cuando hagamos click mostrará los que hay en id=navbarSupportedContent
+            aria-expanded="false": por defecto no va estar expandido
+            aria-label="Toggle navigation": texto alternativo
+        -->
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <!-- span contiene al icono tipo hamburguesa -->
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 
+            me-auto: margen entre los diferentes elementos es automatico
+            mb-2: margin bootom de .5rem
+            mb-lg-0: en lg el margen sera de 0rem
+        -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- ul: lista desordenada -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- icono
+                    active: le da un tomo más oscuro si esta activo
+                -->
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#skils">Skils</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#yo">Yo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacto">Contacto</a>
+                </li>
+            </ul>
+            <!-- se hace un formulario para la sección de búsqueda -->
+            <!-- <form class="d-flex">
+                <input
+                    class="form-control me-2"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                />
+                <button class="btn btn-outline-success" type="submit">
+                    Search
+                </button>
+            </form> -->
+            <form class="d-flex"  id="new_subscriber" action="https://programadornovato.ipzmarketing.com/f/ehTOZIdNnNk" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" >
+                <input class="form-control me-2 email" required="required" aria-required="true" type="email" name="subscriber[email]" id="subscriber_email" placeholder="Email">
+                <input type="text" name="anotheremail" id="anotheremail" style="position: absolute; left: -5000px" tabindex="-1" autocomplete="off"  />
+                <input type="submit" name="commit" value="Enviar" class="btn btn-outline-success" data-disable-with="Procesando" />
+            </form>
+        </div>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO -->
+
+    <!-- TARJETAS: ver en https://getbootstrap.com/docs/5.1/components/card/ 
+        d-inline-block: para que las tarjetas se pongan una de lado de otra (con inline no funciona)
+    -->
+    <div class="container mt-3 text-center">
+        <h1 class="text-center text-uppercase fs-italic fw-bold" id="skils">Mis habilidades</h1>
+        <div class="card d-inline-block" style="width: 18rem;">
+            <img src="images/lenguajes/html.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">HTML</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver detalles</a>
+            </div>
+        </div>
+        <div class="card d-inline-block" style="width: 18rem;">
+            <img src="images/lenguajes/css.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">CSS</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver detalles</a>
+            </div>
+        </div>
+        <div class="card d-inline-block" style="width: 18rem;">
+            <img src="images/lenguajes/js.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">JavaScript</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver detalles</a>
+            </div>
+        </div>
+        <div class="card d-inline-block" style="width: 18rem;">
+            <img src="images/lenguajes/java.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Java</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver detalles</a>
+            </div>
+        </div>
+        <div class="card d-inline-block" style="width: 18rem;">
+            <img src="images/lenguajes/py.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Python</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver detalles</a>
+            </div>
+        </div>
+        <!-- la imagen de c++ es muy grande, este card es más grande que el resto -->
+        <div class="card d-inline-block" style="width: 18rem;">
+            <img src="images/lenguajes/c++.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">C++</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver detalles</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ACERCA DE MI: Ahora definimos los estilos de texto -->
+    <!-- 
+        mt-3: margin top de 1rem 
+        text-center: centrado del h1
+        text-uppercase: texto en mayuscula
+        fs-italic: font-style es italic(curva)
+        fw-bold: font-weith en bold, en negrita
+        w-25: ancho del 25%
+        float-start: lo hacemos flotar a la izquierda
+        d-none d-sm-block: no se muestra, pero en dispositivos mayores de 576px
+        se muestra
+    -->
+    <div class="container mt-3">
+        <h1 class="text-center text-uppercase fs-italic fw-bold" id="yo">Un poco de mi</h1>
+        <div style="text-align: justify;">
+            <p class="bg-primary text-white w-25 float-start m-2 p-2 d-none d-sm-block" style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, ex?</p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia libero veritatis, accusantium tenetur quis omnis doloremque, minus consequatur excepturi maiores numquam nisi quaerat architecto possimus qui illum corrupti sint est?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia libero veritatis, accusantium tenetur quis omnis doloremque, minus consequatur excepturi maiores numquam nisi quaerat architecto possimus qui illum corrupti sint est?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia libero veritatis, accusantium tenetur quis omnis doloremque, minus consequatur excepturi maiores numquam nisi quaerat architecto possimus qui illum corrupti sint est? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia libero veritatis, accusantium tenetur quis omnis doloremque, minus consequatur excepturi maiores numquam nisi quaerat architecto possimus qui illum corrupti sint est? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia libero veritatis, accusantium tenetur quis omnis doloremque, minus consequatur excepturi maiores numquam nisi quaerat architecto possimus qui illum corrupti sint est?
+        </div>
+    </div>
+
+    <!-- FORMULARIO 
+        ver en:  https://getbootstrap.com/docs/5.1/forms/form-control/
+    -->
+    <div class="container">
+        <h1 class="text-center text-uppercase fs-italic fw-bold" id="contacto">Contacto</h1> 
+        <!-- 
+            needs-validation: validación de bootstrap 
+            novalidate: para que no requiera validación del navegador, ya que lo haremos con bootstrap.
+        -->
+        <form action="" class="needs-validation" novalidate>
+            <div class="row align-items-center">
+                <!-- formulario -->
+                <div class="col-6">
+                    <!-- form-group: siver para agrupar el label e input 
+                        form-control: para que sea responsive y se vea bien
+                    -->
+                    <div class="form-group row mb-2">
+                        <div class="col-md-2">
+                            <label>Nombre</label>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" placeholder="Ingresa tu nombre" required>
+                            <div class="invalid-feedback">Falta nombre</div>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <div class="col-md-2">
+                            <label>Email</label>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="email" class="form-control" placeholder="Ingresa tu email" required>
+                            <div class="invalid-feedback">Email invalido</div>
+                        </div>
+                    </div>
+                    <!-- SELECTORES
+                        ver en: https://getbootstrap.com/docs/5.1/forms/select/
+                    -->
+                    <!-- 
+                        multiple: para poder seleccionar varios elementos (con ctrl + clic)
+                        disable: para inhabilitar el select
+                        selected: va dentro del option, deja preseleccionado por defecto a esa opción
+                        Como clases pueden ir:
+                            form-select: es la clase por defecto
+                            form-select-lg: para aumentar el tamaño del select
+                    -->
+                    <div class="form-group row mb-2">
+                        <div class="col-md-2">
+                            <label>Proyecto</label>
+                        </div>
+                        <div class="col-md-10">
+                            <select class="form-select form-select-lg" multiple required>
+                                <option>Programación</option>
+                                <option>Diseño</option>
+                                <option>Marketing</option>
+                                <option>DevPos</option>
+                            </select>
+                            <div class="invalid-feedback">Falta Proyecto</div>
+                        </div>
+                    </div>
+                    <!-- BOTONES 
+                    ver en: https://getbootstrap.com/docs/5.1/components/buttons/ -->
+                    <!-- 
+                        btn: clase base de los botones 
+                        btn-primary: para los bg y color de texto de los botones
+                        btn-sm: para los tamaño (sm es smoll), tambien se puede colocar lg y demás
+                        btn-outline-success: solo se decora el contorno
+                        disabled: desabilita el boton
+                    -->
+                    <div class="form-group">
+                        <button class="btn btn-primary">Enviar</button>
+                        <!-- podemos aparentar un link como boton -->
+                        <!-- <a href="#contacto" class="btn btn-warning">Enviar</a>
+                        <input class="btn btn-outline-success" type="button" value="Enviar"> -->
+                    </div>
+                </div>
+                <!-- Imagen -->
+                <div class="col-6">
+                    <!-- CHECKBOX Y RADIO BUTTONS
+                        ver en: https://getbootstrap.com/docs/5.1/forms/checks-radios/    
+                    -->
+                    <div class="form-group row mb-2">
+                        <div class="col-md-2">
+                            <label>Pagos</label>
+                        </div>
+                        <div class="col-md-10">
+                            <!-- 
+                                form-check: para que label y checkbox se vinculen
+                                form-check-label: podemos diseñar fácilmente el texto de cada elemento en función del <input>.
+                                for="chkTransferencia": se vincula con el id del input
+                                form-switch: convertimos los checkbox o radio button en foma de switch
+                                disable: para inhabilitar
+                            -->
+                            <div class="form-check form-switch">
+                                <label class="form-check-label" for="chkTransferencia">Transferencia</label>
+                                <input class="form-check-input" type="radio" id="chkTransferencia" name="pago" required>
+                            </div>
+                            <div class="form-check form-switch">
+                                <label class="form-check-label" for="chkPaypal">Paypal</label>
+                                <input class="form-check-input" type="radio" id="chkPaypal" name="pago" required>
+                                <div class="invalid-feedback">Falta Pago</div>
+                            </div>
+                            <div class="form-check form-switch">
+                                <label class="form-check-label" for="chkBitcoins">Bitcoins</label>
+                                <input disabled class="form-check-input" type="radio" id="chkBitcoins" name="pago" required>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="images/lenguajes/equipo.png" class="img-fluid img-thumbnail rounded">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="container p-4 bg-light text-center">
+        Copyright 2022 <a href="ed.team">EDteam</a>
+    </div>
+
+    <!-- VENTANAS MODALES ver en: https://getbootstrap.com/docs/5.1/components/modal/ 
+        debemos modificar el boton "Ver detalles" para que abra una ventana modal. Cada uno debe tener data-bs-toggle="modal" data-bs-target="#exampleModal" para que pueda funcionar
+    En esta parte final copiamos el codigo de la ventana modal -->
+    <!-- Modal 
+        fade: efecto con el que se cierra el modal
+        tabindex="-1", posicion en el que se pone la ventana modal, -1 arriba de todo.
+    -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">C++</h5>
+                <!-- botón de cerrar -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- contenido de la ventana modal -->
+            <!-- img-fluid: para que la imagen sea responsive, fluya -->
+            <div class="modal-body">
+                <img src="images/lenguajes/c++.png" class="img-fluid" alt="">
+                <p style="text-align: justify;">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis doloribus adipisci at molestias non dignissimos placeat animi repellendus, omnis dolor dolores nobis quidem recusandae vel nemo sunt delectus alias eaque!
+                    Ducimus earum ipsa illum nemo asperiores velit, accusamus voluptatum aliquid adipisci beatae. Voluptatem dicta obcaecati veniam corporis animi fuga recusandae autem, a corrupti. Atque dolorum odit similique tempore voluptatum fuga!
+                    Obcaecati error quo natus atque soluta illum pariatur debitis, tempore cumque, id earum, iste quas deserunt voluptatem quis. Quaerat quibusdam vero quas ullam blanditiis quia nobis eligendi quis molestias expedita!
+                    Fuga, nobis reiciendis impedit enim autem inventore atque ipsa quo, consequatur provident quas, ut dolorem voluptatem? Laborum officia id voluptatibus, ducimus excepturi ab, aut quibusdam aspernatur magnam deserunt vitae repellendus!
+                </p>
+            </div>
+            <div class="modal-footer text-center">
+                <!-- data-bs-dismiss="modal": para cerrar la ventana modal -->
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"
+    ></script>
+    <!-- Para que el checkbox este en un estado indeterminado -->
+    <script>
+        var chkBitcoins = document.getElementById("chkBitcoins");
+        chkBitcoins.indeterminate = true;
+        
+        // VALIDACION del formulario
+        // ver en: https://getbootstrap.com/docs/5.1/forms/validation/
+        // required: campo obligatorio, en el caso de los radiobutton se coloca en cada opción pero en si solo bastara con que seleccione uno ya que estan vinculados por el name
+        // PARA LA VALIDACION: le agrega un estilo de error
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+            })
+        })()
+    </script>
+    
+</body>
+</html>

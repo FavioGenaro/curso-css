@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Header */
+header{
+    background-color: cornflowerblue;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+}
+header div{
+    text-align: center;
+    margin: auto 0;
+    letter-spacing: 3px;
+}
+header img{
+    margin: 10px;
+}
+
+/* Contenido */
+main{
+    display: flex;
+    margin: 20px 120px;
+}
+section{
+    /* background-color: aqua; */
+    margin: 10px;
+}
+.blod{
+    font-weight: 700;
+}
+/* datos personales */
+.container-data{
+    display: flex;
+    margin: 15px 0;
+}
+.tittle-data{
+    margin-right: 40px;
+}
+
+/* Los titulos */
+.tittle{
+    font-size: 1.65em;
+    color: tomato;
+}
+/* Separación de contenido */
+.content{
+    margin: 15px 0;
+}
+/* Todos los textos */
+.txt{
+    text-align: justify;
+}

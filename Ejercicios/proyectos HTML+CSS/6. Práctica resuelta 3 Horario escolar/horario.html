@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Tabla 9x6 -->
+    <table>
+        <!-- Cabecera -->
+        <thead>
+            <tr>
+                <th colspan = 6 class="cabecera">HORARIO ESCOLAR</th>
+            </tr>
+        </thead>
+        <!-- Cuerpo -->
+        <tbody>
+            <tr> <!-- segunda fila -->
+                <th></th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miércoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+            </tr>
+            <tr> <!-- tercera fila -->
+                <th>08:00 - 09:00</th>
+                <td rowspan = 3 class="prog">PROG</td>
+                <td rowspan = 2 class="lm">LM</td>
+                <td rowspan = 3 class="prog">PROG</td>
+                <td rowspan = 2 class="si">SI</td>
+                <td rowspan = 2 class="prog">PROG</td>
+            </tr>
+            <tr> <!-- cuarta fila -->
+                <th>09:00 - 10:00</th>
+            </tr>
+            <tr> <!-- quinta fila -->
+                <th>10:00 - 11:00</th>
+                <td class="si">SI</td>
+                <td class="db">BD</td>
+                <td class="ed">ED</td>
+            </tr>
+            <tr> <!-- sexta fila -->
+                <th>11:00 - 11:30</th>
+                <td colspan = 5></td>
+            </tr>
+            <tr> <!-- septima fila -->
+                <th>11:30 - 12:30</th>
+                <td class="fol">FOL</td>
+                <td class="si">SI</td>
+                <td rowspan = 3 class="db">BD</td>
+                <td rowspan = 2 class="db">BD</td>
+                <td class="ed">ED</td>
+            </tr>
+            <tr> <!-- octava fila -->
+                <th>12:30 - 13:30</th>
+                <td rowspan = 2 class="si">SI</td>
+                <td class="ed">ED</td>
+                <td rowspan = 2 class="lm">LM</td>
+            </tr>
+            <tr> <!-- novena fila -->
+                <th>13:30 - 14:30</th>
+                <td class="fol">FOL</td>
+                <td class="fol">FOL</td>
+            </tr>
+        </tbody>
+    </table>
+    <section class="leyenda">
+        <p>Módulos</p>
+        <p>PROG: Programación</p>
+        <p>BD: Base de datos</p>
+        <p>LM: Lenguaje de marcas</p>
+        <p>ED: Entornos de desarrollo</p>
+        <p>SI: Sistemas Informáticos</p>
+        <p>FOL: Formación y orientación laboral</p>
+    </section>
+</body>
+</html>

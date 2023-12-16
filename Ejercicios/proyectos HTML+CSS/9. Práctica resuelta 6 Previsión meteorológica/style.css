@@ -1,0 +1,74 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* font-weight: 900; */
+    font-size: 1.2em;
+    background-color:rgb(156, 200, 227);
+}
+body>div{ /* hijo directo*/
+    margin: 40px;
+}
+
+
+
+/* CABECERA */
+header{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+img{
+    width: 50px;
+    margin: 0 10px;
+}
+
+
+
+/* CUERPO */
+main{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+/* cajas */
+main .day{
+    border: 3px solid black;
+    width: 130px;
+}
+main .day h1{
+    font-size: 1.5em;
+    text-align: center;
+    background-color: rgb(195, 194, 194);
+    padding: 6px 0;
+}
+/* centrado de las imagen */
+main .day div {
+    /* otra opción puede ser display:block y despues el margin:0 auto*/
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+main .day div img{
+    margin: 10px 0;
+    padding: 6px 0;
+}
+/* parte final */
+.red{
+    background-color: red;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    padding: 6px 0;
+}
+.blue{
+    background-color: blue;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    padding: 6px 0;
+}

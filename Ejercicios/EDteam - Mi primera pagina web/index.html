@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="/styles/styles.css">
+  <!-- JAM icons, para obtener los iconos -->
+  <link rel="stylesheet" href="https://unpkg.com/jam-icons/css/jam.min.css">
+  <title>Inicio | EDsoft</title>
+</head>
+<body>
+  <!-- Es buena practica que todos los elementos tengan un clase -->
+
+  <!-- Cabecera (Logo y menú de navegación) -->
+  <header class="main-header">
+    <!-- Es mejor colocar un div de contenedor, despues de la etiquita principal header. -->
+    <div class="content-wrapper">
+      <!-- Logo, cuando damos clic al logo nos lleva al inicio -->
+      <a href="/"> 
+        <img src="/images/logo.svg" alt="Logo EDsoft">
+      </a>
+      <!-- icono de hamburgrasa para cuando estemos en moviles-->
+      <span id="open-menu-button" class="jam jam-menu"></span>
+      <!-- Barra de navegación -->
+      <nav id="main-menu" class="main-menu">
+        <!-- el span tiene el icono para cerrar el menú -->
+        <span id="close-menu-button" class="jam jam-close"></span>
+        <ul>
+          <li>
+            <a href="./">Inicio</a>
+          </li>
+          <li>
+            <a href="./quienes-somos.html">¿Quiénes somos?</a>
+          </li>
+          <li>
+            <a href="./proyectos.html">Proyectos</a>
+          </li>
+          <li>
+            <a href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+    <!-- Banner principal -->
+    <section class="main-banner section-container">
+      <!-- div como contenedor, recordar que despues de la etiqueta principal colocar un div -->
+      <div class="content-wrapper content">
+        <div class="container">
+          <h1 class="title">Bienvenidos a EDsoft</h1>
+          <p class="subtitle">Necesitas acesoramiento urgente!!! Nosotros te podemos ayudar en la construcción de tu sitio web.</p>
+          
+          <div> <!-- este es un boton, puede ser buton de igual forma -->
+            <a class="button white" href="./contacto.html">Escríbenos ya mismo!</a>
+          </div>
+        </div>
+        <!-- Para la imagen tambien hay un contenedor para esa imagen -->
+        <div class="container">
+          <img class="image" src="/images/computer.svg" alt="Computadora EDsoft">
+        </div>
+      </div>
+    </section>
+
+    <!-- Nuestros servicios -->
+    <section class="services-section section-container">
+      <!-- Titulo -->
+      <h2>Nuestros servicios</h2> 
+      <!-- Nuestro contenido principal -->
+      <div class="content-wrapper">
+        <article class="service-item">
+          <!-- Icono como span, con la libreria jam ese span se convierte en icono. jam jam-nombreIcono(puede verlo en su página) -->
+          <span class="jam jam-phone"></span>
+          <h3>Servicio 1</h3>
+          <p>Diseñamos tu presencia en internet con apariencia profesional</p>
+        </article>
+        <article class="service-item">
+          <span class="jam jam-computer"></span>
+          <h3>Servicio 2</h3>
+          <p>Diseñamos tu presencia en internet con apariencia profesional</p>
+        </article>
+        <article class="service-item">
+          <span class="jam jam-keyboard"></span>
+          <h3>Servicio 3</h3>
+          <p>Diseñamos tu presencia en internet con apariencia profesional</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sobre nosotros -->
+    <section class="section-container about-section">
+      <!-- Contenido principal -->
+      <div class="content-wrapper">
+        <h2 class="title">Sobre nosotros</h2>
+        <p>Este es el sitio web de nuestra agencia de desarrollo.</p>
+        <a href="/proyectos.html" class="button white ghost">Ver experiencia</a>
+      </div>
+
+      <!-- Imagen de fondo del contenedor -->
+      <img class="background" src="/images/bg-section.jpg" alt="Alumnos estudiando">
+    </section>
+
+    <!-- Ultimos proyectos -->
+    <section class="section-container last-projects">
+      <!-- hacemos solo un h2, porque no contiene más elementos en estas partes -->
+      <h2>Últimos proyectos</h2>
+      <div class="content-wrapper">
+        <!-- todo el elemento es un enlace, para poder hacer click -->
+        <a href="#" class="project-item">
+          <article>
+            <div>
+              <h4>Titulo proyecto</h4>
+              <p>Descripción proyecto</p>
+            </div>
+            <div class="image-container">
+              <img src="/images/project-1.jpg" alt="Proyecto 1">
+            </div>
+          </article>
+        </a>
+        <a href="#" class="project-item">
+          <article>
+            <div>
+              <h4>Titulo proyecto</h4>
+              <p>Descripción proyecto</p>
+            </div>
+            <div class="image-container">
+              <img src="/images/project-2.jpg" alt="Proyecto 2">
+            </div>
+          </article>
+        </a>
+        <a href="#" class="project-item">
+          <article>
+            <div>
+              <h4>Titulo proyecto</h4>
+              <p>Descripción proyecto</p>
+            </div>
+            <div class="image-container">
+              <img src="/images/project-3.jpg" alt="Proyecto 3">
+            </div>
+          </article>
+        </a>
+        <a href="#" class="project-item">
+          <article>
+            <div>
+              <h4>Titulo proyecto</h4>
+              <p>Descripción proyecto</p>
+            </div>
+            <div class="image-container">
+              <img src="/images/project-4.jpg" alt="Proyecto 4">
+            </div>
+          </article>
+        </a>
+      </div>
+    </section>
+
+    <!--  Trabajar con nosotros  -->
+    <section class="work-with-us">
+      <div class="content-wrapper">
+        <h2 class="title">¿Quieres trabajar con nosotros?</h2>
+        <p class="subtitle">Es momento de convertir tu idea en algo real.  Puedes contactarnos en nuestras redes sociales<br/> o enviando un correo a:</p>
+        <!-- boton -->
+        <a href="mailto:contacto@edsoft.com" class="button">contacto@edsoft.com</a>
+        <!-- redes sociales -->
+        <div class="social-networks">
+          <!--  con el class podemos colocar iconos, con jam icons
+              target="_blank", quiere decir que apuntamos a una pagina en blanco
+          -->
+          <a href="#" target="_blank"><span class="jam jam-facebook"></span></a>
+          <a href="#" target="_blank"><span class="jam jam-twitter"></span></a>
+          <a href="#" target="_blank"><span class="jam jam-whatsapp"></span></a>
+          <a href="#" target="_blank"><span class="jam jam-instagram"></span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="main-footer">
+    <p>Todos los derechos reservados © 2020 | EDsoft tech labs agency</p>
+  </footer>
+
+  <script src="/scripts/menu.js"></script>
+</body>
+</html>
