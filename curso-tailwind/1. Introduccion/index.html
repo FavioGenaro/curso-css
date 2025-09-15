@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- Debemos importar los stylos compilados que genera tailwind -->
+    <link rel="stylesheet" href="./dist/styles.css">
+</head>
+<body>
+    <!-- mt-10: margin top, l(left) -->
+    <div class="mt-10 ml-6">
+        <h1 class="text-3xl">Hola Mundo</h1>
+        <!-- 
+            pl-5: padding a la izquierda (left) de 5 puntos, r(right), t(top) y b(bottom) 
+            rounded: redondeo del boton
+            text-white: color del texto
+        -->
+        <button class="bg-red-500 pl-5 pr-5 pt-3 pb-3 rounded text-white">Haz Click</button>
+    </div>
+    
+
+
+    <!-- Desventajas de cdn (no recomendable para producción)
+        No se puede personalizar los aspectos de tailwind
+        El archivo del cdn es grande
+        Ventajas
+        Podemos usarlo para maquetaciones rápidas
+    -->
+</body>
+</html>

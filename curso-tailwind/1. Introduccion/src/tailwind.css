@@ -1,0 +1,6 @@
+/* capa base: hace el reset de los estilos por defecto que vienen en el navegador */
+@tailwind base;
+/* capa de componentes */
+@tailwind components;
+/* capa de utilities, donde estan todas las utilities clases, como colores de fondo, texto, redondeados, etc. */
+@tailwind utilities;
