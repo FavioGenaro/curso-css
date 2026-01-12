@@ -1,0 +1,38 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.active {
+    grid-column-start: span 2;
+    grid-row-start: 1;
+}
+
+div::before {
+    content: attr(class);
+    display: block;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+/* Para escala de grises aplanas los colores */
+/* Los valores de los colores se promedian (rgb) */
+
+.grayscale img {
+    /* Recibe una funcion por cada filtro */
+    /* recibe valores del 0 a 100%, 100% es completamente en escala de grises */
+    /* tambien permite pasar valores decimales entre 0 y 1, se ignoran valores menores a 0 y mayores a 1 */
+    filter: grayscale(100%);
+}
+
+/* se hace una transformación dependiendo de los valores */
+.sepia img {
+    /* recibe valores del 0 a 100%, 100% es completamente en sepia */
+    /* tambien permite pasar valores decimales entre 0 y 1, se ignoran valores menores a 0 y mayores a 1 */
+    filter: sepia(100%);
+}
+
