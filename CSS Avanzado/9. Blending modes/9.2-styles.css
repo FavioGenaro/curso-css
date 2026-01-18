@@ -1,0 +1,22 @@
+/* background-color: red; */ 
+/* si colocamos black, resulta todo en negro y si colocamos white no se ve ningun cambio */
+/* body {
+    width: 300px;
+    height: 500px;
+    background-image: url('./images/image-4mb.jpg'), linear-gradient(red, green);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    background-blend-mode: multiply;
+} */
+/* no se aplica transpariencia, sino que gracias a multiply ambas capas se combinan */
+
+/* cada imagen tiene un color con un canal diferente y al combinarlas se muestra la imagen con los colores reales */
+img {
+    width: 24%;
+    mix-blend-mode: multiply;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
