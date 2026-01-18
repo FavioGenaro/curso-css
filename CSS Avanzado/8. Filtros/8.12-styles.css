@@ -1,0 +1,14 @@
+/* Se tiene los mismos valores en los filtros, pero cambian en el orden */
+
+img {
+    width: 50%;
+    filter: contrast(1.25) saturate(2) sepia(0.5) ;
+}
+
+img:nth-of-type(2) {
+    width: 50%;
+    height: auto;
+    display: block;
+    /* El orden de los filtros importa, uno trabaja con el resultado del filtro anterior */
+    filter: sepia(0.5) contrast(1.25) saturate(2);
+}

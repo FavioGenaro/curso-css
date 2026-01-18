@@ -1,0 +1,30 @@
+
+body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background: #f2f2f2;
+}
+
+.element {
+    width: 200px;
+    height: 200px;
+    background: white;
+    border-radius: 0.25rem;
+}
+
+.element::before {
+    content: '';
+    position: absolute;
+    display: block;
+    background: grey;
+    width: 90%;
+    height: 1rem;
+    left: 5%;
+    border-radius: 100%;
+    bottom: -0.5rem;
+    filter: blur(3px) opacity(0.25);
+    z-index: -1;
+}

@@ -101,3 +101,33 @@ img {
     filter: contrast(50%);
     /* filter: contrast(0); con esto se obtiene un color neutro, todo en gris */
 }
+
+
+/* La saturacion es que tan puro es el tono */
+
+.saturate img {
+    /* recibe valores del 0 a 100%, 100% es la saturación original */
+    /* valores mayores a 100% aumentan la saturación */
+    /* valores menores a 100% disminuyen la saturación */
+    /* tambien se pueden usar valores decimales: 0, 1, 1.25, 0.6 */
+    filter: saturate(0%);
+    /* filter: saturate(0); con esto se obtiene un color neutro, obtenemos el blanco y negro */
+}
+
+
+/* Filtro de desenfoque */
+
+.blur img {
+    /* Le pasamos la unidad de medida que usará desenforque gausiano */
+    /* filter: blur(5px); */
+    /* filter: blur(-3px); */
+    /* filter: blur(1rem); */
+    filter: blur(0);
+    animation: blur 5s linear infinite alternate;
+}
+
+@keyframes blur {
+    to {
+        filter: blur(9px);
+    }
+}
