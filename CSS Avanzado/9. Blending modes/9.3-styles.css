@@ -1,0 +1,15 @@
+/* background-color: red; */ 
+/* 
+    en lugar de multiply, usamos screen, este modo combina colores de forma inversa a multiply
+    en vez de oscurecer, aclara las capas
+*/
+body {
+    width: 300px;
+    height: 500px;
+    background-image: url('./images/image-4mb.jpg'), linear-gradient(red, green);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    background-blend-mode: screen;
+}
