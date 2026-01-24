@@ -1,0 +1,34 @@
+/* background-color: red; */ 
+/* 
+    Se basa mas en al iluminacion de las imagenes.
+    darken: oscurece la imagen con el color de fondo, selecciona el pixel con color más oscuro entre ambas capas.
+    lighten: aclara la imagen con el color de fondo, selecciona el pixel con color más claro entre ambas capas.
+*/
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(40, 100%, 20%);
+    /* background-color: hsl(40, 100%, 90%); color claro */
+    background-image: url('./images/image-4mb.jpg'); /* , url('./images/DwrakIS8.jpeg') */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    /* background-blend-mode: darken; */
+    background-blend-mode: lighten;
+    transition: background-color 0.25s ease;
+}
+
+/* solo animamos el color de fondo */
+/* body:hover {
+    background-color: dodgerblue;
+} */
+
+h1 {
+    color: white;
+    font-family: sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+}

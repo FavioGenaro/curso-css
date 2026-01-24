@@ -1,0 +1,27 @@
+/* 
+    color, 
+*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(red, blue) no-repeat center/cover;
+}
+
+img {
+    width: 100%;
+    /* mix-blend-mode: difference; */
+}
+
+div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.thewebfoto.com/wp-content/uploads/2010/06/FondoNegro04.jpg');
+    background-repeat: no-repeat;
+    /* background: red; */
+    /* background: hsl(0, 50%, 50%); */
+    /* saturation reemplaza la saturación, conserva el tono y la luminosidad */
+    mix-blend-mode: saturation;
+}

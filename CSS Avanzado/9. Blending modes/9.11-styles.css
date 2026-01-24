@@ -1,0 +1,25 @@
+/* 
+    color, 
+*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(red, blue) no-repeat center/cover;
+}
+
+img {
+    width: 49%;
+    /* mix-blend-mode: difference; */
+}
+
+div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background: red; */
+    background: linear-gradient(red, green);
+    /* color reemplaza el tono y la saturación, conserva la luminosidad. pintando normalmente las zonas blancas de una imagen */
+    mix-blend-mode: color;
+}

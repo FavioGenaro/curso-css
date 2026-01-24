@@ -1,0 +1,30 @@
+/* 
+    hue, reemplaza los colores por otro color.
+    hue conserva la luminosidad y la saturación del color base y aplica el tono del color de mezcla.
+*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(red, blue) no-repeat center/cover;
+}
+
+img {
+    width: 49%;
+    /* mix-blend-mode: difference; */
+}
+
+/* img:nth-of-type(2) {
+    mix-blend-mode: exclusion;
+} */
+
+div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background: red; */
+    background: linear-gradient(red, green);
+    /* hue, reemplaza los colores por otro color */
+    mix-blend-mode: hue;
+}

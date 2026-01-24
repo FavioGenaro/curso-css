@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: green
+}
+
+/* con isolation se crea un nuevo contexto de mezcla o de apilamiento
+    por lo que los elementos hijos no se mezclan con los elementos fuera de este contenedor.
+
+    mix-blend-mode se aplicanban sobre el fondo del body, pero al aplicar isolation: isolate al contenedor
+    los elementos hijos solo se mezclan entre ellos y no con el fondo del body.
+*/
+article {
+    position: relative;
+    isolation: isolate;
+}
+
+p {
+    position: absolute;
+    top: 20%;
+    font-size: 4rem;
+    color: white;
+    font-family: sans-serif;
+    mix-blend-mode: overlay;
+}
+
+img {
+    width: 100%;
+    mix-blend-mode: screen;
+}
+
