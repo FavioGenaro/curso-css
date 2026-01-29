@@ -1,3 +1,8 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 .container {
     outline: 5px solid red;
 }
@@ -27,13 +32,33 @@ img {
     border-radius: 5px;
 }
 
+
 div {
     float: left;
     width: 300px;
     height: 300px;
     /* shape-outside recibe los mismos valores que clip-path */
     /* realiza la modificacion del elemento, recorta y deja espacios para que otros elementos la ocupen, pero la imagen no se recortada */
-    shape-outside: inset(100px 50px 25px 10px round 1rem 5px 2rem 10px);
+    /* shape-outside: inset(100px 50px 25px 10px round 1rem 5px 2rem 10px); */
     /* clip-path realiza la modificacion visual, recorta la image */
-    clip-path: inset(100px 50px 25px 10px round 1rem 5px 2rem 10px);
+    /* clip-path: inset(100px 50px 25px 10px round 1rem 5px 2rem 10px); */
+}
+
+:root {
+    /* clip-path y shape-outside reciben la misma sintaxis*/
+    /* por defecto la elipse tiene dos radios, el radio en X y en Y */
+    /* con el mismo valor en ambos lo hace igual que un recorte circular */
+    --clip: ellipse(50px 30px);
+    /* con at recibe las cordenadas del punto de origen (punto desde donde parte el radio) en X y Y */
+    --clip: ellipse(50px 30px at 0 50%);
+    --clip: ellipse(50px 30px at 40px 20%);
+}
+
+.clip-path {
+    /* cicle recibe el tamaño del radio del circulo */
+    clip-path: var(--clip);
+}
+
+.shape-outside {
+    shape-outside: var(--clip);
 }

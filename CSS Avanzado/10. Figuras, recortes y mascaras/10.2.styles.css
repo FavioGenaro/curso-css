@@ -1,0 +1,63 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    outline: 5px solid red;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* height: 200px; */
+    display: block;
+    /* object-fit: cover;
+    object-position: 50% 50%; */
+    /* clip-path: inset(20px 40px 60px 80px); */
+
+    /* inset, recorte rectangular */
+    /* top right bottom left, indican  */
+    /* clip-path: inset(20px, 260px, 140px, 80px); */
+    clip-path: inset(30%); /* recorta 30% de cada lado */
+    clip-path: inset(30% 10%); /* recorta 30% arriba y abajo, 10% izquierda y derecha */
+    clip-path: inset(100px 50px 25px); /* recorta 100px arriba, 50px derecha e izquierda, 25px abajo */
+    clip-path: inset(100px 50px 25px 10px round 1rem); /* round aplica redondeo al recorte */
+    clip-path: inset(100px 50px 25px 10px round 1rem 5px); /* round aplica redondeo al recorte */
+    clip-path: inset(100px 50px 25px 10px round 1rem 5px 2rem 10px); /* round aplica redondeo al recorte */
+    clip-path: none;
+
+    /* aplica el redondeo a la imagen no al recorte */
+    border-radius: 5px;
+}
+
+
+div {
+    float: left;
+    width: 300px;
+    height: 300px;
+    /* shape-outside recibe los mismos valores que clip-path */
+    /* realiza la modificacion del elemento, recorta y deja espacios para que otros elementos la ocupen, pero la imagen no se recortada */
+    /* shape-outside: inset(100px 50px 25px 10px round 1rem 5px 2rem 10px); */
+    /* clip-path realiza la modificacion visual, recorta la image */
+    /* clip-path: inset(100px 50px 25px 10px round 1rem 5px 2rem 10px); */
+}
+
+:root {
+    /* clip-path y shape-outside reciben la misma sintaxis*/
+    /* por defecto el circulo se genera desde el centro */
+    --clip: circle(50px);
+    /* con at recibe las cordenadas del punto de origen (punto desde donde parte el radio) en X y Y */
+    --clip: circle(50px at 0 50%);
+    --clip: circle(50px at 40px 20%);
+}
+
+.clip-path {
+    /* cicle recibe el tamaño del radio del circulo */
+    clip-path: var(--clip);
+}
+
+.shape-outside {
+    shape-outside: var(--clip);
+}

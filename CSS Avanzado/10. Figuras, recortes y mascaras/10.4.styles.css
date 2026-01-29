@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    outline: 5px solid red;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+div {
+    float: left;
+    width: 300px;
+    height: 300px;
+}
+
+:root {
+    /* https://bennettfeely.com/clippy/ - podemos usar esta pagina para realizar recortes más facilmente */
+    /* clip-path y shape-outside reciben la misma sintaxis*/
+    /* el recorte poligonal se define con coordenadas de puntos, permite hacer un recorte personalizado */
+    /* colocas los puntos en X Y */
+    --clip: polygon(0 0, 100px 0, 100px 100px, 0 100px);
+    --clip: polygon(0 100%, 50% 50%, 100% 100%); /* triangulo */
+    --clip: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%);
+}
+
+.clip-path {
+    /* cicle recibe el tamaño del radio del circulo */
+    clip-path: var(--clip);
+}
+
+.shape-outside {
+    shape-outside: var(--clip);
+    shape-margin: 1rem; /* espacio entre el texto y la figura, solo admite un valor */
+}
