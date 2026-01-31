@@ -1,0 +1,17 @@
+img {
+    width: 50%;
+    display: block;
+    /* clip-path: inset(10%);
+    clip-path: circle(10%); */
+    /* clip-path: polygon(0 100%, 50% 0, 100% 100%); */
+    /* la cantidad de puntos entre el clip-path con hover */
+    clip-path: polygon(0 100%, 50% 0, 100% 100%, 50% 60%);
+    transition: clip-path 2s;
+}
+
+img:hover {
+    /* clip-path: inset(200px);
+    clip-path: circle(200px at 20% 70%); */
+    /* si queremos quedarnos con 3 puntos, el cuarto punto debe ser uno que ya exista (el 3er y 4to se repiten) */
+    clip-path: polygon(0 0,50% 100%, 100% 0, 100% 0);
+}

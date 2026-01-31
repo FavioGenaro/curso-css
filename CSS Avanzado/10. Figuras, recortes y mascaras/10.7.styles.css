@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: 100vh;
+    display: block;
+    object-fit: cover;
+    /* funciona con las mismas propiedades de un fondo en css */
+    mask-image: url('./icon.svg');
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 50%;
+    mask-size: 500px;
+    /* shorthand es mask */
+    mask: url('./icon.svg') no-repeat center / 500px;
+    mask-image: linear-gradient(black, transparent 80%);
+}
