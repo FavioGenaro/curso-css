@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #222;
+}
+
+img {
+    width: 50%;
+    height: 100vh;
+    display: block;
+    object-fit: cover;
+    /* funciona con las mismas propiedades de un fondo en css */
+    /* url('https://upload.wikimedia.org/wikipedia/commons/f/fa/Circulo_azul.png') */
+    mask-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fa/Circulo_azul.png'), url('./icon.svg');
+    mask-repeat: no-repeat;
+    /* asignamos la posición a cada una de las mascaras */
+    mask-position: center, 100px center;
+    /* add es el valor por defecto (mascara 1 y 2 son una sola) */
+    /* substract se quita lo de la segunda mascara a la 1ra. */
+    /* intersect deja el contenido que tienen en comun ambas mascaras */
+    /* exclude deja todo el contenido menos la intersección de ambas mascaras */
+    mask-composite: exclude;
+}
+
+
+.container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: blue;
+
+    mask-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fa/Circulo_azul.png'), url('./icon.svg');
+    mask-position: center;
+    mask-size: 100%, 3rem;
+    mask-repeat: no-repeat;
+    mask-composite: subtract;
+}
